@@ -8,6 +8,7 @@ Glowberry is developed primarily with Cursor, in the open. Prefer **one mileston
 2. [docs/POWER.md](docs/POWER.md) — light / battery / solar / controller  
 3. [docs/INFLATABLE.md](docs/INFLATABLE.md) — ephemeral summer track  
 4. [docs/RESEARCH_sculpture_precedents.md](docs/RESEARCH_sculpture_precedents.md) — precedents  
+5. [docs/BIBLIOGRAPHY.md](docs/BIBLIOGRAPHY.md) — living bibliography (readings / research)  
 
 Also: [README.md](README.md), [CONTRIBUTING.md](CONTRIBUTING.md), [LICENSE.md](LICENSE.md).
 

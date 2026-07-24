@@ -20,6 +20,7 @@ Canonical brief and companions:
 | [docs/POWER.md](docs/POWER.md) | Lighting, battery, solar, controller |
 | [docs/INFLATABLE.md](docs/INFLATABLE.md) | Soft / summer track |
 | [docs/RESEARCH_sculpture_precedents.md](docs/RESEARCH_sculpture_precedents.md) | Sculpture / material precedents |
+| [docs/BIBLIOGRAPHY.md](docs/BIBLIOGRAPHY.md) | Living bibliography (readings, texts, research) |
 
 ## Working in the open
 

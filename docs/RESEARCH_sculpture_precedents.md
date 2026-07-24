@@ -4,7 +4,9 @@ Research notes for a large **glowing bakeapple** pilgrimage sculpture (**Glowber
 
 **Locked direction (see [`BRIEF.md`](BRIEF.md) + [`POWER.md`](POWER.md)):** semi-opaque translucent orange shell + internal heartbeat LEDs; touch/walk-around (no entry); ≤60" gallery plug/battery; ~10 ft outdoor solar (grid if available).
 
-**Related:** [`BRIEF.md`](BRIEF.md) · [`POWER.md`](POWER.md)
+See also: [BIBLIOGRAPHY.md](BIBLIOGRAPHY.md) (living reading list) · [`BRIEF.md`](BRIEF.md) · [`POWER.md`](POWER.md)
+
+**Related:** [`BRIEF.md`](BRIEF.md) · [`POWER.md`](POWER.md) · [`BIBLIOGRAPHY.md`](BIBLIOGRAPHY.md)
 
 ---
 

@@ -7,6 +7,7 @@ Canonical brief for concept, fabrication (Studio Artefact), and systems. Budget 
 | Companion docs | |
 |----------------|--|
 | [`RESEARCH_sculpture_precedents.md`](RESEARCH_sculpture_precedents.md) | Sculpture / material precedents |
+| [`BIBLIOGRAPHY.md`](BIBLIOGRAPHY.md) | **Living bibliography** — readings, texts, research |
 | [`POWER.md`](POWER.md) | Lighting, battery, solar, controller detail |
 | [`INFLATABLE.md`](INFLATABLE.md) | **Separate track:** ephemeral summer inflatable (Choi-lineage POC) |
 
