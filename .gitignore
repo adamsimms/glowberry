@@ -1,0 +1,16 @@
+.DS_Store
+**/.DS_Store
+*.blend1
+
+# Preliminary moodboard — keep local; commit only when intentional
+/3D/
+/inspiration/
+/locations/
+/maquettes/
+/references/
+
+# Fabrication exports until intentionally published
+*.blend
+*.stl
+*.obj
+/models/

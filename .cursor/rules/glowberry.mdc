@@ -1,0 +1,14 @@
+---
+description: Glowberry project constraints for agents
+globs:
+alwaysApply: true
+---
+
+# Glowberry
+
+- Canonical docs live under `docs/` (BRIEF, POWER, INFLATABLE, RESEARCH).
+- Do not invent permissions, quotes, or funding facts.
+- Do not commit moodboard folders (`3D/`, `inspiration/`, `locations/`, `maquettes/`, `references/`) or mesh/blend binaries unless explicitly asked in an issue.
+- Dual license: CC BY-NC 4.0 (docs/creative), MIT (software). See LICENSE.md.
+- Avoid the word "master" in new user-facing text, docs, comments, and identifiers.
+- Exploratory phase: Milestone 0 foundation, then Milestone 1 feasibility — no due dates required.
