@@ -12,6 +12,13 @@ Glowberry is developed primarily with Cursor, in the open. Prefer **one mileston
 
 Also: [README.md](README.md), [CONTRIBUTING.md](CONTRIBUTING.md), [LICENSE.md](LICENSE.md).
 
+## GitHub Projects
+
+- Active: **Glowberry — R&D** — https://github.com/users/adamsimms/projects/2  
+- Later (do not create until needed): Fabrication, Editions, Outputs, Web  
+
+Put M1/M2 work on R&D. Do not invent parallel boards without an explicit ask.
+
 ## Hard rules
 
 - Do **not** invent site permissions, landowner agreements, fabricator quotes, or funding commitments.

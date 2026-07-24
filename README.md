@@ -2,9 +2,7 @@
 
 Monumental ripe **bakeapple** (cloudberry) as a glowing sculpture — concept, feasibility notes, and open development toward a Newfoundland landmark.
 
-**Artist:** [Adam Simms](https://adamsimms.xyz)  
-**Repo:** [github.com/adamsimms/glowberry](https://github.com/adamsimms/glowberry)  
-**Status:** Exploratory — Milestone 0 (open foundation) → Milestone 1 (concept, site & feasibility)
+**Artist:** [Adam Simms](https://adamsimms.xyz)
 
 Glowberry continues a practice lineage with [*Cloudberry*](https://github.com/adamsimms/cloudberry), *Light House*, and related works: presence, beacon, resettlement, and return to Pinchard’s.
 
@@ -22,9 +20,18 @@ Canonical brief and companions:
 | [docs/RESEARCH_sculpture_precedents.md](docs/RESEARCH_sculpture_precedents.md) | Sculpture / material precedents |
 | [docs/BIBLIOGRAPHY.md](docs/BIBLIOGRAPHY.md) | Living bibliography (readings, texts, research) |
 
-## Working in the open
+## GitHub Projects
 
-Issues, Discussions, and a Projects board track exploratory work. Milestone **1** will cover site options, fabrication feasibility, systems (hardware + software), budget/timeline, and grant packaging. Moodboard media and production meshes are **not** in this repo yet — they will be added deliberately later.
+Active board: **[Glowberry — R&D](https://github.com/users/adamsimms/projects/2)** (concept, site, feasibility, funding package; Milestones 0–2).
+
+Noted for later (not created yet):
+
+| Board | When |
+|-------|------|
+| **Glowberry — Fabrication** | Mesh, shops, FRP/PETG, solar, stage/base, install |
+| **Glowberry — Editions** | Small / large / inflatable delivery tracks |
+| **Glowberry — Outputs** | Statements, visuals, public documentation |
+| **Glowberry — Web** | Public site — only if/when building one |
 
 ## Contributing
 
