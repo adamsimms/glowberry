@@ -1,6 +1,6 @@
 # Glowberry
 
-Monumental ripe **bakeapple** (cloudberry) as a glowing pilgrimage sculpture — concept, feasibility notes, and open development toward a Newfoundland landmark.
+Monumental ripe **bakeapple** (cloudberry) as a glowing sculpture — concept, feasibility notes, and open development toward a Newfoundland landmark.
 
 **Artist:** [Adam Simms](https://adamsimms.xyz)  
 **Repo:** [github.com/adamsimms/glowberry](https://github.com/adamsimms/glowberry)  
