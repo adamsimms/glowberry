@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Glowberry — Artefact inquiry</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Glowberry — Artefact inquiry</h1>
+</header>
+<h1 id="glowberry-fabrication-inquiry">Glowberry — fabrication
+inquiry</h1>
+<p><strong>Studio Artefact · feasibility &amp; rough ranges</strong></p>
+<p><strong>Artist:</strong> Adam Simms · Montreal<br />
+<strong>Email:</strong> hello@adamsimms.xyz · <strong>Web:</strong>
+https://adamsimms.xyz<br />
+<strong>Project:</strong> https://github.com/adamsimms/glowberry<br />
+<strong>Date:</strong> July 2026</p>
+<p><em>This is a feasibility brief for ballpark ranges and materials
+advice. Funding is open; not a purchase order.</em></p>
+<hr />
+<h2 id="what-it-is">1. What it is</h2>
+<p><strong>Glowberry</strong> is a monumental ripe
+<strong>bakeapple</strong> (cloudberry) — a pilgrimage sculpture with
+soft <strong>heartbeat / breathing glow</strong> in the flesh at dusk
+and night.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><strong>Tone</strong></td>
+<td>Awe + humor + uncanny presence</td>
+</tr>
+<tr>
+<td><strong>Interaction</strong></td>
+<td>Touch, sit near, walk around, photograph — <strong>no
+entering</strong></td>
+</tr>
+<tr>
+<td><strong>Audience</strong></td>
+<td>Newfoundlanders and visitors</td>
+</tr>
+<tr>
+<td><strong>Site (outdoor)</strong></td>
+<td>TBD — reachable NL (Avalon / Fogo / Bonavista-class); coastal
+plateau / shore–cliff character</td>
+</tr>
+<tr>
+<td><strong>Lineage</strong></td>
+<td>Continues <em>Cloudberry</em>, <em>Light House</em>, and related
+beacon / resettlement work</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Not:</strong> weather station, data dashboard, or enterable
+pavilion.</p>
+<p><strong>References in spirit (not to copy):</strong> Kusama
+<em>Yellow Pumpkin</em> (pilgrimage fruit); Turrell / Villareal (night
+light); Kapoor <em>Cloud Gate</em> (public touchable body) — executed as
+<strong>translucent glowing flesh</strong>, not opaque paint or mirror
+steel.</p>
+<hr />
+<h2 id="look-build-intent">2. Look &amp; build intent</h2>
+<p><strong>Target:</strong> semi-opaque <strong>translucent glowing
+orange</strong> (amber → vermillion).</p>
+<ul>
+<li>Hollow shell + internal diffusion + LEDs<br />
+</li>
+<li>Service <strong>hatch at stem / bottom</strong><br />
+</li>
+<li>Daytime: readable as fruit; <strong>night: the show</strong><br />
+</li>
+<li>Outdoor: occasional dark nights OK</li>
+</ul>
+<p><strong>Materials of interest</strong></p>
+<table>
+<colgroup>
+<col style="width: 44%" />
+<col style="width: 55%" />
+</colgroup>
+<thead>
+<tr>
+<th>Prefer discussing</th>
+<th>Avoid as primary skin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Translucent <strong>PETG</strong> (your large-format print)</td>
+<td>Fully opaque paint</td>
+</tr>
+<tr>
+<td>Thin <strong>translucent</strong> tinted coat + <strong>UV-stable
+aliphatic clear</strong></td>
+<td>Polished stainless as the body</td>
+</tr>
+<tr>
+<td>Or translucent <strong>FRP</strong> handoff if print isn’t right for
+outdoor NL</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Systems (may be separate scope from shell
+quote)</strong><br />
+Gallery (≤ ~60”): AC and/or battery, ~5–8 h evenings. Outdoor (~7–10
+ft): solar hidden in/under base and/or grid; ESP32-class heartbeat
+controller — not Raspberry Pi for v1.</p>
+<hr />
+<h2 id="geometry-files">3. Geometry &amp; files</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><strong>Form</strong></td>
+<td>Drupelets only (no calyx, stem, leaves, hairs)</td>
+</tr>
+<tr>
+<td><strong>Master</strong></td>
+<td>~447 × 460 × <strong>500 mm</strong> tall; units
+<strong>meters</strong>; manifold / watertight</td>
+</tr>
+<tr>
+<td><strong>Orientation</strong></td>
+<td><strong>−Z = stem / attachment</strong> (bottom when upright)</td>
+</tr>
+<tr>
+<td><strong>Scale</strong></td>
+<td>Uniform scale from 500 mm master per tier below</td>
+</tr>
+<tr>
+<td><strong>Colour</strong></td>
+<td>STL uncolored — translucency / LEDs are finish + systems</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available on request (WeTransfer):</strong> production STL
+(~484k tris), preview STL, OBJ, Blender source. Preview stills and berry
+photo refs accompany this PDF.</p>
+<hr />
+<h2 id="please-quote-advise">4. Please quote / advise</h2>
+<h3 id="tier-a-2030-gallery">Tier A — 20–30” (gallery)</h3>
+<ul>
+<li>Prefer <strong>one piece on 1 m³</strong><br />
+</li>
+<li>Translucent / light-passing build + internal LED access hatch<br />
+</li>
+<li>Power: plug-in / battery (LED install optional add-on)</li>
+</ul>
+<h3 id="tier-b-5060-gallery">Tier B — 50–60” (gallery)</h3>
+<ul>
+<li>One berry; please price <strong>both</strong>:
+<ul>
+<li>split across <strong>1 m³</strong> + join, <strong>and</strong></li>
+<li>one piece on <strong>20 m³</strong><br />
+</li>
+</ul></li>
+<li>Same translucent glow intent</li>
+</ul>
+<h3 id="tier-c-710-ft-outdoor-landmark">Tier C — ~7–10 ft (outdoor
+landmark)</h3>
+<ul>
+<li>Prefer one piece on <strong>20 m³</strong> if feasible<br />
+</li>
+<li>Outdoor UV / weather; anchoring for coastal plateau; hatch for
+electronics<br />
+</li>
+<li>Advice: translucent PETG + clear/tinted weather face
+<strong>vs</strong> FRP; wall thickness; mass; install notes<br />
+</li>
+<li>Solar / grid may be separate — advise if you integrate LEDs or
+partner on power</li>
+</ul>
+<h3 id="cross-cutting-questions">Cross-cutting questions</h3>
+<ol type="1">
+<li>Best translucent PETG grade / wall thickness for gallery vs
+outdoor<br />
+</li>
+<li>Compatible <strong>translucent</strong> outdoor coatings that still
+pass light<br />
+</li>
+<li>How you prefer to handle internal ribs vs even glow (diffusion
+cavity)<br />
+</li>
+<li>Rough timeline from approved files to delivery for each tier<br />
+</li>
+<li>What you need next from me for a firmer quote</li>
+</ol>
+<hr />
+<h2 id="process-note">5. Process note</h2>
+<p>I am happy to co-design materials, hatch detail, and wall strategy
+with your team after an initial feasibility read. Open R&amp;D notes
+(concept, materials, power):
+<strong>https://github.com/adamsimms/glowberry</strong></p>
+<p>Thank you —<br />
+<strong>Adam Simms</strong><br />
+hello@adamsimms.xyz · [phone]<br />
+Montreal, QC</p>
+</body>
+</html>
