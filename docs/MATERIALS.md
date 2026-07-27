@@ -95,4 +95,48 @@ Rough shell as sphere of diameter ≈ 7 ft (surface area ≈ 14.5 m²), then **�
 
 ---
 
-*Updated 2026-07-27 — print/coating options + ~7 ft PETG mass bands.*
+## Pure materials cost — ~7 ft PETG (planning bands)
+
+**This is resin/filament + coating chemistry only** — not machine time, labor, shop overhead, failed prints, shipping, or electronics. Those usually dwarf raw plastic on a custom art piece.
+
+### PETG feedstock price (order-of-magnitude, 2026)
+
+| Form | Typical price | Notes |
+|------|---------------|--------|
+| **Pellets** (large-format / FGF) | ~**CAD $5–20 / kg** landed | Common for 100+ kg jobs; translucent grades toward upper end |
+| **Filament** (spools) | ~**CAD $20–40 / kg** | Unlikely for a full 7 ft shell; shop may still bill filament-equivalent |
+
+Use **~CAD $12–25 / kg** as a planning midpoint for translucent PETG on a serious large-format job.
+
+### Plastic-only cost × wall thickness
+
+| Wall | Mass band | @ $12/kg | @ $20/kg | @ $30/kg (filament-ish) |
+|------|-----------|----------|----------|-------------------------|
+| 5 mm | 90–130 kg | **~$1.1k–1.6k** | **~$1.8k–2.6k** | **~$2.7k–3.9k** |
+| 8–10 mm | 150–260 kg | **~$1.8k–3.1k** | **~$3.0k–5.2k** | **~$4.5k–7.8k** |
+| 15 mm | 280–400 kg | **~$3.4k–4.8k** | **~$5.6k–8.0k** | **~$8.4k–12k** |
+| 20 mm | 370–530 kg | **~$4.4k–6.4k** | **~$7.4k–10.6k** | **~$11k–16k** |
+
+**Likely planning band for a structural outdoor-ish shell (8–15 mm):** roughly **CAD $2k–8k** in PETG alone (pellet economics).
+
+### Coatings (materials only, ~7 ft surface)
+
+| System | Rough materials | Notes |
+|--------|-----------------|--------|
+| Aliphatic clear topcoat | **~$150–600** | A few litres sprayed/rolled |
+| Thin translucent tinted resin / gelcoat + clear | **~$400–2,000** | Chemistry + waste; not labor |
+| Adhesion promoters, sealers, sandpaper, masking | **~$50–300** | Easy to forget |
+
+### Ballpark “pure materials” total (print + translucent weather face)
+
+| Build intent | Plastic + coat (CAD) |
+|--------------|----------------------|
+| Gallery, thinner wall, clear only | **~$1.5k–4k** |
+| Outdoor-leaning, 8–15 mm + tinted translucent coat | **~$3k–10k** |
+| Heavy wall + generous coating waste | **~$8k–15k+** |
+
+Again: a shop **quote** for a finished 7 ft Glowberry will usually be **much higher** (machine hours, programming, finishing labor, risk). Raw materials are often a **minority** of the invoice.
+
+---
+
+*Updated 2026-07-27 — print/coating options, ~7 ft mass bands, pure materials cost.*
