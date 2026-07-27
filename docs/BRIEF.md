@@ -114,13 +114,14 @@ When publishing, expect roughly:
 
 ### Scale tiers
 
-| Tier | Height | Scale from 500 mm | Fabrication note | Power |
-|------|--------|-------------------|------------------|--------|
-| **A** | 20–30" | 1.02×–1.52× | Prefer **1 m³**, one piece; translucent + LED hatch | Gallery: plug / battery, 5–8 h |
-| **B** | 50–60" | 2.54×–3.05× | Quote split on 1 m³ **and** one piece on **20 m³** | Gallery: plug / battery, 5–8 h |
-| **C** | ~10 ft | 6.10× | Prefer **20 m³** one piece; outdoor translucent + anchors | Solar (hidden); grid if available |
+| Tier | Height | Scale from 500 mm | Role | Fabrication note |
+|------|--------|-------------------|------|------------------|
+| **Primary (Artefact ask)** | **~6 ft (≈1.8 m)** | **≈3.66×** | Outdoor-capable pilgrimage piece | Prefer **20 m³** one piece; translucent PETG ± weather coat |
+| A (later) | 20–30" | 1.02×–1.52× | Gallery / study | 1 m³ possible |
+| B (later) | 50–60" | 2.54×–3.05× | Gallery | 1 m³ split or 20 m³ |
+| C (alt.) | ~7–10 ft | 4.3×–6.1× | Larger landmark | Same family as 6 ft; not the current quote focus |
 
-Shop may hollow, rib, thicken walls; advise on translucent outdoor builds.
+**Current submission to Artefact:** quote the **~6 ft** piece only. Shop may hollow, rib, thicken walls; advise on translucent outdoor builds.
 
 ---
 
@@ -128,15 +129,17 @@ Shop may hollow, rib, thicken walls; advise on translucent outdoor builds.
 
 **Official path:** their [project contact form](https://www.studioartefact.com/en/contact/) (not a free-form cold email alone).
 
+Paste-ready answers + PDF brief: [`docs/artefact/`](artefact/).
+
 Form fields they ask for:
 
 | Field | Suggested for Glowberry |
 |-------|-------------------------|
-| Project type | **3D printing** (or cultural / public art if that fits the ask better — 3D printing is the fabrication ask) |
-| Delivery | **In more than six months** (exploratory / grant-dependent) unless you have a hard date |
-| Budget band | Pick an honest range: **$50k or less** (gallery / first study) · **$50–100k** · **$100–250k** · **$250k+** — open funding is fine; they still want a band |
-| Description | Short paste from below + link to docs |
-| Documents | Upload a **1–3 page PDF brief** + preview image; put full STL on WeTransfer/Drive (form uploads are for docs, not 50–100 MB meshes) |
+| Project type | **3D printing** |
+| Delivery | **In more than six months** (exploratory / grant-dependent) |
+| Budget band | **$50,000 or less** for this feasibility ask (or $50–100k if you prefer) |
+| Description | Paste from [`artefact/FORM_ANSWERS.md`](artefact/FORM_ANSWERS.md) — **~6 ft only** |
+| Documents | PDF from [`artefact/ARTEFACT_SUBMISSION_BRIEF.md`](artefact/ARTEFACT_SUBMISSION_BRIEF.md) + preview image; full STL via WeTransfer |
 | How you found them | e.g. online search / recommendation |
 | Email / phone | Required |
 
@@ -144,57 +147,25 @@ Form fields they ask for:
 
 ### Best approach
 
-1. **Submit the form** with a tight brief + clear questions (feasibility + rough ranges by tier). That *is* their quoting intake.  
-2. **Do not** only write “can I have a contact to figure it out?” — they already route you through this form.  
-3. After they reply, **co-design details together** (materials, translucent coat, hatch, wall thickness, 1 m³ vs 20 m³). The form starts the conversation; it isn’t the final engineering package.  
-4. Keep the first ask to **feasibility / ballpark ranges**, not a hard PO — Glowberry is still R&D / funding-dependent.
+1. **Submit the form** with the short **6 ft** brief + clear feasibility ask.  
+2. After they reply, **co-design** materials, translucent coat, hatch, wall thickness.  
+3. Keep the first ask to **feasibility / ballpark range**, not a hard PO.
 
-### Form / email body (short)
+### Form body (short — ~6 ft)
 
-**Subject / specifically:** Quote / feasibility — translucent glowing bakeapple sculpture (Glowberry), several sizes
+**Specifically:** Quote / feasibility — Glowberry, translucent glowing bakeapple, **~6 ft**
 
-Hello,
-
-I’m Adam Simms, an artist developing **Glowberry**: a bakeapple (cloudberry) sculpture — gallery pieces up to ~60" and a possible ~7–10 ft outdoor landmark in Newfoundland (site TBD). Budget open / may pursue funding; please treat this as a **feasibility + rough range** request.
-
-**Art direction:** semi-opaque **translucent orange** that can **glow from within** (soft heartbeat pulse). Touchable; walk-around; no entry. Interested in **translucent PETG** and/or outdoor translucent coatings / FRP handoff — see materials notes if helpful.
-
-Attached / linked: short brief PDF, berry refs, preview mesh. Full production STL available on request (WeTransfer).
-
-Please advise feasibility / ranges for:
-
-### Tier A — 20–30"
-- Prefer **1 m³**, one piece  
-- Translucent / light-passing + internal LED access hatch  
-
-### Tier B — 50–60"
-- Price **both** split on 1 m³ + join **and** one piece on **20 m³**  
-- Gallery power: plug-in / battery (LEDs may be separate scope)  
-
-### Tier C — ~7–10 ft outdoor
-- Prefer one piece on **20 m³** if possible  
-- Outdoor UV / weather, anchoring, hatch for electronics  
-- Advice on translucent PETG + clear/tinted weather coat vs FRP  
-
-Also: materials you’d recommend for **translucent glowing orange** outdoors (wall thickness, diffusion, coating).
-
-Happy to talk after you’ve glanced at the files.
-
-Best regards,  
-Adam Simms  
-hello@adamsimms.xyz  
-[Phone]
+Hello — Adam Simms, Montreal. Developing **Glowberry** (bakeapple / cloudberry pilgrimage sculpture) with soft internal heartbeat glow. Touchable; walk-around; no entry. NL outdoor site TBD. Funding open — please treat as **feasibility + rough range** for **one size: ~6 ft (≈1.8 m)** tall, scaled from a 500 mm manifold master (≈3.66×). Prefer translucent PETG ± translucent outdoor coat (or FRP if needed); hatch at stem; LEDs may be separate scope. Advise one-piece vs split, cost range, wall/mass, coastal weather finish, timeline. Brief PDF + refs attached; full STL on WeTransfer on request. https://github.com/adamsimms/glowberry — thanks, Adam · hello@adamsimms.xyz · [Phone]
 
 ---
 
 ## 8. Send checklist
 
 - [ ] Fill [Artefact contact form](https://www.studioartefact.com/en/contact/) (3D printing + timeline + budget band)  
-- [ ] Upload short PDF brief (+ preview image); WeTransfer full STL if asked  
+- [ ] Upload **6 ft** PDF brief (+ preview image); WeTransfer full STL if asked  
 - [ ] Name / phone / email on form  
-- [ ] Stress **translucent / glow-capable** materials  
-- [ ] Ask for **feasibility + ranges**, not a fixed PO yet  
-- [ ] Tier A/B = gallery plug/battery; Tier C = outdoor (systems may be separate)  
+- [ ] Stress **translucent / glow-capable** + **~6 ft only**  
+- [ ] Ask for **feasibility + range**, not a fixed PO yet  
 - [ ] Interaction: touch / sit near / walk around — no entry  
 
 ---
@@ -202,10 +173,10 @@ hello@adamsimms.xyz
 ## 9. Still open
 
 - Exact NL site + permissions  
-- Tier C: solar-only vs solar+grid when shore power exists  
-- Exact panel hiding strategy on site  
+- Outdoor power: solar-only vs solar+grid when shore power exists  
+- Panel hiding strategy on site  
 - Whether Artefact installs LEDs or only delivers shell  
 
 ---
 
-*Updated 2026-07-22 — consolidates concept, Artefact quote package, and power discoveries.*
+*Updated 2026-07-27 — Artefact ask simplified to ~6 ft primary tier.*
