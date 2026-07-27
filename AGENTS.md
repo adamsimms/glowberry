@@ -9,8 +9,11 @@ Glowberry is developed primarily with Cursor, in the open. Prefer **one mileston
 3. [docs/INFLATABLE.md](docs/INFLATABLE.md) — ephemeral summer track  
 4. [docs/RESEARCH_sculpture_precedents.md](docs/RESEARCH_sculpture_precedents.md) — precedents  
 5. [docs/BIBLIOGRAPHY.md](docs/BIBLIOGRAPHY.md) — living bibliography (readings / research)  
+6. [docs/MATERIALS.md](docs/MATERIALS.md) — print, coatings, translucency, ~7 ft mass bands  
 
 Also: [README.md](README.md), [CONTRIBUTING.md](CONTRIBUTING.md), [LICENSE.md](LICENSE.md).
+
+Local-only playground: [`sketchpad/`](sketchpad/) (gitignored except its README). Use for drafts and reference material; canonical truth stays in `docs/`.
 
 ## GitHub Projects
 
@@ -18,6 +21,8 @@ Also: [README.md](README.md), [CONTRIBUTING.md](CONTRIBUTING.md), [LICENSE.md](L
 - Later (do not create until needed): Fabrication, Editions, Outputs, Web  
 
 Put M1/M2 work on R&D. Do not invent parallel boards without an explicit ask.
+
+Priority on the board (and matching `priority:*` issue labels): **Urgent** → **High** → **Medium** → **Low**. Prefer working Urgent/High in the active milestone before Medium/Low. Milestone tags: `milestone-1`, `milestone-2` (plus closed `milestone-0`).
 
 ## Hard rules
 

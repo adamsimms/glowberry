@@ -8,6 +8,7 @@ Canonical brief for concept, fabrication (Studio Artefact), and systems. Budget 
 |----------------|--|
 | [`RESEARCH_sculpture_precedents.md`](RESEARCH_sculpture_precedents.md) | Sculpture / material precedents |
 | [`BIBLIOGRAPHY.md`](BIBLIOGRAPHY.md) | **Living bibliography** — readings, texts, research |
+| [`MATERIALS.md`](MATERIALS.md) | Print materials, coatings, translucency, mass bands |
 | [`POWER.md`](POWER.md) | Lighting, battery, solar, controller detail |
 | [`INFLATABLE.md`](INFLATABLE.md) | **Separate track:** ephemeral summer inflatable (Choi-lineage POC) |
 
@@ -49,7 +50,7 @@ Canonical brief for concept, fabrication (Studio Artefact), and systems. Budget 
 |--|--|
 | **Look** | Saturated amber → vermillion; soft internal luminescence |
 | **Build** | Hollow shell + diffusion + internal LEDs + hatch at stem/bottom |
-| **Candidates** | Translucent **FRP / fiberglass–resin**; translucent **PETG** (Artefact); light-passing tints/clearcoats |
+| **Candidates** | Translucent **FRP / fiberglass–resin**; translucent **PETG** (Artefact); light-passing tints/clearcoats — see [`MATERIALS.md`](MATERIALS.md) |
 | **Avoid** | Fully opaque paint (kills glow); polished stainless as primary skin |
 | **When it glows** | **Dusk / night** is the show — no daytime glow requirement |
 | **Behavior** | Simple breathing / heartbeat pulse (ESP32-class MCU) |

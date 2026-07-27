@@ -2,6 +2,8 @@
 
 Companion to [`BRIEF.md`](BRIEF.md). Locked decisions from project development (2026-07).
 
+Print / coating / translucency / mass bands: [`MATERIALS.md`](MATERIALS.md).
+
 ---
 
 ## Locked decisions
