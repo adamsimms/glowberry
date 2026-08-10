@@ -9,6 +9,10 @@
 /maquettes/
 /references/
 
+# Local playground — Cursor can read it; only README is tracked
+/sketchpad/*
+!/sketchpad/README.md
+
 # Fabrication exports until intentionally published
 *.blend
 *.stl

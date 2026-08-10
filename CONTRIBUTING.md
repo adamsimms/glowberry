@@ -19,9 +19,24 @@ Glowberry is an open, exploratory public-art project. Contributions are welcome 
 | Software (firmware, LED pulse) | Issues + PRs labeled `software` |
 | Hardware BOM / solar / materials | Issues labeled `hardware` or `fabrication` |
 
+### Labels & priority
+
+Board: [Glowberry — R&D](https://github.com/users/adamsimms/projects/2) (Priority field: Urgent / High / Medium / Low).
+
+| Kind | Labels |
+|------|--------|
+| Domain | `concept`, `site`, `fabrication`, `hardware`, `software`, `inflatable`, `mesh`, `funding`, `docs`, `meta` |
+| Process | `decision`, `spike` |
+| Milestone | `milestone-0`, `milestone-1`, `milestone-2` |
+| Priority | `priority:urgent`, `priority:high`, `priority:medium`, `priority:low` |
+
+Priority meaning: **Urgent** = critical path / start now; **High** = core work next; **Medium** = sequenced after earlier inputs; **Low** = background, optional, or post-first-wave. Keep issue labels and the project Priority field in sync when changing order.
+
 Do **not** cold-email fabricators or landowners on behalf of the project without coordinating in an issue first.
 
 Do **not** commit moodboard photos, location dumps, or large meshes unless an issue explicitly asks for them.
+
+Local drafts and scratch media belong in [`sketchpad/`](sketchpad/) (ignored by git except its README).
 
 ## Pull requests
 
