@@ -7,6 +7,7 @@ alwaysApply: true
 # Glowberry
 
 - Canonical docs live under `docs/` (BRIEF, POWER, INFLATABLE, RESEARCH).
+- Private vault holds reasoning and restricted material. Start at the Studio Vault Index, then the Glowberry project index, when the local vault rule is present. Dual-write decisions and status to `docs/` and the vault in the same turn. Sketchpad is scratch only.
 - Do not invent permissions, quotes, or funding facts.
 - Do not commit moodboard folders (`3D/`, `inspiration/`, `locations/`, `maquettes/`, `references/`) or mesh/blend binaries unless explicitly asked in an issue.
 - `sketchpad/` is a local playground (notes, drafts, images). Only its README is tracked; do not commit other sketchpad contents. Prefer it as agent context when relevant; do not treat it as canonical over `docs/`.

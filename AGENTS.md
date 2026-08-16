@@ -15,6 +15,10 @@ Also: [README.md](README.md), [CONTRIBUTING.md](CONTRIBUTING.md), [LICENSE.md](L
 
 Local-only playground: [`sketchpad/`](sketchpad/) (gitignored except its README). Use for drafts and reference material; canonical truth stays in `docs/`.
 
+## Private vault
+
+Working notes live in a local Obsidian vault shared with Rover, Dreamberry, and Camera Pi (not this repo). A gitignored Cursor rule names the path on this machine. Start at the Studio Vault Index, then the Glowberry project index, then one topical MOC. Do not copy restricted material into this repo. Public `docs/` are the adapted canon. Dual-write decisions and status to `docs/` and the vault in the same turn. Sketchpad is scratch only.
+
 ## GitHub Projects
 
 - Active: **Glowberry — R&D** — https://github.com/users/adamsimms/projects/2  
