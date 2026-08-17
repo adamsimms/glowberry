@@ -17,7 +17,7 @@ Local-only playground: [`sketchpad/`](sketchpad/) (gitignored except its README)
 
 ## Private vault
 
-Working notes live in a local Obsidian vault shared with Rover, Dreamberry, and Camera Philosophies (not this repo). A gitignored Cursor rule names the path on this machine. Start at the Studio Vault Index, then the Glowberry project index, then one topical MOC. Do not copy restricted material into this repo. Public `docs/` are the adapted canon. Dual-write decisions and status to `docs/` and the vault in the same turn. Sketchpad is scratch only.
+Working notes live in a local Obsidian vault shared with Rover, Dreamberry, and Camera Philosophies (not this repo). A gitignored Cursor rule names the path on this machine. Start at the Studio Vault Index, then the Glowberry project index (`Glowberry/MOCs/`), then one topical MOC. Glowberry notes live under `Glowberry/`. Filename prefix `Glowberry -`. Do not copy restricted material into this repo. Public `docs/` are the adapted canon. Dual-write decisions and status to `docs/` and the vault in the same turn. Sketchpad is scratch only.
 
 ## Bibliography / Zotero
 
