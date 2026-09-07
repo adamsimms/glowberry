@@ -24,6 +24,8 @@ Scale comes from **one caliper reading** of 2.5 cm across the widest point. Noth
 
 **Go / no-go: go.** Photogrammetry is a viable provenance path for a single berry. It is not a path to photoreal fidelity at 6 ft, which was never the claim; the raw scan is the archive twin and the ancestor, not the production mesh.
 
+**Descendant locked 2026-09-07.** The 6 ft production body is built from this scan: a cleaned, manifold descendant scaled up, replacing the independently modelled 500 mm mesh as the default body ([`BRIEF.md`](BRIEF.md) §6, [#16](https://github.com/adamsimms/glowberry/issues/16)). The raw mesh above is unchanged in role. What changed is that the monument is no longer allowed to be an unrelated model: public application text now says the sculpture is printed from a scan of a berry picked at Pinchard's Island.
+
 ---
 
 ## What was captured
@@ -86,4 +88,4 @@ Replayable scripts live in [`tools/metashape/`](../tools/metashape/README.md). E
 
 The public ancestor is [`models/provenance/berry_merged_up_inv_cm.glb`](../models/provenance/berry_merged_up_inv_cm.glb) (metres, 2.50 cm widest).
 
-The 446 TIFFs and the Metashape project are not in this repo. They live in Google Drive **`BERRY/provenance/`**, with `TIFF-CHUNK-01/02/03` next to `metashape/berry04_three_chunks.psx`. Photo paths are relative to that folder.
+The 446 TIFFs and the Metashape project are not in this repo. They live in Google Drive **`BERRY/provenance/`**, with `TIFF-CHUNK-01/02/03` next to `metashape/berry04_three_chunks.psx`. Photo paths are relative to that folder. Hasselblad RAWs for this capture remain in `BERRY/BERRY-04/`.
