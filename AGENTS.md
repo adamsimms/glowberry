@@ -10,6 +10,7 @@ Glowberry is developed primarily with Cursor, in the open. Prefer **one mileston
 4. [docs/RESEARCH_sculpture_precedents.md](docs/RESEARCH_sculpture_precedents.md) — precedents  
 5. [docs/BIBLIOGRAPHY.md](docs/BIBLIOGRAPHY.md) — living bibliography (readings / research)  
 6. [docs/MATERIALS.md](docs/MATERIALS.md) — print, coatings, translucency, ~7 ft mass bands  
+7. [docs/SCANNING.md](docs/SCANNING.md) — photogrammetry of the provenance berry, result and method findings  
 
 Also: [README.md](README.md), [CONTRIBUTING.md](CONTRIBUTING.md), [LICENSE.md](LICENSE.md).
 

@@ -20,6 +20,7 @@ Canonical brief and companions:
 | [docs/RESEARCH_sculpture_precedents.md](docs/RESEARCH_sculpture_precedents.md) | Sculpture / material precedents |
 | [docs/BIBLIOGRAPHY.md](docs/BIBLIOGRAPHY.md) | Living bibliography (readings, texts, research) |
 | [docs/MATERIALS.md](docs/MATERIALS.md) | Print materials, coatings, translucency, mass bands |
+| [docs/SCANNING.md](docs/SCANNING.md) | Photogrammetry of the provenance berry |
 
 ## GitHub Projects
 

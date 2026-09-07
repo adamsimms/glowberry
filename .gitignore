@@ -17,8 +17,19 @@
 .cursor/rules/vault-local.mdc
 *.code-workspace
 
-# Fabrication exports until intentionally published
+# Python
+__pycache__/
+*.py[cod]
+
+# Fabrication dumps, until an issue asks to publish one
 *.blend
 *.stl
 *.obj
-/models/
+*.glb
+*.gltf
+*.ply
+*.psx
+/models/*
+!/models/provenance/
+!/models/provenance/**
+!/models/provenance/*.glb
