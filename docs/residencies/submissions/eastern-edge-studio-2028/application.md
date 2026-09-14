@@ -72,7 +72,7 @@ Glowberry is a six-foot bakeapple, scanned from a single berry my grandmother pi
 
 ## Support Material
 
-Public folder URL filled on the live form. Packet: ten support pages, Image List, 2-page CV. See [README.md](README.md).
+Public folder URL filled on the live form. Archived in this folder: [Adam-Simms-Support-Materials.pdf](Adam-Simms-Support-Materials.pdf), [Adam-Simms-Image-List.pdf](Adam-Simms-Image-List.pdf), [Adam-Simms-CV.pdf](Adam-Simms-CV.pdf).
 
 ## Self-identify (optional)
 

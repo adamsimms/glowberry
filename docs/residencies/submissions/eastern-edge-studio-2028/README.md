@@ -13,10 +13,11 @@
 | File | Role |
 |------|------|
 | [application.md](application.md) | As-submitted form texts. Fields marked **YOU** were completed on the live form and may not match this file. Phone redacted. |
+| [Adam-Simms-Support-Materials.pdf](Adam-Simms-Support-Materials.pdf) | Ten support pages (1920×1440). Pages 6-8 link to Vimeo. |
+| [Adam-Simms-Image-List.pdf](Adam-Simms-Image-List.pdf) | One-page landscape image list. Rows 06-08 link to Vimeo. |
+| [Adam-Simms-CV.pdf](Adam-Simms-CV.pdf) | Two-page CV. Uploaded as `Adaim-Simms-CV.pdf` (filename typo on the Drive copy). |
 
-## Support material (not in git)
-
-Uploaded separately: ten support pages as one PDF; `Image-List.pdf`; 2-page CV. Figma source: [Cloudberry Portfolio](https://www.figma.com/design/NkyzNbjjT19exT7r9hTkHu/Cloudberry---Portfolio). Local Desktop exports: `Adam-Simms-Support-Materials.pdf`, `Image-List.pdf`.
+Figma source: [Cloudberry Portfolio](https://www.figma.com/design/NkyzNbjjT19exT7r9hTkHu/Cloudberry---Portfolio). CV Figma: [Residency CV](https://www.figma.com/design/R54dcoTIE5mGCeFKlk6aaA/Residency-CV).
 
 ## Follow-on (not closed by submit)
 
