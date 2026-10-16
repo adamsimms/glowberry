@@ -19,9 +19,6 @@
 
 Figma source: [Cloudberry Portfolio](https://www.figma.com/design/NkyzNbjjT19exT7r9hTkHu/Cloudberry---Portfolio). CV Figma: [Residency CV](https://www.figma.com/design/R54dcoTIE5mGCeFKlk6aaA/Residency-CV).
 
-## Follow-on (not closed by submit)
+## Parked until a yes
 
-- Garage access and one-piece transport: [#65](https://github.com/adamsimms/glowberry/issues/65)
-- Parking-lot dusk tests (insurance / vandalism): [#66](https://github.com/adamsimms/glowberry/issues/66)
-
-Decision tracking opens when results land.
+Garage access ([#65](https://github.com/adamsimms/glowberry/issues/65)), parking-lot dusk tests ([#66](https://github.com/adamsimms/glowberry/issues/66)), and the Pier 10 stretch ([#67](https://github.com/adamsimms/glowberry/issues/67)) were closed 2026-10-13. They reopen only if Eastern Edge selects the residency. One-piece transport facts stay in `docs/MATERIALS.md`.

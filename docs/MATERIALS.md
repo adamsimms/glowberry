@@ -139,4 +139,21 @@ Again: a shop **quote** for a finished 7 ft Glowberry will usually be **much hig
 
 ---
 
-*Updated 2026-07-27 — print/coating options, ~7 ft mass bands, pure materials cost.*
+## Transport (6 ft one-piece)
+
+The 6 ft pilgrimage shell is a **single print**. Split/join is not a live path.
+
+Scaled mesh envelope (500 mm × ≈3.66): about **64" × 66" × 72"** (≈1636 × 1684 × 1830 mm). Confirm bbox on the production file ([#16](https://github.com/adamsimms/glowberry/issues/16)).
+
+| Opening | Width | Fit |
+|---------|-------|-----|
+| 15 ft U-Haul cargo door | 7'3" × 6'5" | Bare shell should fit. Crate may not. Uncrate outside if needed. |
+| Eastern Edge studio double doors | 62" | **No.** Do not shrink the sculpture to fake this fit. |
+| Eastern Edge garage | 3 m, 12" step from parking lot | **Yes** for width. Ramp or lift for the step. Parked until a residency yes ([#65](https://github.com/adamsimms/glowberry/issues/65), closed). |
+| Eastern Edge assigned bay | Studio 1 / Studio 2 split of the open harbour studio (shared, up to three artists plus a writer) | **Yes** for a walk-around. Object is ~1.64 × 1.68 × 1.83 m. Ask for the **garage-side bay (Studio 2)** and about **4 m clear** plus a table. Do not ask for the other studio or exclusive use of the open floor. Steel post sits on the dashed split. Ceiling 12'. |
+
+Eastern Edge application **leads inside**. Why this place: first nights of a returned fruit in a harbour studio that can take the body through the garage, not a landscape sit. Floor ask is the garage-side bay (Studio 2) and walk-around clearance, not extra exclusive space. Outdoor dusk on the parking lot is a staff-shaped option (not a dock, not a promised install). Insurance and vandalism stay parked until a yes ([#66](https://github.com/adamsimms/glowberry/issues/66), closed). A month on the Pier 10 boardwalk across the street is a separate Port Authority stretch, also parked ([#67](https://github.com/adamsimms/glowberry/issues/67), closed). Trucking the shell to and from St. John's is **artist-driven**: printed one-piece at Artefact, driven in a U-Haul by the artist, paid from the sculpture budget, not Eastern Edge's return-shipping stipend. Bare shell should fit a 15 ft cargo door; uncrate outside if the crate does not.
+
+---
+
+*Updated 2026-10-13. Eastern Edge garage, lot, and Pier 10 questions parked until a residency yes.*

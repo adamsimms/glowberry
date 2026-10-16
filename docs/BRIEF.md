@@ -64,6 +64,7 @@ Canonical brief for concept, fabrication (Studio Artefact), and systems. Budget 
 |-------|------|--------|
 | **≤ ~60"** (Tiers A & B) | Gallery / indoor or short outdoor loans | **AC plug-in** and/or small **battery pack**; typical **5–8 h** evening run; recharge or plug overnight / closed hours; **no solar** |
 | **~10 ft** (Tier C) | Outdoor landmark | **Solar** (panels **hidden** in/under base); **grid assist OK** if site allows; battery for night; dark spells OK |
+| **~6 ft** (CCA / Eastern Edge) | Outdoor-capable pilgrimage; **process test at EE** | **EE:** AC + **600-1000 Wh** LiFePO₄. **Optional** one **200-220 W** visible foldable if staff allow. DC into the driver. Not hidden PV/vault. |
 
 **Controller:** ESP32 / Arduino / small LED controller — **not** Raspberry Pi (Pi only if a future Cloudberry-style sensing chapter).
 
@@ -92,6 +93,8 @@ Detail + cost bands: [`POWER.md`](POWER.md).
 
 Production mesh package is **not published in this repo yet** (will be added deliberately when quote-ready). Local working files live outside git for now.
 
+**Body origin (locked 2026-09-07):** the production body descends from the **provenance scan** of a Pinchard's Island bakeapple ([#52](https://github.com/adamsimms/glowberry/issues/52), [`SCANNING.md`](SCANNING.md)), not from the independently modelled 500 mm mesh. Raw scan stays the ancestor and archive twin; the print path takes a cleaned, manifold descendant of it, scaled to ~6 ft. This is a claim made in public application text, so [#16](https://github.com/adamsimms/glowberry/issues/16) has to actually rebuild on the scan before fabrication.
+
 When publishing, expect roughly:
 
 | File | Use |
@@ -116,9 +119,9 @@ When publishing, expect roughly:
 
 | Tier | Height | Scale from 500 mm | Role | Fabrication note |
 |------|--------|-------------------|------|------------------|
-| **Primary (Artefact ask)** | **~6 ft (≈1.8 m)** | **≈3.66×** | Outdoor-capable pilgrimage piece | Prefer **20 m³** one piece; translucent PETG ± weather coat |
-| A (later) | 20–30" | 1.02×–1.52× | Gallery / study | 1 m³ possible |
-| B (later) | 50–60" | 2.54×–3.05× | Gallery | 1 m³ split or 20 m³ |
+| **Primary (Artefact ask)** | **~6 ft (≈1.8 m)** | **≈3.66×** | Outdoor-capable pilgrimage piece | **20 m³ one-piece only**; translucent PETG ± weather coat. Split/join is not a live path for this size. |
+| A (later) | 20–30" | 1.02×–1.52× | Gallery / study | Smaller prints possible |
+| B (later) | 50–60" | 2.54×–3.05× | Gallery | Later; not a split of the 6 ft piece |
 | C (alt.) | ~7–10 ft | 4.3×–6.1× | Larger landmark | Same family as 6 ft; not the current quote focus |
 
 **Current submission to Artefact:** quote the **~6 ft** piece only. Shop may hollow, rib, thicken walls; advise on translucent outdoor builds.
@@ -155,7 +158,7 @@ Form fields they ask for:
 
 **Specifically:** Quote / feasibility — Glowberry, translucent glowing bakeapple, **~6 ft**
 
-Hello — Adam Simms, Montreal. Developing **Glowberry** (bakeapple / cloudberry pilgrimage sculpture) with soft internal heartbeat glow. Touchable; walk-around; no entry. NL outdoor site TBD. Funding open — please treat as **feasibility + rough range** for **one size: ~6 ft (≈1.8 m)** tall, scaled from a 500 mm manifold master (≈3.66×). Prefer translucent PETG ± translucent outdoor coat (or FRP if needed); hatch at stem; LEDs may be separate scope. Advise one-piece vs split, cost range, wall/mass, coastal weather finish, timeline. Brief PDF + refs attached; full STL on WeTransfer on request. https://github.com/adamsimms/glowberry — thanks, Adam · hello@adamsimms.xyz · [Phone]
+Hello, Adam Simms, Montreal. Developing **Glowberry** (bakeapple / cloudberry pilgrimage sculpture) with soft internal heartbeat glow. Touchable; walk-around; no entry. NL outdoor site TBD. Funding open. Please treat as **feasibility + rough range** for **one size: ~6 ft (≈1.8 m)** tall, scaled from a 500 mm manifold mesh (≈3.66×). Prefer translucent PETG ± translucent outdoor coat (or FRP if needed); hatch at stem; LEDs may be separate scope. **One-piece print required** (20 m³ class). Not a split/join. Cost range, wall/mass, coastal weather finish, timeline. Brief PDF + refs attached; full STL on WeTransfer on request. https://github.com/adamsimms/glowberry. Thanks, Adam · hello@adamsimms.xyz · [Phone]
 
 ---
 
@@ -164,19 +167,25 @@ Hello — Adam Simms, Montreal. Developing **Glowberry** (bakeapple / cloudberry
 - [ ] Fill [Artefact contact form](https://www.studioartefact.com/en/contact/) (3D printing + timeline + budget band)  
 - [ ] Upload **6 ft** PDF brief (+ preview image); WeTransfer full STL if asked  
 - [ ] Name / phone / email on form  
-- [ ] Stress **translucent / glow-capable** + **~6 ft only**  
+- [ ] Stress **translucent / glow-capable** + **~6 ft one-piece only** (no split)  
 - [ ] Ask for **feasibility + range**, not a fixed PO yet  
 - [ ] Interaction: touch / sit near / walk around — no entry  
 
 ---
 
-## 9. Still open
+## 9. Working calendar and still open
+
+**Working calendar:** living Start / Due dates live on [Glowberry — R&D](https://github.com/users/adamsimms/projects/2). That board is the feasibility clock. There is no separate studio-wide timeline ticket ([#26](https://github.com/adamsimms/glowberry/issues/26) closed). Grant-period work plans and spend schedules live on individual grant issues (for example [#47](https://github.com/adamsimms/glowberry/issues/47)).
+
+Hard call currently on the board: The Rooms AIR ([#57](https://github.com/adamsimms/glowberry/issues/57)) due **2026-11-02**. Canada Council ([#47](https://github.com/adamsimms/glowberry/issues/47)) is a personal submit target on a rolling intake.
+
+**Still open (concept / site):**
 
 - Exact NL site + permissions  
 - Outdoor power: solar-only vs solar+grid when shore power exists  
 - Panel hiding strategy on site  
-- Whether Artefact installs LEDs or only delivers shell  
+- Whether Artefact installs LEDs or only delivers shell
 
 ---
 
-*Updated 2026-07-27 — Artefact ask simplified to ~6 ft primary tier.*
+*Updated 2026-10-16. Working calendar points at the R&D board; production body from provenance scan; 6 ft shell one-piece only.*

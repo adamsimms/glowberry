@@ -37,7 +37,7 @@ ART DIRECTION
 • Power/LEDs may be separate scope; shell quote can exclude electronics if cleaner
 
 PLEASE ADVISE
-• Feasibility of ~6 ft as one piece (likely 20 m³ class) vs split/join
+• Feasibility of ~6 ft as one piece (20 m³ class). Split/join is not a path for this piece.
 • Rough cost range for translucent PETG shell + recommended outdoor translucent finish (clear/tinted coat vs FRP if needed)
 • Wall thickness, mass, hatch, anchoring notes for coastal NL weather (UV, freeze, salt)
 • Timeline from approved files to delivery

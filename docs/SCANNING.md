@@ -88,4 +88,4 @@ Replayable scripts live in [`tools/metashape/`](../tools/metashape/README.md). E
 
 The public ancestor is [`models/provenance/berry_merged_up_inv_cm.glb`](../models/provenance/berry_merged_up_inv_cm.glb) (metres, 2.50 cm widest).
 
-The 446 TIFFs and the Metashape project are not in this repo. They live in Google Drive **`BERRY/provenance/`**, with `TIFF-CHUNK-01/02/03` next to `metashape/berry04_three_chunks.psx`. Photo paths are relative to that folder. Hasselblad RAWs for this capture remain in `BERRY/BERRY-04/`.
+The 446 TIFFs and the Metashape project are not in this repo. They live in Google Drive **`BERRY/provenance/`**, with `TIFF-CHUNK-01/02/03` next to `metashape/berry04_three_chunks.psx`. Photo paths are relative to that folder.
