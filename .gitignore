@@ -33,3 +33,6 @@ __pycache__/
 !/models/provenance/
 !/models/provenance/**
 !/models/provenance/*.glb
+
+# Local image dumps (not committed until intentional)
+/assets/
