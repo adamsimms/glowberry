@@ -82,9 +82,52 @@ Four behaviours cost real time and are not obvious from the documentation:
 
 ---
 
+## Print-ready test files (2026-10-17)
+
+Closed, single-body STLs at 100 mm tall, for desk test prints ([#61](https://github.com/adamsimms/glowberry/issues/61)). They are not the production body ([#16](https://github.com/adamsimms/glowberry/issues/16)).
+
+| File | Method | Mean / p95 deviation from scan (% of radius) |
+|---|---|---|
+| `berry_detail_100mm.stl` | Voxel remesh, light smoothing | 0.46 / 0.84 |
+| `berry_clean_100mm.stl` | Voxel remesh, medium smoothing | 0.74 / 2.03 |
+| `berry_smooth_100mm.stl` | Robust spherical-harmonic fit, degree 12 | 2.22 / 6.39 |
+| `berry_lumps_100mm.stl` | Packed-spheres look-dev, closed | stylized, not measured |
+| `berry_lumps_sharp_100mm.stl` | Same 12 spheres, exact boolean union | stylized, not measured |
+| `berry_lumps_groove_100mm.stl` | Same 12 spheres, smooth union, ~1.2 mm groove | stylized, not measured |
+
+The look-dev joins zigzag because it moved the scan's irregular vertices onto the sphere union. The sharp and groove files rebuild the union from the 12 spheres themselves (recovered exactly from `berry_medium.glb`), so joins are clean curves. Rebuild with `uv run tools/mesh/lumps_clean.py [--groove-mm N]`.
+
+`berry_organic_{light,medium}_100mm.stl` sit between sharp, groove, and smooth: a 0.6 mm groove, then each vertex pulled 25% or 45% of the way toward the scan's own surface (robust spherical-harmonic fit, degree 20, registered to the lumps by ICP). The unevenness comes from the berry, not from added noise. `berry_organic_medium_skin_100mm.stl` adds a faint procedural skin texture (0.15 mm at 100 mm), which is an aesthetic choice and does not survive at 1 to 2 in. Rebuild with `uv run tools/mesh/lumps_organic.py`; resize with `tools/mesh/resize.py --widest-mm`.
+
+`berry_seams_{wander,wander_strong,wander_scan}_100mm.stl` keep every drupelet an exact sphere and change only a band around each seam (masked by the gap between the two nearest sphere distances). Seams drift sideways along slow curves and the groove width varies (procedural, invented). `wander_scan` also lets seams sink, never rise, where the scan sits lower. `wander_70` / `wander_50` / `wander_30` are gentler steps of `wander` (percent of its sideways drift), made after `wander` was picked but judged to wander too much. Rebuild with `uv run tools/mesh/lumps_seams.py [--only NAME ...]`. `wander_50` was picked.
+
+`berry_texture_{vesicles,skin,nub,flesh,inner_cutaway}_100mm.stl` add flesh texture to `wander_50`, faded to zero near seams so the seams stay as picked. The scan's photo texture shows a faint cellular, frosted pattern under the drupelet skin and small dark style specks; vesicles and skin follow the first, the nub dimple at each drupelet's tip interprets the second (the specks' exact position is not resolvable). Depths are 0.02 to 0.35 mm at 100 mm, so they read at 100 mm on a resin printer and vanish at 1 to 2 in on FDM. `inner_cutaway` is a mock for the lit 6 ft shell: smooth outside, cells thinning the inside wall, cut in half. Rebuild with `uv run tools/mesh/lumps_texture.py [--only NAME ...]`. Of these, only skin worked; `skin_60`, `skin_35`, `skin_broad`, and `skin_fine` are quieter versions of the same pattern. `skin_35` was picked for resin (about ±0.025 mm, near the resin limit). `skin_fdm_min` is the smallest version an FDM print can show: broad layer only at about ±0.1 mm, since the fine layer is narrower than a 0.4 mm nozzle can draw.
+
+Slicer-ready test set (2026-10-17) in `models/print/ready/`, built by `uv run tools/mesh/print_prep.py`:
+
+| File | Printer | Prep |
+|---|---|---|
+| `resin_skin35_100mm.stl` | Resin | Hollow, 2 mm wall, two 3 mm drain holes, label "35" |
+| `resin_plain_100mm.stl` | Resin | Hollow, same, label "0" (control, no skin) |
+| `resin_plain_true_size_25mm.stl` | Resin | Solid, label "0" |
+| `fdm_skin_min_100mm.stl` | FDM | 1 mm flat at the stem end, label "F" |
+| `fdm_plain_2in.stl` | FDM | 0.6 mm flat, label "0" |
+
+Hollowing cuts each 100 mm resin print from about 408 cm3 to 54 cm3. Labels are mirrored to read from below. Skin is tested at 100 mm only; it is tuned in millimetres and vanishes when scaled down, so the small prints carry no skin.
+
+Full-colour files (2026-10-17) in `models/print/colour/`, built by `uv run tools/mesh/colour_files.py`: a designed vertical gradient (amber `#FFB02E` at the top to orange `#E86A17` at the base, not taken from the scan) and solid amber and solid orange, each at 100 mm hollow (`skin_35`), 2 in, and true size. Format is 3MF with a per-vertex colour group (checked in strict mode with lib3mf); the gradient files also come as zipped VRML. Translucency is not in the file; request colour-tinted translucent (PolyJet) or opaque when ordering. Test prints are orange or amber from the start, never grey.
+
+What automation can and cannot do here: the underside of the scan (inverted remount) is clean and shows the drupelets. The upper half is noisy, and that noise is as deep as the drupelets, so no single smoothing strength removes one and keeps the other. Light smoothing keeps the noise; heavy smoothing turns it into pits; the spherical-harmonic fit removes both and leaves soft lumps. A clean drupelet surface at 6 ft (about 73x scale, where 1 mm of scan noise becomes 7 cm) needs a sculpting pass, using the clean underside and the 446 source photographs as reference.
+
+Screened Poisson reconstruction aborts on this scan above depth 6 in both PyMeshLab and Open3D, so the closed surface comes from Blender's voxel remesher.
+
+Files are local (`models/print/`, gitignored). Rebuild with `uv run tools/mesh/print_ready.py [--height-mm N]`.
+
+---
+
 ## Files
 
-Replayable scripts live in [`tools/metashape/`](../tools/metashape/README.md). Each step file carries its reasoning in the module docstring.
+Replayable scripts live in [`tools/metashape/`](../tools/metashape/README.md). Each step file carries its reasoning in the module docstring. Print-ready descendants come from [`tools/mesh/print_ready.py`](../tools/mesh/print_ready.py).
 
 The public ancestor is [`models/provenance/berry_merged_up_inv_cm.glb`](../models/provenance/berry_merged_up_inv_cm.glb) (metres, 2.50 cm widest).
 

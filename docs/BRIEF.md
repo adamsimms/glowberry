@@ -185,7 +185,8 @@ Hard call currently on the board: The Rooms AIR ([#57](https://github.com/adamsi
 - Outdoor power: solar-only vs solar+grid when shore power exists  
 - Panel hiding strategy on site  
 - Whether Artefact installs LEDs or only delivers shell
+- Alternate quotes beside Artefact ([#37](https://github.com/adamsimms/glowberry/issues/37)): [AllPrototype](https://allprototype.com/3d-scanning-montreal/), [USIMM](https://www.usimm.ca/en/)
 
 ---
 
-*Updated 2026-10-16. Working calendar points at the R&D board; production body from provenance scan; 6 ft shell one-piece only.*
+*Updated 2026-10-17. Working calendar points at the R&D board; production body from provenance scan; 6 ft shell one-piece only; alternate shops added to quotes.*
