@@ -30,6 +30,8 @@ Board: [Glowberry — R&D](https://github.com/users/adamsimms/projects/2) (Prior
 | Milestone | `milestone-0`, `milestone-1`, `milestone-2` |
 | Priority | `priority:urgent`, `priority:high`, `priority:medium`, `priority:low` |
 
+Put domain and process in **labels**, not in the issue title. Never prefix titles with `[docs]`, `[site]`, `[funding]`, `[residency]`, `[spike]`, or similar. Titles should read as the task itself. Issue templates must not prefill a `[tag]` title.
+
 Priority meaning: **Urgent** = critical path / start now; **High** = core work next; **Medium** = sequenced after earlier inputs; **Low** = background, optional, or post-first-wave. Keep issue labels and the project Priority field in sync when changing order.
 
 Do **not** cold-email fabricators or landowners on behalf of the project without coordinating in an issue first.

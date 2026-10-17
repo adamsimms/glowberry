@@ -1,7 +1,6 @@
 ---
 name: Docs
 about: Documentation improvement
-title: "[docs] "
 labels: docs
 ---
 

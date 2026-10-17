@@ -1,6 +1,8 @@
-# Glowberry Inflatable — ephemeral summer track
+# Glowberry Inflatable — archived (not pursuing)
 
-Separate from the permanent **Glowberry** hard sculpture (translucent FRP/PETG shell). This is a **Choi Jeong-hwa–lineage** piece: soft, loud, temporary, photo-magnetic — a **summer proof of concept** to test scale, humor, and site before (or beside) the hard sculpture.
+**Status: out, 2026-08-26.** Will not do this summer POC. GitHub [#19](https://github.com/adamsimms/glowberry/issues/19) closed as not planned. The live work is the ~6 ft 3D-print hard sculpture (`docs/BRIEF.md`). This file is kept as notes only.
+
+Separate from the permanent **Glowberry** hard sculpture (translucent FRP/PETG shell). This was a **Choi Jeong-hwa-lineage** piece: soft, loud, temporary, photo-magnetic. A **summer proof of concept** to test scale, humor, and site before (or beside) the hard sculpture.
 
 | Companion | |
 |-----------|--|

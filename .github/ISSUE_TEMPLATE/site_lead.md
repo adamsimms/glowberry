@@ -1,7 +1,6 @@
 ---
 name: Site lead
 about: Newfoundland location research or outreach
-title: "[site] "
 labels: site
 ---
 

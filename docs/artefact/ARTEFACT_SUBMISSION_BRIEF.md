@@ -38,7 +38,7 @@ Scaled uniformly from a **500 mm** master → scale factor **≈ 3.66×**.
 |--|--|
 | **Role** | Outdoor-capable pilgrimage piece (gallery loan possible) |
 | **Build** | Hollow translucent shell + diffusion + LED hatch at stem/bottom |
-| **Printer class** | Likely **20 m³** one-piece preferred; advise if split/join is wiser |
+| **Printer class** | Try Artefact **20 m³ one-piece** first. 1 m³ split is backup if one-piece fails or the U-Haul door will not take a crate. |
 | **Systems** | LEDs / battery / solar may be **separate scope** — shell-first is fine |
 
 Smaller gallery editions may come later; **please quote the 6 ft piece only** for now.
@@ -75,7 +75,7 @@ Daytime: readable fruit. **Night: the show.** Occasional dark nights OK outdoors
 
 ## 5. Please advise
 
-1. Feasibility of **~6 ft** one-piece vs split  
+1. Feasibility of **~6 ft** one-piece vs split, given a U-Haul 15 ft+ door (7'3" × 6'5") for the drive to Newfoundland  
 2. **Rough cost range** — translucent PETG shell + recommended outdoor translucent finish  
 3. Wall thickness, approximate **mass**, hatch, anchoring for coastal NL (UV / freeze / salt)  
 4. PETG + translucent coat **vs** FRP for this size outdoors  

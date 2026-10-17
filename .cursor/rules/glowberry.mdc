@@ -13,4 +13,5 @@ alwaysApply: true
 - `sketchpad/` is a local playground (notes, drafts, images). Only its README is tracked; do not commit other sketchpad contents. Prefer it as agent context when relevant; do not treat it as canonical over `docs/`.
 - Dual license: CC BY-NC 4.0 (docs/creative), MIT (software). See LICENSE.md.
 - Avoid the word "master" in new user-facing text, docs, comments, and identifiers.
-- Exploratory phase: Milestone 0 foundation, then Milestone 1 feasibility — no due dates required.
+- GitHub Issues: never prefix titles with a bracket tag (`[docs]`, `[site]`, `[funding]`, `[residency]`, `[spike]`, and so on). Put domain and process on **labels**. Title is the task itself (`Apply: The Rooms AIR…`, not `[residency] Apply: …`). Issue templates must not prefill a `[tag]` title.
+- Exploratory phase: Milestone 0 foundation, then Milestone 1 feasibility. Working start/due dates live on the R&D board. Hard dates only for real external deadlines.

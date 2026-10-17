@@ -112,7 +112,7 @@ These are the **best references** for Glowberry going forward:
 | *Plantoir* | Oldenburg / van Bruggen | Aluminum, FRP, steel | No | Oversized tool; wind engineering |
 | Stainless cherries / fruit (commercial & public) | Various fabricators | **304/316 stainless**, sometimes painted | Rarely internal | Mirror sublime; daytime spectacle; weak “flesh” glow |
 | Bronze jackfruit *Urbanscape* | Paresh Maity | **Solid bronze** (~7000 kg) | No | Monumental fruit as cultural metaphor; not glow-friendly |
-| *Fruit Tree* / flower-fruit inflatables | Choi Jeong-hwa | **Steel + fabric inflatable**; plastic; LEDs in some works | Sometimes | Humor & pilgrimage photos; **own track** as summer POC — see [`INFLATABLE.md`](INFLATABLE.md); weak as permanent NL beacon |
+| *Fruit Tree* / flower-fruit inflatables | Choi Jeong-hwa | **Steel + fabric inflatable**; plastic; LEDs in some works | Sometimes | Humor and pilgrimage photos. Inflatable track is **out** (2026-08-26); notes in [`INFLATABLE.md`](INFLATABLE.md). Weak as permanent NL beacon |
 | Giant FRP fruit (plazas / parks) | Commercial FRP studios | **FRP + UV gelcoat**, steel frame | Optional LED backlight | Same material family as Kusama; quality varies; study anchoring |
 
 ### Light-as-medium / glowing shells

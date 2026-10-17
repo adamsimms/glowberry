@@ -95,6 +95,30 @@ Rough shell as sphere of diameter ≈ 7 ft (surface area ≈ 14.5 m²), then **�
 
 ---
 
+## Transport envelope (U-Haul to Newfoundland)
+
+The ~6 ft piece has to ride a rental truck to Newfoundland. Door opening is the limit, not the box interior. U-Haul numbers below are from their public spec pages (approximate; fleet varies).
+
+| Truck | Door opening (W × H) | Source |
+|-------|----------------------|--------|
+| 10 ft | 5'11" × 5'7" (71" × 67") | [U-Haul 10 ft](https://www.uhaul.com/Truck-Rentals/10ft-Moving-Truck/) |
+| 15 / 17 / 20 ft | 7'3" × 6'5" (87" × 77") | [U-Haul 15 ft](https://www.uhaul.com/Truck-Rentals/15ft-Moving-Truck/) |
+| 26 ft | 7'9" × 6'10" (93" × 82") | [U-Haul 26 ft](https://www.uhaul.com/Truck-Rentals/26ft-Moving-Truck/) |
+
+From the published 500 mm source mesh (~447 × 460 × 500 mm) scaled to **6 ft tall (≈3.66×)**:
+
+| Axis | Size |
+|------|------|
+| Width | ≈ **64.4"** (5'4") |
+| Depth | ≈ **66.3"** (5'6") |
+| Height | ≈ **72"** (6'0") |
+
+Bare shell: a **15 ft or larger** U-Haul door should take it (upright height 72" vs 77" door). A 10 ft truck door is too short upright (67"). A crate, pallet, or coat will eat the 5" upright margin on a 15 ft door. If it ships crated, plan to load on its side, use a 26 ft truck, or **split the shell**.
+
+Confirm bounding box from the live mesh on [#16](https://github.com/adamsimms/glowberry/issues/16). Shop order ([#18](https://github.com/adamsimms/glowberry/issues/18)): try Artefact 20 m³ one-piece first. 1 m³ split printers are backup if one-piece fails or the door will not take a crate. Fogo adds a second ferry; vehicle still has to fit that boat.
+
+---
+
 ## Pure materials cost — ~7 ft PETG (planning bands)
 
 **This is resin/filament + coating chemistry only** — not machine time, labor, shop overhead, failed prints, shipping, or electronics. Those usually dwarf raw plastic on a custom art piece.
@@ -139,4 +163,4 @@ Again: a shop **quote** for a finished 7 ft Glowberry will usually be **much hig
 
 ---
 
-*Updated 2026-07-27 — print/coating options, ~7 ft mass bands, pure materials cost.*
+*Updated 2026-08-26. Added U-Haul transport envelope for the ~6 ft shell.*

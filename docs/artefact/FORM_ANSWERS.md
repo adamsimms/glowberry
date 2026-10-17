@@ -37,7 +37,7 @@ ART DIRECTION
 • Power/LEDs may be separate scope; shell quote can exclude electronics if cleaner
 
 PLEASE ADVISE
-• Feasibility of ~6 ft as one piece (likely 20 m³ class) vs split/join
+• Feasibility of ~6 ft as one piece (likely 20 m³ class) vs split/join so it fits a U-Haul 15 ft+ door (7'3" × 6'5") to Newfoundland
 • Rough cost range for translucent PETG shell + recommended outdoor translucent finish (clear/tinted coat vs FRP if needed)
 • Wall thickness, mass, hatch, anchoring notes for coastal NL weather (UV, freeze, salt)
 • Timeline from approved files to delivery

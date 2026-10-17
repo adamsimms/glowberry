@@ -8,7 +8,7 @@ Glowberry continues a practice lineage with [*Cloudberry*](https://github.com/ad
 
 ## What it is
 
-A semi-opaque **translucent orange** fruit body with a soft **heartbeat / breathing glow** at dusk and night. Touchable, walk-around, not enterable. Site TBD (Avalon, Fogo, Bonavista, or another reachable NL place). Parallel track: ephemeral summer **inflatable** proof-of-concept.
+A semi-opaque **translucent orange** fruit body with a soft **heartbeat / breathing glow** at dusk and night. Touchable, walk-around, not enterable. Site TBD among named NL options in [docs/SITE.md](docs/SITE.md). No permissions claimed.
 
 Canonical brief and companions:
 
@@ -20,6 +20,7 @@ Canonical brief and companions:
 | [docs/RESEARCH_sculpture_precedents.md](docs/RESEARCH_sculpture_precedents.md) | Sculpture / material precedents |
 | [docs/BIBLIOGRAPHY.md](docs/BIBLIOGRAPHY.md) | Living bibliography (readings, texts, research) |
 | [docs/MATERIALS.md](docs/MATERIALS.md) | Print materials, coatings, translucency, mass bands |
+| [docs/SITE.md](docs/SITE.md) | NL site longlist (no place chosen; no permissions) |
 
 ## GitHub Projects
 

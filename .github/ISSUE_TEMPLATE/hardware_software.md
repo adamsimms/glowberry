@@ -1,7 +1,6 @@
 ---
 name: Hardware / software
 about: Physical BOM or controller / lighting / power logic
-title: "[systems] "
 labels: hardware, software
 ---
 

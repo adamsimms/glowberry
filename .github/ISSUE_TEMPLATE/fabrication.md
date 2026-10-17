@@ -1,7 +1,6 @@
 ---
 name: Fabrication question
 about: Shops, materials, quotes, mesh package
-title: "[fab] "
 labels: fabrication
 ---
 

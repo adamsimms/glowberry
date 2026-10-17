@@ -1,7 +1,6 @@
 ---
 name: Concept spike
 about: Time-boxed concept or form decision
-title: "[concept] "
 labels: concept, spike
 ---
 
