@@ -590,7 +590,7 @@ def build(spec, height_mm, voxel):
     if spec.get("crease_pinch"):
         seam["pinch_mm"], seam["pinch_w_mm"] = spec["crease_pinch"]
     m = seam_field(ellipsoid_dist(C, B, A, X), len(C), lo, hi, seam, voxel)
-    return m, len(C) - 1, (C, B, A, X)
+    return m, len(C) - 1, (C, B, A, X), (lo, hi, seam)
 
 
 def drupelet_dists(P, lay, chunk=50_000):
@@ -625,14 +625,23 @@ def skinned(m, lay, skin):
     return out
 
 
-def deform(m, spec):
-    """Whole-berry shape changes after meshing: ripe slump, then oval."""
-    v = m.vertices.copy()
+def deform(m, spec, frame=None):
+    """Whole-berry shape changes after meshing: ripe slump, then oval.
+
+    frame (z0, height) defaults to the mesh's own; pass the outer surface's
+    so an inner wall deforms with it."""
+    m.vertices = deform_points(m.vertices, spec, frame or (m.vertices[:, 2].min(),
+                                                           np.ptp(m.vertices[:, 2])))
+    return m
+
+
+def deform_points(v, spec, frame):
+    v = np.array(v, dtype=np.float64)
     if spec.get("slump"):
         # A ripe berry settles on its stem end: upper parts drop (most at
         # the tip), and the base row spreads a little.
         s = spec["slump"]
-        z0, H = v[:, 2].min(), np.ptp(v[:, 2])
+        z0, H = frame
         t = (v[:, 2] - z0) / H
         v[:, 2] = z0 + H * (t - s * t ** 2)
         v[:, :2] *= (1 + s * np.exp(-((t - 0.3) / 0.22) ** 2))[:, None]
@@ -644,8 +653,7 @@ def deform(m, spec):
         R = np.array([[c, -s_], [s_, c]])
         M = R @ np.diag([1 + amt, 1 / (1 + amt)]) @ R.T
         v[:, :2] = v[:, :2] @ M.T
-    m.vertices = v
-    return m
+    return v
 
 
 def clean(m):
@@ -668,7 +676,7 @@ def main():
     args = ap.parse_args()
     for name in args.only or VARIANTS:
         spec = VARIANTS[name]
-        raw, n, lay = build(spec, args.height_mm, voxel=args.height_mm / 500)
+        raw, n, lay, _ = build(spec, args.height_mm, voxel=args.height_mm / 500)
         outs = {"": raw.copy()}
         for sk in args.skin:
             outs[f"_{sk}"] = skinned(raw, lay, sk)

@@ -92,9 +92,11 @@ def seam_union(spheres, spec, voxel, level=0.0, ids=None):
                       (C + R[:, None]).max(axis=0), spec, voxel, level, ids)
 
 
-def seam_field(dist, n, lo, hi, spec, voxel, level=0.0, ids=None):
+def seam_field(dist, n, lo, hi, spec, voxel, level=0.0, ids=None, level_fn=None):
     """seam_union for any blobs: dist(x, Yf, Zf) gives (n, len(Yf)) distances
-    on the plane at x; lo/hi bound the blobs."""
+    on the plane at x; lo/hi bound the blobs. level_fn(x, Yf, Zf), if given,
+    is added to the field, so meshing at level 0 gives an inward offset that
+    varies from point to point."""
     ids = range(n) if ids is None else ids
     k0 = GROOVE_MM / 4
     pad = 2 * k0 * np.log(n) + spec["wander_mm"] * 3 + 3 * voxel
@@ -131,6 +133,8 @@ def seam_field(dist, n, lo, hi, spec, voxel, level=0.0, ids=None):
                 top2 = np.sort(db, axis=0)[:2]
                 f[band] += spec["pinch_mm"] * np.exp(
                     -((top2[1] - top2[0]) / spec["pinch_w_mm"]) ** 2)
+        if level_fn is not None:
+            f = f + level_fn(x, Yf, Zf)
         field[ix] = f.reshape(Y.shape)
     verts, faces, _, _ = marching_cubes(field, level, spacing=(voxel,) * 3)
     ms = ml.MeshSet()
