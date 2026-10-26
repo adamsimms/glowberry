@@ -23,7 +23,7 @@ Lighting vs ribs: see issue discussion on luminous volume vs structure ([#21](ht
 
 **Tint strategy:** print **clear or lightly amber**; put saturated orange in a **thin translucent coat** so UV hits the finish first.
 
-**Test prints are orange or amber from the start**, never neutral grey (decided 2026-10-17). Desk tests use orange or amber filament and resin; full-colour service tests use the files in `models/print/colour/` (see [`SCANNING.md`](SCANNING.md)).
+**Test prints are orange or amber from the start**, never neutral grey (decided 2026-10-17). Desk tests use orange or amber filament and resin; full-colour service tests use the files in `models/print/colour/` (see [`SCANNING.md`](SCANNING.md)). Where to print desk tests in Montreal: [`FABLABS.md`](FABLABS.md).
 
 Artefact-class large-format **translucent PETG** remains the primary shop conversation for printable shells ([`BRIEF.md`](BRIEF.md) tiers).
 

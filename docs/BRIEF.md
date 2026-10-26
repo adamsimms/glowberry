@@ -177,7 +177,7 @@ Hello, Adam Simms, Montreal. Developing **Glowberry** (bakeapple / cloudberry pi
 
 **Working calendar:** living Start / Due dates live on [Glowberry — R&D](https://github.com/users/adamsimms/projects/2). That board is the feasibility clock. There is no separate studio-wide timeline ticket ([#26](https://github.com/adamsimms/glowberry/issues/26) closed). Grant-period work plans and spend schedules live on individual grant issues (for example [#47](https://github.com/adamsimms/glowberry/issues/47)).
 
-Hard call currently on the board: The Rooms AIR ([#57](https://github.com/adamsimms/glowberry/issues/57)) due **2026-11-02**. Canada Council ([#47](https://github.com/adamsimms/glowberry/issues/47)) is a personal submit target on a rolling intake.
+Hard call currently on the board: The Rooms AIR ([#57](https://github.com/adamsimms/glowberry/issues/57)) due **2026-11-02**. Site preference is the Landfall Trust, Kent Cottage, Brigus (three weeks, mid-June to mid-July 2027). Working title *Bakeapple*: a study for Glowberry, about 16 in, printed from the scan at night on a Sovol SV08 Max (500 mm build volume) running on its own solar panel and battery, then lit by the same sun. Kent Cottage is off-grid, so nothing draws on the cottage's power. Canada Council ([#47](https://github.com/adamsimms/glowberry/issues/47)) is a personal submit target on a rolling intake.
 
 **Still open (concept / site):**
 
