@@ -23,10 +23,13 @@ seams stay as they are.
 Sizes are at 100 mm tall. One drupelet is ~50 mm across here and ~0.9 m at
 6 ft (x18.3), so 3.5 mm cells here are ~6 cm on the sculpture.
 
-Writes models/print/berry_texture_<name>_<H>mm.stl.
+Built on the chosen body (lumps_merge.BODY); --drop with no ids uses all 12.
+
+Writes models/print/berry_texture_<name>[_<body>]_<H>mm.stl (no body tag for
+all 12).
 
 Run:
-    uv run tools/mesh/lumps_texture.py [--height-mm 100] [--only vesicles nub]
+    uv run tools/mesh/lumps_texture.py [--height-mm 100] [--only vesicles nub] [--drop ...]
 """
 
 import argparse
@@ -39,7 +42,8 @@ import trimesh
 from scipy.spatial import cKDTree
 
 sys.path.insert(0, os.path.dirname(__file__))
-from lumps_clean import LOOKDEV, N_SPHERES, place, recover_spheres  # noqa: E402
+from lumps_clean import place  # noqa: E402
+from lumps_merge import BODY, body_spheres, tag  # noqa: E402
 from lumps_seams import VARIANTS as SEAMS, seam_union, smooth_noise  # noqa: E402
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
@@ -133,19 +137,16 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--height-mm", type=float, default=100.0)
     ap.add_argument("--only", nargs="+", choices=NAMES)
+    ap.add_argument("--drop", type=int, nargs="*", default=BODY)
     args = ap.parse_args()
     names = args.only or NAMES
 
-    scene = trimesh.load(LOOKDEV)
-    V = np.asarray((scene.to_geometry() if hasattr(scene, "to_geometry") else scene).vertices,
-                   dtype=np.float64)
-    spheres, _ = recover_spheres(V, N_SPHERES)
-    s = args.height_mm / np.ptp(V[:, 2])
-    spheres_mm = [(c * s, r * s) for c, r in spheres]
+    spheres_mm, ids = body_spheres(args.height_mm, args.drop)
     centre = np.mean([c for c, _ in spheres_mm], axis=0)
     voxel = args.height_mm / 500
+    suffix = f"_{tag(args.drop)}" if args.drop else ""
 
-    outer = seam_union(spheres_mm, SEAM, voxel)
+    outer = seam_union(spheres_mm, SEAM, voxel, ids=ids)
     fine = outer.subdivide()  # ~0.2 mm edges so 0.35 mm creases resolve
     P = fine.vertices
     dome = 1.0 - np.exp(-(sphere_gaps(P, spheres_mm) / DOME_SIGMA_MM) ** 2)
@@ -171,7 +172,8 @@ def main():
                                                    + layers["nub"]), spheres_mm)
 
     if "inner_cutaway" in names:
-        inner = seam_union(spheres_mm, SEAM, voxel, level=-INNER["wall_mm"]).subdivide()
+        inner = seam_union(spheres_mm, SEAM, voxel, level=-INNER["wall_mm"],
+                           ids=ids).subdivide()
         Pi = inner.vertices
         inner_dome = 1.0 - np.exp(-(sphere_gaps(Pi, spheres_mm) / DOME_SIGMA_MM) ** 2)
         # Cells thin the wall at their centres; borders stay at full wall.
@@ -186,7 +188,8 @@ def main():
 
     for name, m in outputs.items():
         place(m, args.height_mm)
-        path = os.path.join(OUT_DIR, f"berry_texture_{name}_{int(args.height_mm)}mm.stl")
+        path = os.path.join(OUT_DIR,
+                            f"berry_texture_{name}{suffix}_{int(args.height_mm)}mm.stl")
         m.export(path)
         print(f"{name}: faces {len(m.faces)}, watertight {m.is_watertight}, "
               f"bodies {len(m.split(only_watertight=False))} -> {os.path.relpath(path, ROOT)}")

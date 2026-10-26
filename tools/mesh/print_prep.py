@@ -31,7 +31,7 @@ import numpy as np
 import trimesh
 
 sys.path.insert(0, os.path.dirname(__file__))
-from lumps_clean import LOOKDEV, N_SPHERES, recover_spheres  # noqa: E402
+from lumps_merge import BODY, base_stl, body_spheres, tag  # noqa: E402
 from lumps_seams import VARIANTS as SEAMS, seam_union  # noqa: E402
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
@@ -44,13 +44,15 @@ WALL_MM = 2.0
 DRAIN_MM = 3.0
 DRAIN_OFFSET_MM = 8.0
 
+SKIN_TAG = f"_{tag(BODY)}" if BODY else ""
+
 # source, output, mode, label, label height mm, flat depth mm
 JOBS = [  # noqa: E501
-    ("berry_texture_skin_35_100mm.stl", "resin_skin35_100mm.stl", "resin_hollow", "35", 6.0, 0),
-    ("berry_seams_wander_50_100mm.stl", "resin_plain_100mm.stl", "resin_hollow", "0", 6.0, 0),
-    ("berry_seams_wander_50_w25mm.stl", "resin_plain_true_size_25mm.stl", "resin_solid", "0", 2.5, 0),
-    ("berry_texture_skin_fdm_min_100mm.stl", "fdm_skin_min_100mm.stl", "fdm_flat", "F", 6.0, 1.0),
-    ("berry_seams_wander_50_w50.8mm.stl", "fdm_plain_2in.stl", "fdm_flat", "0", 4.0, 0.6),
+    (f"berry_texture_skin_35{SKIN_TAG}_100mm.stl", "resin_skin35_100mm.stl", "resin_hollow", "35", 6.0, 0),
+    (base_stl(BODY), "resin_plain_100mm.stl", "resin_hollow", "0", 6.0, 0),
+    (base_stl(BODY, "w25mm"), "resin_plain_true_size_25mm.stl", "resin_solid", "0", 2.5, 0),
+    (f"berry_texture_skin_fdm_min{SKIN_TAG}_100mm.stl", "fdm_skin_min_100mm.stl", "fdm_flat", "F", 6.0, 1.0),
+    (base_stl(BODY, "w50.8mm"), "fdm_plain_2in.stl", "fdm_flat", "0", 4.0, 0.6),
 ]
 
 
@@ -97,15 +99,10 @@ def lowest_point(m):
 
 def cavity_100mm():
     """wander_50 field at -WALL_MM, in the same frame as the 100 mm files."""
-    scene = trimesh.load(LOOKDEV)
-    V = np.asarray((scene.to_geometry() if hasattr(scene, "to_geometry") else scene).vertices,
-                   dtype=np.float64)
-    spheres, _ = recover_spheres(V, N_SPHERES)
-    s = 100.0 / np.ptp(V[:, 2])
-    spheres_mm = [(c * s, r * s) for c, r in spheres]
+    spheres_mm, ids = body_spheres(100.0, BODY)
     spec = SEAMS["wander_50"]
-    outer = seam_union(spheres_mm, spec, voxel=0.2)
-    inner = seam_union(spheres_mm, spec, voxel=0.2, level=-WALL_MM)
+    outer = seam_union(spheres_mm, spec, voxel=0.2, ids=ids)
+    inner = seam_union(spheres_mm, spec, voxel=0.2, level=-WALL_MM, ids=ids)
     k = 100.0 / outer.extents[2]
     lo, hi = outer.bounds
     shift = np.array([-(lo[0] + hi[0]) / 2, -(lo[1] + hi[1]) / 2, -lo[2]]) * k
