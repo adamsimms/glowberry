@@ -65,7 +65,17 @@ Checked 2026-10-26 against each service's own site. For the v17 set (prints 1 to
 | [Axis Prototypes](https://www.axisproto.com/), 6956 rue Jarry Est | SLA | Yes | No PolyJet | Send, quote, build, deliver |
 | [3DCentral](https://3dcentral.ca/3d-printing-service/), Laval | No | PLA, PETG | Up to four filament colours, not a gradient | Upload STL, 3MF, OBJ up to 60 MB |
 
-Full colour outside Montreal: [Xometry](https://www.xometry.com/capabilities/3d-printing-service/polyjet-3d/) prints full-colour PolyJet from 3MF (Canadian shipping not confirmed); [Custom Prototypes](https://customprototypes.ca/services/polyjet-3d-printing/), Toronto, has a Mimaki with a 76 mm build height, so it fits prints 7 and 8 but not the 100 mm berry.
+Full-colour PolyJet in Canada (checked 2026-10-26, all in the Toronto area, ship nationally):
+
+| Service | Full colour | Resin and FDM in-house | Links |
+|---|---|---|---|
+| Proto3000, Vaughan ON | Stratasys J-series; gradients from VRML | Yes (Formlabs, FDM) | [services](https://proto3000.com/service/additive-manufacturing-canada-united-states/), [quote](https://proto3000.com/quote/), [PolyJet guide](https://proto3000.com/service/additive-manufacturing-canada-united-states/materials/overview/polyjet-3d-printing-design-guidelines/) |
+| Javelin (Javelin-Cimetrix), Oakville ON | PolyJet, multiple colours in one part | Yes (Form 4, Stratasys FDM) | [services](https://www.javelin-tech.com/3d/toronto-3d-printing-services/) |
+| 3DMan, Concord ON | Full colour, multi-material, 14 µm | Not stated | [PolyJet](https://3dman.ca/polyjet-3d-printing-services-in-canada/) |
+
+Proto3000 is the first pick for a single order of all eight: it documents a full-colour gradient workflow from VRML (send the `.wrl.zip` copies of prints 6 to 8) and runs resin and FDM in-house.
+
+Other full colour outside Montreal: [Xometry](https://www.xometry.com/capabilities/3d-printing-service/polyjet-3d/) prints full-colour PolyJet from 3MF (Canadian shipping not confirmed); [Custom Prototypes](https://customprototypes.ca/services/polyjet-3d-printing/), Toronto, has a Mimaki with a 76 mm build height, so it fits prints 7 and 8 but not the 100 mm berry.
 
 Ask: whether the PolyJet is a full-colour J-series that reads per-vertex colour 3MF; whether resin can be clear or translucent amber (the varying wall needs light through it); keep supports off the number; rinse the inside through the 10 mm hole; a quote and lead time for all eight.
 
