@@ -54,6 +54,23 @@ Checked 2026-10-24 against each lab's own site where one exists, plus the [Fab L
 
 ---
 
+## Commercial print services (send files, they print)
+
+Checked 2026-10-26 against each service's own site. For the v17 set (prints 1 to 8 in [`SCANNING.md`](SCANNING.md)), resin and FDM are easy to source; full colour (6 to 8) is not confirmed anywhere in Montreal.
+
+| Service | Resin | FDM | Full colour | Notes |
+|---|---|---|---|---|
+| [Fablab Inc.](https://fablabinc.com/en/professional-3d-printing-service/), 160 rue Saint-Viateur Est | SLA (14.5 x 17.5 x 14.5 cm) | Yes | PolyJet listed, "contact us"; colour not stated | Online upload and instant price, ships. info@fablabinc.com, 514-779-1309 |
+| [MatterThings](https://www.matterthings.com/), Pincourt | SLA | Yes | PolyJet listed; colour not stated | Quote by email. 3d@matterthings.com, 514-312-6060 |
+| [Axis Prototypes](https://www.axisproto.com/), 6956 rue Jarry Est | SLA | Yes | No PolyJet | Send, quote, build, deliver |
+| [3DCentral](https://3dcentral.ca/3d-printing-service/), Laval | No | PLA, PETG | Up to four filament colours, not a gradient | Upload STL, 3MF, OBJ up to 60 MB |
+
+Full colour outside Montreal: [Xometry](https://www.xometry.com/capabilities/3d-printing-service/polyjet-3d/) prints full-colour PolyJet from 3MF (Canadian shipping not confirmed); [Custom Prototypes](https://customprototypes.ca/services/polyjet-3d-printing/), Toronto, has a Mimaki with a 76 mm build height, so it fits prints 7 and 8 but not the 100 mm berry.
+
+Ask: whether the PolyJet is a full-colour J-series that reads per-vertex colour 3MF; whether resin can be clear or translucent amber (the varying wall needs light through it); keep supports off the number; rinse the inside through the 10 mm hole; a quote and lead time for all eight.
+
+---
+
 ## Not shortlisted
 
 | Lab | Reason |
