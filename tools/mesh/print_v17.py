@@ -5,8 +5,9 @@
 # ///
 """Test-print files for the picked berry (berry_tiers a_studio_v17_subtle).
 
-Each print carries a three-letter ID engraved on its underside; the table
-in docs/SCANNING.md maps IDs to files and notes.
+Each print carries its number engraved on the stem star; the table in
+docs/SCANNING.md maps numbers to files and notes. 6 and 9 get a dot so they
+read the same at any rotation.
 
 - Hollow resin (100 mm): the inner wall varies from 1.5 to 3 mm, so a lit
   berry shifts in tone without paint: thinner toward the stem end and at
@@ -51,16 +52,16 @@ WALL_MIN_MM, WALL_MAX_MM = 1.5, 3.0
 GROOVE_SIGMA_MM = 2.5  # how far the thicker wall spreads from a groove
 LIGHT_HOLE_MM = 10.0
 
-# id, output, kind, surface, size, label height mm, label depth mm
+# number, output, kind, surface, size, largest label height mm, label depth mm
 JOBS = [
-    ("RFA", "resin_skin35_100mm.stl", "hollow", "skin_35", None, 4.0, 0.6),
-    ("K73", "resin_plain_100mm.stl", "hollow", "plain", None, 4.0, 0.6),
-    ("XEY", "resin_true_size_w25mm.stl", "solid", "plain", 25.0, 1.6, 0.3),
-    ("WT7", "fdm_plain_w2in.stl", "solid", "plain", 50.8, 2.6, 0.4),
-    ("NMY", "fdm_skin_fdm_min_100mm.stl", "solid", "skin_fdm_min", None, 4.0, 0.6),
-    ("ECW", "colour_gradient_skin35_100mm_hollow", "hollow", "skin_35", None, 4.0, 0.6),
-    ("AYK", "colour_gradient_w2in", "solid", "plain", 50.8, 2.6, 0.4),
-    ("YMC", "colour_gradient_w25mm", "solid", "plain", 25.0, 1.6, 0.3),
+    (1, "resin_skin35_100mm.stl", "hollow", "skin_35", None, 6.0, 0.6),
+    (2, "resin_plain_100mm.stl", "hollow", "plain", None, 6.0, 0.6),
+    (3, "resin_true_size_w25mm.stl", "solid", "plain", 25.0, 2.0, 0.3),
+    (4, "fdm_plain_w2in.stl", "solid", "plain", 50.8, 3.5, 0.4),
+    (5, "fdm_skin_fdm_min_100mm.stl", "solid", "skin_fdm_min", None, 6.0, 0.6),
+    (6, "colour_gradient_skin35_100mm_hollow", "hollow", "skin_35", None, 6.0, 0.6),
+    (7, "colour_gradient_w2in", "solid", "plain", 50.8, 3.5, 0.4),
+    (8, "colour_gradient_w25mm", "solid", "plain", 25.0, 2.0, 0.3),
 ]
 
 
@@ -177,16 +178,17 @@ def main():
     clear = clear_raw * scale
     print(f"label spot clearance from grooves {clear:.1f} mm at 100 mm")
 
-    for pid, out, kind, surface, width, text_mm, depth in JOBS:
+    for num, out, kind, surface, width, text_mm, depth in JOBS:
+        label = f"{num}." if num % 10 in (6, 9) else str(num)
         m = surfaces[surface].copy()
         p, q, k = pole.copy(), spot.copy(), 1.0
         if width:
             k = width / max(m.extents[0], m.extents[1])
             m.apply_scale(k)
             p, q = p * k, q * k
-        # Three characters are about twice as wide as tall; keep them on
-        # the drupelet face.
-        text_mm = min(text_mm, 0.8 * clear * k)
+        # Keep the label on the drupelet face: a character is about 0.7 of
+        # its height wide.
+        text_mm = min(text_mm, 1.6 * clear * k, 0.8 * clear * k / (0.35 * len(label)))
         M = to_mf(m)
         if kind == "hollow":
             M = M - cavity
@@ -197,17 +199,17 @@ def main():
             hole = mf.Manifold.cylinder(z_top + 1.0, LIGHT_HOLE_MM / 2, LIGHT_HOLE_MM / 2, 64)
             M = M - hole.translate((p[0], p[1], -1.0))
         q = m.vertices[np.argmin(np.linalg.norm(m.vertices - q, axis=1))]
-        M = M - label_cutter(m, pid, text_mm, depth, q, p, workdir)
+        M = M - label_cutter(m, label, text_mm, depth, q, p, workdir)
         r = from_mf(M)
         if out.endswith(".stl"):
-            path = os.path.join(OUT_DIR, f"{pid}_{out}")
+            path = os.path.join(OUT_DIR, f"{num}_{out}")
             r.export(path)
         else:
-            path = os.path.join(OUT_DIR, f"{pid}_{out}.3mf")
+            path = os.path.join(OUT_DIR, f"{num}_{out}.3mf")
             g = gradient_colours(r)
             write_3mf(path, r, g)
-            write_vrml_zip(os.path.join(OUT_DIR, f"{pid}_{out}.wrl.zip"), r, g)
-        print(f"{pid} {os.path.basename(path)}: watertight {r.is_watertight}, "
+            write_vrml_zip(os.path.join(OUT_DIR, f"{num}_{out}.wrl.zip"), r, g)
+        print(f"{label} {os.path.basename(path)}: watertight {r.is_watertight}, "
               f"bodies {len(r.split(only_watertight=False))}, volume {r.volume / 1000:.1f} cm3, "
               f"extents {np.round(r.extents, 1)}, label {text_mm:.1f} mm")
 
