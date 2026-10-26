@@ -35,7 +35,8 @@ import trimesh
 
 sys.path.insert(0, os.path.dirname(__file__))
 from berry_tiers import (VARIANTS, build, clean, deform, deform_points,  # noqa: E402
-                         ellipsoid_dist, skinned)
+                         drupelet_dists, ellipsoid_dist, skinned)
+from scipy.spatial import cKDTree  # noqa: E402
 from colour_files import gradient_colours, write_3mf, write_vrml_zip  # noqa: E402
 from lumps_seams import seam_field  # noqa: E402
 
@@ -100,15 +101,25 @@ def text_mesh(text, workdir):
     return trimesh.load(path)
 
 
-def label_cutter(m, text, height_mm, depth_mm, pole, workdir):
-    """Text cut along the surface normal on the underside, beside the stem
-    star, reading normally from outside."""
-    r_lo, r_hi = 0.13 * m.extents[2], 0.17 * m.extents[2]
+def label_spot(raw, lay, pole_raw, keep_out):
+    """Point on a stem-star drupelet furthest from any groove and outside
+    keep_out (layout units) of the stem axis; returns it and its clearance."""
+    v = raw.vertices
+    d = drupelet_dists(v, lay)
+    near = d.argmin(axis=1)
+    ds = np.sort(d, axis=1)
+    groove = v[ds[:, 1] - ds[:, 0] < 0.15]
+    clear = cKDTree(groove).query(v)[0]
+    rad = np.linalg.norm(v[:, :2] - pole_raw[:2], axis=1)
+    ok = (near < 4) & (raw.vertex_normals[:, 2] < -0.5) & (rad > keep_out)
+    i = np.flatnonzero(ok)[np.argmax(clear[ok])]
+    return v[i], clear[i]
+
+
+def label_cutter(m, text, height_mm, depth_mm, p, pole, workdir):
+    """Text cut along the surface normal at p, reading normally from outside,
+    its top pointing away from the stem axis."""
     v, n = m.vertices, m.vertex_normals
-    rad = np.linalg.norm(v[:, :2] - pole[:2], axis=1)
-    pick = np.flatnonzero((rad > r_lo) & (rad < r_hi) & (n[:, 2] < -0.5))
-    i = pick[np.argmin(n[pick, 2])]
-    p = v[i]
     near = np.linalg.norm(v - p, axis=1) < height_mm
     nrm = n[near].mean(axis=0)
     nrm /= np.linalg.norm(nrm)
@@ -156,23 +167,37 @@ def main():
     print("cavity done")
 
     # Stem pole: the centre of the stem star, carried through the same changes.
-    pole = deform_points(C[:4].mean(axis=0, keepdims=True), spec, frame)[0] * scale + shift
+    pole_raw = C[:4].mean(axis=0)
+    pole = deform_points(pole_raw[None], spec, frame)[0] * scale + shift
+    # One label spot for every print: on a stem-star drupelet, clear of the
+    # grooves and of the light hole.
+    keep_out = (LIGHT_HOLE_MM / 2 + 3.0) / scale
+    spot_raw, clear_raw = label_spot(raw, lay, pole_raw, keep_out)
+    spot = deform_points(spot_raw[None], spec, frame)[0] * scale + shift
+    clear = clear_raw * scale
+    print(f"label spot clearance from grooves {clear:.1f} mm at 100 mm")
 
     for pid, out, kind, surface, width, text_mm, depth in JOBS:
         m = surfaces[surface].copy()
-        p = pole.copy()
+        p, q, k = pole.copy(), spot.copy(), 1.0
         if width:
             k = width / max(m.extents[0], m.extents[1])
             m.apply_scale(k)
-            p *= k
+            p, q = p * k, q * k
+        # Three characters are about twice as wide as tall; keep them on
+        # the drupelet face.
+        text_mm = min(text_mm, 0.8 * clear * k)
         M = to_mf(m)
         if kind == "hollow":
             M = M - cavity
             near = np.linalg.norm(m.vertices[:, :2] - p[:2], axis=1) < LIGHT_HOLE_MM / 2
-            z_top = m.vertices[near, 2].max() + WALL_MAX_MM + 2.0
+            # Lowest surface on the axis is the stem star; cut just past
+            # the wall there, not up through the tip.
+            z_top = m.vertices[near, 2].min() + WALL_MAX_MM + 2.0
             hole = mf.Manifold.cylinder(z_top + 1.0, LIGHT_HOLE_MM / 2, LIGHT_HOLE_MM / 2, 64)
             M = M - hole.translate((p[0], p[1], -1.0))
-        M = M - label_cutter(m, pid, text_mm, depth, p, workdir)
+        q = m.vertices[np.argmin(np.linalg.norm(m.vertices - q, axis=1))]
+        M = M - label_cutter(m, pid, text_mm, depth, q, p, workdir)
         r = from_mf(M)
         if out.endswith(".stl"):
             path = os.path.join(OUT_DIR, f"{pid}_{out}")
@@ -184,7 +209,7 @@ def main():
             write_vrml_zip(os.path.join(OUT_DIR, f"{pid}_{out}.wrl.zip"), r, g)
         print(f"{pid} {os.path.basename(path)}: watertight {r.is_watertight}, "
               f"bodies {len(r.split(only_watertight=False))}, volume {r.volume / 1000:.1f} cm3, "
-              f"extents {np.round(r.extents, 1)}")
+              f"extents {np.round(r.extents, 1)}, label {text_mm:.1f} mm")
 
 
 if __name__ == "__main__":
