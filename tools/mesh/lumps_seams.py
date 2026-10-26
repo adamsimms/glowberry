@@ -75,21 +75,37 @@ def smin(d, k):
     return m - k * np.log(np.exp(-(d - m) / k).sum(axis=0))
 
 
-def seam_union(spheres, spec, voxel, level=0.0):
-    """Mesh the seam-wandered union; negative level gives an inward offset."""
+def seam_union(spheres, spec, voxel, level=0.0, ids=None):
+    """Mesh the seam-wandered union; negative level gives an inward offset.
+
+    ids are the spheres' original indices, so a sphere keeps its own seam
+    noise when others are dropped from the list.
+    """
     C = np.array([c for c, _ in spheres])
     R = np.array([r for _, r in spheres])
+
+    def dist(x, Yf, Zf):
+        return np.sqrt((x - C[:, 0, None]) ** 2 + (Yf - C[:, 1, None]) ** 2
+                       + (Zf - C[:, 2, None]) ** 2) - R[:, None]
+
+    return seam_field(dist, len(R), (C - R[:, None]).min(axis=0),
+                      (C + R[:, None]).max(axis=0), spec, voxel, level, ids)
+
+
+def seam_field(dist, n, lo, hi, spec, voxel, level=0.0, ids=None):
+    """seam_union for any blobs: dist(x, Yf, Zf) gives (n, len(Yf)) distances
+    on the plane at x; lo/hi bound the blobs."""
+    ids = range(n) if ids is None else ids
     k0 = GROOVE_MM / 4
-    pad = 2 * k0 * np.log(len(R)) + spec["wander_mm"] * 3 + 3 * voxel
-    lo = (C - R[:, None]).min(axis=0) - pad
-    hi = (C + R[:, None]).max(axis=0) + pad
+    pad = 2 * k0 * np.log(n) + spec["wander_mm"] * 3 + 3 * voxel
+    lo = np.asarray(lo) - pad
+    hi = np.asarray(hi) + pad
     axes = [np.arange(lo[i], hi[i] + voxel, voxel) for i in range(3)]
     field = np.empty([len(a) for a in axes], np.float32)
     Y, Z = np.meshgrid(axes[1], axes[2], indexing="ij")
     Yf, Zf = Y.ravel(), Z.ravel()
     for ix, x in enumerate(axes[0]):
-        d = np.sqrt((x - C[:, 0, None]) ** 2 + (Yf - C[:, 1, None]) ** 2
-                    + (Zf - C[:, 2, None]) ** 2) - R[:, None]
+        d = dist(x, Yf, Zf)
         f = smin(d, k0)
         order = np.argsort(d, axis=0)[:2]
         cols = np.arange(d.shape[1])
@@ -104,11 +120,17 @@ def seam_union(spheres, spec, voxel, level=0.0):
             # seam cannot fold back on itself.
             N = np.stack([1.2 * np.tanh(smooth_noise(P, spec["feature_mm"], waves=24,
                                                      seed=100 + i) / 1.2)
-                          for i in range(len(R))])
+                          for i in ids])
             db = d[:, band] + spec["wander_mm"] * wb * N
             kb = k0 * (1 + spec["width_var"] * wb
                        * np.tanh(smooth_noise(P, spec["feature_mm"] * 0.8, seed=23)))
             f[band] = smin(db, kb)
+            if spec.get("pinch_mm"):
+                # Crisp line at the very bottom of the groove: a narrow
+                # inward pinch where the two nearest blobs are nearly level.
+                top2 = np.sort(db, axis=0)[:2]
+                f[band] += spec["pinch_mm"] * np.exp(
+                    -((top2[1] - top2[0]) / spec["pinch_w_mm"]) ** 2)
         field[ix] = f.reshape(Y.shape)
     verts, faces, _, _ = marching_cubes(field, level, spacing=(voxel,) * 3)
     ms = ml.MeshSet()
