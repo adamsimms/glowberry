@@ -1,6 +1,6 @@
 # Montreal fab labs for small test prints
 
-Shortlist of Montreal-area fab labs for the desk test prints of small glowberries ([#61](https://github.com/adamsimms/glowberry/issues/61)): the slicer-ready set in `models/print/ready/` described in [`SCANNING.md`](SCANNING.md). Not for the 6 ft shell, which stays with Artefact ([`BRIEF.md`](BRIEF.md)). Picking and trying a lab is tracked in [#68](https://github.com/adamsimms/glowberry/issues/68).
+Shortlist of Montreal-area fab labs for the desk test prints of small glowberries ([#61](https://github.com/adamsimms/glowberry/issues/61)): the labelled v17 test set in `models/print/ready_v17/` described in [`SCANNING.md`](SCANNING.md). Not for the 6 ft shell, which stays with Artefact ([`BRIEF.md`](BRIEF.md)). Picking and trying a lab is tracked in [#68](https://github.com/adamsimms/glowberry/issues/68).
 
 Checked 2026-10-24 against each lab's own site where one exists, plus the [Fab Labs Québec wiki](https://wiki.fablabs.quebec/) for machine lists. Many fablabs.io entries are years out of date. Prices, hours, and machines change, so confirm by email before going.
 
@@ -11,8 +11,8 @@ Checked 2026-10-24 against each lab's own site where one exists, plus the [Fab L
 - **Resin printer** for the 100 mm hollow `skin_35` berry and the 25 mm true-size berry. The skin texture is about ±0.025 mm, near the resin limit; FDM cannot show it.
 - **FDM printer** for the 2 in plain berry and the 100 mm `skin_fdm_min` berry.
 - **Orange or amber material** ([`MATERIALS.md`](MATERIALS.md)). Lab stock is mostly grey, white, or black resin and plain PLA, so ask whether you can bring a translucent orange resin or amber filament. Formlabs printers have an open-material mode and Elegoo printers take third-party resin, but each lab sets its own rule.
-- **Build volume** of about 110 mm on each side for the 100 mm berry. Every resin printer below fits.
-- **Resin per print:** about 54 mL for a hollow 100 mm berry, plus supports.
+- **Build volume** for the 100 mm berry: 109 x 114 x 100 mm. Tilted for supports along the plate's long side, the 109 mm side has to fit the plate's short side (123 to 125 mm on the Form 4 and Saturn 3 Ultra).
+- **Resin per print:** about 79 mL for a hollow 100 mm berry (1.5 to 3 mm wall), plus supports.
 
 ---
 
@@ -22,7 +22,7 @@ Checked 2026-10-24 against each lab's own site where one exists, plus the [Fab L
 
 - **Machines:** three Formlabs Form 4 and one Elegoo Saturn 3 Ultra (10 µm minimum layer), with Form Wash, Form Cure, and an ultrasonic cleaner ([PolyFab SLA page](https://polyfab.polymtl.ca/technologies-offertes/impression-3d-sla/)). The wiki also lists a Form 3 and Form 3B. FDM: Bambu Lab X1-Carbon, Bambu Lab H2D, Ultimaker S5 and 3.
 - **Access:** open to external members ([tarifs](https://polyfab.polymtl.ca/commencer-ici/)): $15 for one week, $25 for 15 days, $50 per month. Requires photo ID, the health and safety training, and a booking in Polysafe. No working alone. Open weekdays, closed weekends.
-- **Cost:** machine time is free; resin is billed per mL, failed prints included. Standard grey, white, black $0.35; clear, tough, durable $0.40; Elegoo grey water-washable $0.09. A hollow 100 mm berry in clear is roughly $22 before supports.
+- **Cost:** machine time is free; resin is billed per mL, failed prints included. Standard grey, white, black $0.35; clear, tough, durable $0.40; Elegoo grey water-washable $0.09. A hollow 100 mm berry in clear is roughly $32 before supports.
 - **Why first:** the Form 4 and Saturn 3 Ultra are the best chance of resolving the skin. A one-week pass covers a print, review, and reprint cycle, and the FDM files can run the same week.
 - **Ask:** whether open-material mode or own resin is allowed (grey is out for these tests).
 - **Where:** Pavillons Lassonde, Université-de-Montréal metro. polyfab@polymtl.ca, 514-340-4711 ext. 2233.
