@@ -9,7 +9,7 @@ Modes:
 - hero: transparent background with a soft shadow, for layouts
 - studio: seamless grey backdrop
 - night: dark scene, berry lit from inside
-- day: the night framing in daylight, on a seamless pale blue backdrop
+- day: the night framing in daylight, on a seamless sky blue backdrop
 - turntable: studio look, one full turn as numbered PNG frames
 
     Blender -b --factory-startup -P tools/blender/render_v17.py -- MODE OUT [SIZE] [SAMPLES]
@@ -146,8 +146,9 @@ if MODE == "night":
 bsdf.inputs["Subsurface Weight"].default_value = float(os.environ.get("GB_SSS", 0.6 if MODE == "night" else 0.25))
 bsdf.inputs["Subsurface Radius"].default_value = (1.0, 0.75, 0.35) if MODE == "night" else (1.0, 0.5, 0.18)
 bsdf.inputs["Subsurface Scale"].default_value = float(os.environ.get("GB_SSS_SCALE", 0.01 if MODE == "night" else 0.015))
-bsdf.inputs["Coat Weight"].default_value = float(os.environ.get("GB_COAT", 0.1 if MODE == "night" else 0.35))
-bsdf.inputs["Coat Roughness"].default_value = 0.12
+# Day highlights are broader and gentler: less coat, and a rougher one.
+bsdf.inputs["Coat Weight"].default_value = float(os.environ.get("GB_COAT", {"night": 0.1, "day": 0.25}.get(MODE, 0.35)))
+bsdf.inputs["Coat Roughness"].default_value = 0.22 if MODE == "day" else 0.12
 if NATURAL:
     # Faint juice-sac cells under the skin: a soft cell pattern about 3 cm
     # across at full size, as a slight bump and a slight darkening.
@@ -195,7 +196,7 @@ if NATURAL:
     gao.inputs["Distance"].default_value = 0.12
     rough = nt.nodes.new("ShaderNodeMapRange")
     rough.inputs["To Min"].default_value = 0.65
-    rough.inputs["To Max"].default_value = 0.28
+    rough.inputs["To Max"].default_value = 0.33 if MODE == "day" else 0.28
     nt.links.new(gao.outputs["AO"], rough.inputs["Value"])
     nt.links.new(rough.outputs["Result"], bsdf.inputs["Roughness"])
 me.materials.append(mat)
@@ -347,15 +348,17 @@ elif MODE == "night":
     sc.collection.objects.link(glow)
     area("moon", (2.5, 4.0, 4.0), (0, 0, 1.0), 3.0, float(os.environ.get("GB_MOON", 900)), (0.65, 0.75, 1.0))
 elif MODE == "day":
-    # The night composition in daylight: a pale sky blue backdrop, palest
-    # at the bottom of the frame and a little bluer toward the top, under a
-    # soft sky and a hazy sun.
-    sky = (0.75, 0.84, 1.0)
+    # The night composition in daylight: a soft sky blue backdrop, deeper
+    # toward the top of the frame and hazier toward the floor, under a sky
+    # and a hazy sun.
+    sky = (0.55, 0.72, 1.0)
     bg.inputs["Color"].default_value = (*sky, 1)
     bg.inputs["Strength"].default_value = float(os.environ.get("GB_SKY", 1.5))
     back = float(os.environ.get("GB_BACK", 3.2))
-    alb = np.array((0.6, 0.66, 0.74))
-    cb = glow_backdrop(tuple(alb), (0.86, 0.93, 1.0), (0.62, 0.74, 0.9), 1.0, screen=True)
+    # The backdrop's own colour is a clear blue, so sunlight on it and its
+    # shadow read as sky; the glow adds haze, whiter toward the floor.
+    alb = np.array((0.3, 0.45, 0.7))
+    cb = glow_backdrop(tuple(alb), (0.89, 0.9, 0.73), (0.39, 0.475, 0.42), 1.0, screen=True)
     cb.inputs["Roughness"].default_value = 1.0
     cb.inputs["Specular IOR Level"].default_value = 0.0
     cn = cb.id_data
@@ -368,7 +371,7 @@ elif MODE == "day":
     sun_e = float(os.environ.get("GB_SUN", 16.0))
     sun = bpy.data.objects.new("sun", bpy.data.lights.new("sun", "SUN"))
     sun.data.energy = sun_e
-    sun.data.angle = math.radians(20)
+    sun.data.angle = math.radians(30)
     sun.data.color = (1.0, 0.97, 0.92)
     sun.rotation_euler = (-to_sun).to_track_quat("-Z", "Y").to_euler()
     sc.collection.objects.link(sun)
@@ -412,7 +415,7 @@ elif MODE == "day":
     cn.links.new(seen.outputs["Result"], cb.inputs["Emission Strength"])
 
     # Soft fill on the berry only, so it does not mark the backdrop.
-    fill = area("fill", (3.5, -2.5, 1.8), (0, 0, 0.9), 4.0, float(os.environ.get("GB_FILL", 1200)), (0.9, 0.95, 1.0), shadow=False)
+    fill = area("fill", (3.5, -2.5, 1.8), (0, 0, 0.9), 5.0, float(os.environ.get("GB_FILL", 1700)), (0.9, 0.95, 1.0), shadow=False)
     only = bpy.data.collections.new("berry_only")
     only.objects.link(berry)
     fill.light_linking.receiver_collection = only
