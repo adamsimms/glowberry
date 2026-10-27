@@ -39,7 +39,7 @@ HEIGHT_M = 1.83
 PEAKS = f"{ROOT}/models/print/v17_drupelet_peaks.json"
 # Less toy-like: colour varies per drupelet, slightly less saturated, faint
 # cell texture under the surface, gloss on the domes and matte in the folds.
-NATURAL = os.environ.get("GB_NATURAL", "1" if MODE == "night" else "0") == "1"
+NATURAL = os.environ.get("GB_NATURAL", "1") == "1"
 BASE, TIP = (247, 149, 35), (237, 84, 31)
 WALL_M = 0.02
 
@@ -164,26 +164,30 @@ if NATURAL:
     shade.inputs["To Min"].default_value = 1.0
     shade.inputs["To Max"].default_value = 1.0 - float(os.environ.get("GB_CELL_SHADE", 0.08))
     nt.links.new(vor.outputs["Distance"], shade.inputs["Value"])
-    # Narrow crease mask from the mesh's own concavity, for the line right
-    # at the bottom of each seam that ambient occlusion is too wide to reach.
-    geo = nt.nodes.new("ShaderNodeNewGeometry")
-    crease = nt.nodes.new("ShaderNodeMapRange")
-    crease.inputs["From Min"].default_value = float(os.environ.get("GB_CREASE_LO", 0.44))
-    crease.inputs["From Max"].default_value = 0.5
-    crease.inputs["To Min"].default_value = float(os.environ.get("GB_CREASE", 0.2))
-    crease.inputs["To Max"].default_value = 1.0
-    nt.links.new(geo.outputs["Pointiness"], crease.inputs["Value"])
-    both = nt.nodes.new("ShaderNodeMath")
-    both.operation = "MULTIPLY"
-    nt.links.new(shade.outputs["Result"], both.inputs[0])
-    nt.links.new(crease.outputs["Result"], both.inputs[1])
+    darken = shade.outputs["Result"]
+    # Optional narrow crease mask from the mesh's own concavity (Cycles only).
+    # Off by default: the seams read better as soft red lines than dark ones.
+    crease_to = float(os.environ.get("GB_CREASE", 1.0))
+    if crease_to < 1.0:
+        geo = nt.nodes.new("ShaderNodeNewGeometry")
+        crease = nt.nodes.new("ShaderNodeMapRange")
+        crease.inputs["From Min"].default_value = float(os.environ.get("GB_CREASE_LO", 0.44))
+        crease.inputs["From Max"].default_value = 0.5
+        crease.inputs["To Min"].default_value = crease_to
+        crease.inputs["To Max"].default_value = 1.0
+        nt.links.new(geo.outputs["Pointiness"], crease.inputs["Value"])
+        both = nt.nodes.new("ShaderNodeMath")
+        both.operation = "MULTIPLY"
+        nt.links.new(shade.outputs["Result"], both.inputs[0])
+        nt.links.new(crease.outputs["Result"], both.inputs[1])
+        darken = both.outputs["Value"]
     mul = nt.nodes.new("ShaderNodeMix")
     mul.data_type = "RGBA"
     mul.blend_type = "MULTIPLY"
     mul.inputs["Factor"].default_value = 1.0
     base_in = bsdf.inputs["Base Color"].links[0].from_socket
     nt.links.new(base_in, mul.inputs["A"])
-    nt.links.new(both.outputs["Value"], mul.inputs["B"])
+    nt.links.new(darken, mul.inputs["B"])
     nt.links.new(mul.outputs["Result"], bsdf.inputs["Base Color"])
     # Gloss on the domes, matte in the folds.
     gao = nt.nodes.new("ShaderNodeAmbientOcclusion")
