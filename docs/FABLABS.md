@@ -73,6 +73,16 @@ Full-colour PolyJet in Canada (checked 2026-10-26, all in the Toronto area, ship
 | Javelin (Javelin-Cimetrix), Oakville ON | PolyJet, multiple colours in one part | Yes (Form 4, Stratasys FDM) | [services](https://www.javelin-tech.com/3d/toronto-3d-printing-services/) |
 | 3DMan, Concord ON | Full colour, multi-material, 14 µm | Not stated | [PolyJet](https://3dman.ca/polyjet-3d-printing-services-in-canada/) |
 
+Wider search (2026-10-27, each service's own site):
+
+| Service | What matters here | Links |
+|---|---|---|
+| Objex Unlimited, Mississauga ON | Mimaki 3DUJ-553 (says it is the only one running in Canada): over 10 million colours, clear ink for translucent effects, "Color-in-Clear" mode at 19 µm, water-soluble support, 508 x 508 x 305 mm, takes 3MF and WRL. Also SLA, FDM, MJP. Best fit for prints 6 and 8 | [3DUJ-553](https://objexunlimited.com/3d-equipment/3d-printers/3d-printing-companies/mimaki/mimaki-3duj-553/), sales@objexunlimited.com, 416-233-7165 |
+| 3DMan, Concord ON | Stratasys J750 full-colour PolyJet (Pantone), 35+ SLA materials, SLS, large-scale printing for art installations | [services](https://3dman.ca/3d-printing-services-and-rapid-prototyping/), info@3dman.ca, 416-400-4335 |
+| Agile Manufacturing, Beaverton ON | About 50 machines: SLA (incl. clear), SLS, FDM, PolyJet/MJP (colour not stated), Carbon DLS, cast urethane; bilingual EN/FR; instant quote | [services](https://agile-manufacturing.com/3d-printing-services-toronto/), agile@agile-manufacturing.com, 905-852-0794 |
+
+Method notes: colour inside clear resin (Mimaki Color-in-Clear, or PolyJet VeroVivid with VeroClear) is the closest a printer gets to a lit cloudberry. Tinted translucent urethane cast from a clear SLA master gives colour through the whole part and suits small editions later (mould cost up front). Translucent amber FDM (ABSi at Proto3000) is closest to the planned translucent PETG shell.
+
 Proto3000 is the first pick for a single order of all eight: it documents a full-colour gradient workflow from VRML (send the `.wrl.zip` copies of prints 6 to 8) and runs resin and FDM in-house.
 
 Other full colour outside Montreal: [Xometry](https://www.xometry.com/capabilities/3d-printing-service/polyjet-3d/) prints full-colour PolyJet from 3MF (Canadian shipping not confirmed); [Custom Prototypes](https://customprototypes.ca/services/polyjet-3d-printing/), Toronto, has a Mimaki with a 76 mm build height, so it fits prints 7 and 8 but not the 100 mm berry.
