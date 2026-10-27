@@ -16,12 +16,14 @@ Modes:
 OUT is a PNG path, or a folder for the turntable.
 """
 
+import json
 import math
 import os
 import sys
 
 import bpy
 import mathutils
+import numpy as np
 
 argv = sys.argv[sys.argv.index("--") + 1:]
 MODE, OUT = argv[0], argv[1]
@@ -34,6 +36,10 @@ MESH = f"{ROOT}/models/print/berry_ref_a_studio_v17_subtle_100mm.stl"
 # 3 mm at grooves, at 100 mm) makes the seams read darker, as printed.
 HOLLOW = f"{ROOT}/models/print/ready_v17/2_cloudberry_resin_100mm_hollow_smooth.stl"
 HEIGHT_M = 1.83
+PEAKS = f"{ROOT}/models/print/v17_drupelet_peaks.json"
+# Less toy-like: colour varies per drupelet, slightly less saturated, faint
+# cell texture under the surface, gloss on the domes and matte in the folds.
+NATURAL = os.environ.get("GB_NATURAL", "1" if MODE == "night" else "0") == "1"
 BASE, TIP = (247, 149, 35), (237, 84, 31)
 WALL_M = 0.02
 
@@ -50,22 +56,46 @@ bpy.ops.wm.stl_import(filepath=HOLLOW if MODE == "night" else MESH)
 berry = bpy.context.selected_objects[0]
 berry.name = "berry"
 s = HEIGHT_M / berry.dimensions.z
+mm_to_m = s
 berry.scale = (s, s, s)
 bpy.ops.object.transform_apply(scale=True)
 bb = [berry.matrix_world @ mathutils.Vector(c) for c in berry.bound_box]
 lo = mathutils.Vector([min(v[i] for v in bb) for i in range(3)])
 hi = mathutils.Vector([max(v[i] for v in bb) for i in range(3)])
-berry.location -= mathutils.Vector(((lo.x + hi.x) / 2, (lo.y + hi.y) / 2, lo.z))
+offset = mathutils.Vector(((lo.x + hi.x) / 2, (lo.y + hi.y) / 2, lo.z))
+berry.location -= offset
 bpy.ops.object.transform_apply(location=True)
 bpy.ops.object.shade_smooth()
 
 # Gradient as a colour attribute, eased like the print files but unbanded.
 me = berry.data
 attr = me.color_attributes.new("grad", "FLOAT_COLOR", "POINT")
-for i, v in enumerate(me.vertices):
-    t = min(max(v.co.z / HEIGHT_M, 0.0), 1.0)
-    t = t * t * (3 - 2 * t)
-    attr.data[i].color = [lin(BASE[k] * (1 - t) + TIP[k] * t) for k in range(3)] + [1.0]
+co = np.empty(len(me.vertices) * 3)
+me.vertices.foreach_get("co", co)
+co = co.reshape(-1, 3)
+t = np.clip(co[:, 2] / HEIGHT_M, 0, 1)
+t = t * t * (3 - 2 * t)
+srgb = (1 - t)[:, None] * np.array(BASE, float) + t[:, None] * np.array(TIP, float)
+if NATURAL:
+    # Each drupelet a little lighter or darker and a little more amber or
+    # more red; the seams between them fall in the grooves.
+    peaks = np.array(json.load(open(PEAKS))["peaks_mm"]) * mm_to_m - np.array(offset)
+    # Soft weights by distance to each peak, so a drupelet assigned to the
+    # wrong peak fades instead of showing a hard edge.
+    d2 = ((co[:, None, :] - peaks[None]) ** 2).sum(axis=2)
+    sig = float(os.environ.get("GB_VAR_SOFT", 0.12))
+    w = np.exp(-(d2 - d2.min(axis=1, keepdims=True)) / sig ** 2)
+    w /= w.sum(axis=1, keepdims=True)
+    rng = np.random.default_rng(int(os.environ.get("GB_SEED", 7)))
+    value = 1 + float(os.environ.get("GB_VAR_VALUE", 0.14)) * (rng.random(len(peaks)) - 0.5)
+    hue = float(os.environ.get("GB_VAR_HUE", 0.5)) * (rng.random(len(peaks)) - 0.5)
+    srgb = srgb * (w @ value)[:, None] + (w @ hue)[:, None] * (np.array(TIP, float) - np.array(BASE, float))
+    # A touch less saturated than the print colours, closer to real fruit.
+    lum = srgb @ np.array([0.2126, 0.7152, 0.0722])
+    srgb = srgb + float(os.environ.get("GB_DESAT", 0.12)) * (lum[:, None] - srgb)
+c = np.clip(srgb, 0, 255) / 255
+c = np.where(c <= 0.04045, c / 12.92, ((c + 0.055) / 1.055) ** 2.4)
+attr.data.foreach_set("color", np.hstack([c, np.ones((len(c), 1))]).astype(np.float32).ravel())
 
 if MODE != "night":
     solid = berry.modifiers.new("shell", "SOLIDIFY")
@@ -117,6 +147,52 @@ bsdf.inputs["Subsurface Radius"].default_value = (1.0, 0.75, 0.35) if MODE == "n
 bsdf.inputs["Subsurface Scale"].default_value = float(os.environ.get("GB_SSS_SCALE", 0.01 if MODE == "night" else 0.015))
 bsdf.inputs["Coat Weight"].default_value = float(os.environ.get("GB_COAT", 0.1 if MODE == "night" else 0.35))
 bsdf.inputs["Coat Roughness"].default_value = 0.12
+if NATURAL:
+    # Faint juice-sac cells under the skin: a soft cell pattern about 3 cm
+    # across at full size, as a slight bump and a slight darkening.
+    tc = nt.nodes.new("ShaderNodeTexCoord")
+    vor = nt.nodes.new("ShaderNodeTexVoronoi")
+    vor.feature = "SMOOTH_F1"
+    vor.inputs["Scale"].default_value = float(os.environ.get("GB_CELL", 30.0))
+    nt.links.new(tc.outputs["Object"], vor.inputs["Vector"])
+    bump = nt.nodes.new("ShaderNodeBump")
+    bump.inputs["Strength"].default_value = float(os.environ.get("GB_CELL_BUMP", 0.12))
+    bump.inputs["Distance"].default_value = 0.004
+    nt.links.new(vor.outputs["Distance"], bump.inputs["Height"])
+    nt.links.new(bump.outputs["Normal"], bsdf.inputs["Normal"])
+    shade = nt.nodes.new("ShaderNodeMapRange")
+    shade.inputs["To Min"].default_value = 1.0
+    shade.inputs["To Max"].default_value = 1.0 - float(os.environ.get("GB_CELL_SHADE", 0.08))
+    nt.links.new(vor.outputs["Distance"], shade.inputs["Value"])
+    # Narrow crease mask from the mesh's own concavity, for the line right
+    # at the bottom of each seam that ambient occlusion is too wide to reach.
+    geo = nt.nodes.new("ShaderNodeNewGeometry")
+    crease = nt.nodes.new("ShaderNodeMapRange")
+    crease.inputs["From Min"].default_value = float(os.environ.get("GB_CREASE_LO", 0.44))
+    crease.inputs["From Max"].default_value = 0.5
+    crease.inputs["To Min"].default_value = float(os.environ.get("GB_CREASE", 0.2))
+    crease.inputs["To Max"].default_value = 1.0
+    nt.links.new(geo.outputs["Pointiness"], crease.inputs["Value"])
+    both = nt.nodes.new("ShaderNodeMath")
+    both.operation = "MULTIPLY"
+    nt.links.new(shade.outputs["Result"], both.inputs[0])
+    nt.links.new(crease.outputs["Result"], both.inputs[1])
+    mul = nt.nodes.new("ShaderNodeMix")
+    mul.data_type = "RGBA"
+    mul.blend_type = "MULTIPLY"
+    mul.inputs["Factor"].default_value = 1.0
+    base_in = bsdf.inputs["Base Color"].links[0].from_socket
+    nt.links.new(base_in, mul.inputs["A"])
+    nt.links.new(both.outputs["Value"], mul.inputs["B"])
+    nt.links.new(mul.outputs["Result"], bsdf.inputs["Base Color"])
+    # Gloss on the domes, matte in the folds.
+    gao = nt.nodes.new("ShaderNodeAmbientOcclusion")
+    gao.inputs["Distance"].default_value = 0.12
+    rough = nt.nodes.new("ShaderNodeMapRange")
+    rough.inputs["To Min"].default_value = 0.65
+    rough.inputs["To Max"].default_value = 0.28
+    nt.links.new(gao.outputs["AO"], rough.inputs["Value"])
+    nt.links.new(rough.outputs["Result"], bsdf.inputs["Roughness"])
 me.materials.append(mat)
 
 
@@ -228,27 +304,29 @@ if MODE in ("hero", "studio", "turntable"):
         berry.rotation_euler = (0, 0, 2 * math.pi)
         berry.keyframe_insert("rotation_euler", index=2, frame=97)
 elif MODE == "night":
-    # Dusk just after sunset: physical sky with the sun a few degrees below
-    # the horizon, behind and to the left of the berry.
-    wn = sc.world.node_tree
-    sky = wn.nodes.new("ShaderNodeTexSky")
-    sky.sky_type = "MULTIPLE_SCATTERING"
-    sky.sun_disc = False
-    sky.sun_elevation = math.radians(float(os.environ.get("GB_SUN_EL", -4.0)))
-    sky.sun_rotation = math.radians(150)
-    wn.links.new(sky.outputs["Color"], bg.inputs["Color"])
-    bg.inputs["Strength"].default_value = float(os.environ.get("GB_SKY", 5.0))
-    f = floor(400.0)
-    gm = material("ground", (0.05, 0.055, 0.04), 0.8)
-    gnt = gm.node_tree
-    noise = gnt.nodes.new("ShaderNodeTexNoise")
-    noise.inputs["Scale"].default_value = 3.0
-    bump = gnt.nodes.new("ShaderNodeBump")
-    bump.inputs["Strength"].default_value = 0.3
-    gnt.links.new(noise.outputs["Fac"], bump.inputs["Height"])
-    gb = next(n for n in gnt.nodes if n.type == "BSDF_PRINCIPLED")
-    gnt.links.new(bump.outputs["Normal"], gb.inputs["Normal"])
-    f.data.materials.append(gm)
+    # Seamless dark navy backdrop: the floor curves up into the wall, so the
+    # dark blue continues behind the berry with no horizon.
+    bg.inputs["Color"].default_value = (0.006, 0.009, 0.02, 1)
+    bg.inputs["Strength"].default_value = 1.0
+    cyc = cyclorama((0.02, 0.025, 0.04))
+    # The backdrop glows faintly on its own, navy fading darker upward, so
+    # the gradient is smooth; it still catches the berry's light on the floor.
+    cm = cyc.data.materials[0]
+    cn = cm.node_tree
+    cb = next(n for n in cn.nodes if n.type == "BSDF_PRINCIPLED")
+    ctc = cn.nodes.new("ShaderNodeTexCoord")
+    sep = cn.nodes.new("ShaderNodeSeparateXYZ")
+    cn.links.new(ctc.outputs["Object"], sep.inputs["Vector"])
+    zr = cn.nodes.new("ShaderNodeMapRange")
+    zr.inputs["From Max"].default_value = 7.0
+    cn.links.new(sep.outputs["Z"], zr.inputs["Value"])
+    grad = cn.nodes.new("ShaderNodeMix")
+    grad.data_type = "RGBA"
+    grad.inputs["A"].default_value = (0.03, 0.06, 0.17, 1)
+    grad.inputs["B"].default_value = (0.008, 0.014, 0.045, 1)
+    cn.links.new(zr.outputs["Result"], grad.inputs["Factor"])
+    cn.links.new(grad.outputs["Result"], cb.inputs["Emission Color"])
+    cb.inputs["Emission Strength"].default_value = float(os.environ.get("GB_BACK", 1.0))
     glow = bpy.data.objects.new("glow", bpy.data.lights.new("glow", "POINT"))
     glow.data.energy = 450
     glow.data.shadow_soft_size = 0.3
@@ -267,4 +345,10 @@ if MODE == "turntable":
     bpy.ops.render.render(animation=True)
 else:
     sc.render.filepath = OUT
+    if os.environ.get("GB_BORDER"):
+        # Test a region only: "xmin,xmax,ymin,ymax" as fractions.
+        x0, x1, y0, y1 = (float(v) for v in os.environ["GB_BORDER"].split(","))
+        sc.render.use_border, sc.render.use_crop_to_border = True, True
+        sc.render.border_min_x, sc.render.border_max_x = x0, x1
+        sc.render.border_min_y, sc.render.border_max_y = y0, y1
     bpy.ops.render.render(write_still=True)
