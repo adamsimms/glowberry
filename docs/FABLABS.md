@@ -61,7 +61,7 @@ Checked 2026-10-26 against each service's own site. For the v17 set (prints 1 to
 | Service | Resin | FDM | Full colour | Notes |
 |---|---|---|---|---|
 | [Fablab Inc.](https://fablabinc.com/en/professional-3d-printing-service/), 160 rue Saint-Viateur Est | SLA (14.5 x 17.5 x 14.5 cm) | Yes | PolyJet listed, "contact us"; colour not stated | Online upload and instant price, ships. info@fablabinc.com, 514-779-1309 |
-| [MatterThings](https://www.matterthings.com/), Pincourt | SLA | Yes | PolyJet listed; colour not stated | Quote by email. 3d@matterthings.com, 514-312-6060 |
+| [MatterThings](https://www.matterthings.com/), Pincourt | SLA: Formlabs Form 1+ (120 x 120 mm), Elegoo Saturn (192 x 120 mm) | About 30 desktop printers: PLA, PETG, ABS, ASA, TPU | No: Stratasys Objet30, single Vero material. SLS is a Sintratec Kit, grey PA12, 100 mm cube ([fleet](https://www.matterthings.com/fleet)) | Quote by email, pickup in Pincourt. 3d@matterthings.com, 514-312-6060. Suits prints 1, 3, 5 only; print 1 fits the SLA beds with about 6 mm to spare |
 | [Axis Prototypes](https://www.axisproto.com/), 6956 rue Jarry Est | SLA | Yes | No PolyJet | Send, quote, build, deliver |
 | [3DCentral](https://3dcentral.ca/3d-printing-service/), Laval | No | PLA, PETG | Up to four filament colours, not a gradient | Upload STL, 3MF, OBJ up to 60 MB |
 
