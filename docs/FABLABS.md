@@ -87,7 +87,7 @@ Objex Unlimited replied on 2026-10-27. The Mimaki's jetted support cannot be rem
 - MultiJet ProJet 2500 M2-Crystal (frosted, semi-translucent, takes dye, support melted out with steam), frosted and undyed: $750 at 100 mm, $25 each at 25 mm.
 - Clear SLA: their clear resins are not large enough for the 100 mm part, and clear SLA needs sanding at the support posts.
 
-The artist is now asking Objex for 50 mm quotes in all three (Mimaki, M2-Crystal, clear SLA), using prints 9 and 10 in `docs/SCANNING.md`: solid, 50 mm tall, with a 12 mm wide, 25 mm deep light pocket in the stem end.
+The artist is now asking Objex for 50 mm quotes in all three (Mimaki, M2-Crystal, clear SLA), using prints 9 and 10 in `docs/SCANNING.md`: solid, 50 mm tall, with a 12 mm wide, 25 mm deep light pocket in the stem end. Tests stay amber or orange, never clear: M2-Crystal dyed amber, SLA in a translucent amber or orange resin, clear resin dyed amber, or an opaque amber or orange.
 
 Method notes: colour inside clear resin (Mimaki Color-in-Clear, or PolyJet VeroVivid with VeroClear) is the closest a printer gets to a lit cloudberry. Tinted translucent urethane cast from a clear SLA master gives colour through the whole part and suits small editions later (mould cost up front). Translucent amber FDM (ABSi at Proto3000) is closest to the planned translucent PETG shell.
 
