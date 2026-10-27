@@ -9,6 +9,7 @@ Modes:
 - hero: transparent background with a soft shadow, for layouts
 - studio: seamless grey backdrop
 - night: dark scene, berry lit from inside
+- day: the night framing in daylight, on a seamless pale blue backdrop
 - turntable: studio look, one full turn as numbered PNG frames
 
     Blender -b --factory-startup -P tools/blender/render_v17.py -- MODE OUT [SIZE] [SAMPLES]
@@ -244,6 +245,29 @@ def cyclorama(rgb, back=4.0, radius=3.0, half_w=14.0):
     return cyc
 
 
+def glow_backdrop(rgb, low, high, strength, screen=False):
+    """Cyclorama that glows on its own, `low` on the floor fading to `high`
+    up the wall (or, with `screen`, from the bottom of the frame to the top,
+    so it stays level across the frame), so the gradient is smooth; it still
+    catches the berry's light and shadow. Returns the backdrop's BSDF node."""
+    cn = cyclorama(rgb).data.materials[0].node_tree
+    cb = next(n for n in cn.nodes if n.type == "BSDF_PRINCIPLED")
+    ctc = cn.nodes.new("ShaderNodeTexCoord")
+    sep = cn.nodes.new("ShaderNodeSeparateXYZ")
+    cn.links.new(ctc.outputs["Window" if screen else "Object"], sep.inputs["Vector"])
+    zr = cn.nodes.new("ShaderNodeMapRange")
+    zr.inputs["From Max"].default_value = 1.0 if screen else 7.0
+    cn.links.new(sep.outputs["Y" if screen else "Z"], zr.inputs["Value"])
+    grad = cn.nodes.new("ShaderNodeMix")
+    grad.data_type = "RGBA"
+    grad.inputs["A"].default_value = (*low, 1)
+    grad.inputs["B"].default_value = (*high, 1)
+    cn.links.new(zr.outputs["Result"], grad.inputs["Factor"])
+    cn.links.new(grad.outputs["Result"], cb.inputs["Emission Color"])
+    cb.inputs["Emission Strength"].default_value = strength
+    return cb
+
+
 cam = bpy.data.objects.new("cam", bpy.data.cameras.new("cam"))
 sc.collection.objects.link(cam)
 sc.camera = cam
@@ -312,25 +336,9 @@ elif MODE == "night":
     # dark blue continues behind the berry with no horizon.
     bg.inputs["Color"].default_value = (0.006, 0.009, 0.02, 1)
     bg.inputs["Strength"].default_value = 1.0
-    cyc = cyclorama((0.02, 0.025, 0.04))
-    # The backdrop glows faintly on its own, navy fading darker upward, so
-    # the gradient is smooth; it still catches the berry's light on the floor.
-    cm = cyc.data.materials[0]
-    cn = cm.node_tree
-    cb = next(n for n in cn.nodes if n.type == "BSDF_PRINCIPLED")
-    ctc = cn.nodes.new("ShaderNodeTexCoord")
-    sep = cn.nodes.new("ShaderNodeSeparateXYZ")
-    cn.links.new(ctc.outputs["Object"], sep.inputs["Vector"])
-    zr = cn.nodes.new("ShaderNodeMapRange")
-    zr.inputs["From Max"].default_value = 7.0
-    cn.links.new(sep.outputs["Z"], zr.inputs["Value"])
-    grad = cn.nodes.new("ShaderNodeMix")
-    grad.data_type = "RGBA"
-    grad.inputs["A"].default_value = (0.03, 0.06, 0.17, 1)
-    grad.inputs["B"].default_value = (0.008, 0.014, 0.045, 1)
-    cn.links.new(zr.outputs["Result"], grad.inputs["Factor"])
-    cn.links.new(grad.outputs["Result"], cb.inputs["Emission Color"])
-    cb.inputs["Emission Strength"].default_value = float(os.environ.get("GB_BACK", 1.0))
+    # Navy fading darker upward.
+    glow_backdrop((0.02, 0.025, 0.04), (0.03, 0.06, 0.17), (0.008, 0.014, 0.045),
+                  float(os.environ.get("GB_BACK", 1.0)))
     glow = bpy.data.objects.new("glow", bpy.data.lights.new("glow", "POINT"))
     glow.data.energy = 450
     glow.data.shadow_soft_size = 0.3
@@ -338,6 +346,77 @@ elif MODE == "night":
     glow.location = (0, 0, 0.85)
     sc.collection.objects.link(glow)
     area("moon", (2.5, 4.0, 4.0), (0, 0, 1.0), 3.0, float(os.environ.get("GB_MOON", 900)), (0.65, 0.75, 1.0))
+elif MODE == "day":
+    # The night composition in daylight: a pale sky blue backdrop, palest
+    # at the bottom of the frame and a little bluer toward the top, under a
+    # soft sky and a hazy sun.
+    sky = (0.75, 0.84, 1.0)
+    bg.inputs["Color"].default_value = (*sky, 1)
+    bg.inputs["Strength"].default_value = float(os.environ.get("GB_SKY", 1.5))
+    back = float(os.environ.get("GB_BACK", 3.2))
+    alb = np.array((0.6, 0.66, 0.74))
+    cb = glow_backdrop(tuple(alb), (0.86, 0.93, 1.0), (0.62, 0.74, 0.9), 1.0, screen=True)
+    cb.inputs["Roughness"].default_value = 1.0
+    cb.inputs["Specular IOR Level"].default_value = 0.0
+    cn = cb.id_data
+    grad = cb.inputs["Emission Color"].links[0].from_socket
+
+    # From the upper left and a little in front, so the shadow falls to the
+    # right of the berry where the camera sees it.
+    az, el = math.radians(-75), math.radians(50)
+    to_sun = mathutils.Vector((math.sin(az) * math.cos(el), -math.cos(az) * math.cos(el), math.sin(el)))
+    sun_e = float(os.environ.get("GB_SUN", 16.0))
+    sun = bpy.data.objects.new("sun", bpy.data.lights.new("sun", "SUN"))
+    sun.data.energy = sun_e
+    sun.data.angle = math.radians(20)
+    sun.data.color = (1.0, 0.97, 0.92)
+    sun.rotation_euler = (-to_sun).to_track_quat("-Z", "Y").to_euler()
+    sc.collection.objects.link(sun)
+
+    # The sun lights the floor more than the wall. The backdrop glows more
+    # where the sun reaches it less, so the sweep stays even and only the
+    # berry's shadow shows.
+    geo = cn.nodes.new("ShaderNodeNewGeometry")
+    dot = cn.nodes.new("ShaderNodeVectorMath")
+    dot.operation = "DOT_PRODUCT"
+    dot.inputs[1].default_value = to_sun
+    cn.links.new(geo.outputs["Normal"], dot.inputs[0])
+    lit = cn.nodes.new("ShaderNodeMath")
+    lit.operation = "MAXIMUM"
+    lit.inputs[1].default_value = 0.0
+    cn.links.new(dot.outputs["Value"], lit.inputs[0])
+    short = cn.nodes.new("ShaderNodeMath")
+    short.operation = "SUBTRACT"
+    short.inputs[0].default_value = to_sun.z
+    cn.links.new(lit.outputs[0], short.inputs[1])
+    comp = cn.nodes.new("ShaderNodeVectorMath")
+    comp.operation = "SCALE"
+    comp.inputs[0].default_value = tuple(alb * sun_e * np.array(sun.data.color) / math.pi)
+    cn.links.new(short.outputs[0], comp.inputs["Scale"])
+    level = cn.nodes.new("ShaderNodeVectorMath")
+    level.operation = "SCALE"
+    level.inputs["Scale"].default_value = back
+    cn.links.new(grad, level.inputs[0])
+    total = cn.nodes.new("ShaderNodeVectorMath")
+    total.operation = "ADD"
+    cn.links.new(level.outputs[0], total.inputs[0])
+    cn.links.new(comp.outputs[0], total.inputs[1])
+    cn.links.new(total.outputs[0], cb.inputs["Emission Color"])
+    # Seen by the camera at full strength; it lights the berry less, so the
+    # pale glow does not wash out the orange.
+    lp = cn.nodes.new("ShaderNodeLightPath")
+    seen = cn.nodes.new("ShaderNodeMapRange")
+    seen.inputs["To Min"].default_value = 0.3
+    seen.inputs["To Max"].default_value = 1.0
+    cn.links.new(lp.outputs["Is Camera Ray"], seen.inputs["Value"])
+    cn.links.new(seen.outputs["Result"], cb.inputs["Emission Strength"])
+
+    # Soft fill on the berry only, so it does not mark the backdrop.
+    fill = area("fill", (3.5, -2.5, 1.8), (0, 0, 0.9), 4.0, float(os.environ.get("GB_FILL", 1200)), (0.9, 0.95, 1.0), shadow=False)
+    only = bpy.data.collections.new("berry_only")
+    only.objects.link(berry)
+    fill.light_linking.receiver_collection = only
+if MODE in ("night", "day"):
     sc.render.resolution_x, sc.render.resolution_y = SIZE, int(SIZE * 2 / 3)
     sc.render.image_settings.color_mode = "RGB"
     # Low camera so the horizon and sky sit behind the upper berry.
