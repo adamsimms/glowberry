@@ -123,8 +123,33 @@ When publishing, expect roughly:
 | A (later) | 20–30" | 1.02×–1.52× | Gallery / study | Smaller prints possible |
 | B (later) | 50–60" | 2.54×–3.05× | Gallery | Later; not a split of the 6 ft piece |
 | C (alt.) | ~7–10 ft | 4.3×–6.1× | Larger landmark | Same family as 6 ft; not the current quote focus |
+| Editions (now) | 10 to 16 in (about 25 to 40 cm) | 0.51x to 0.81x | Small ownable objects, lit from inside | See **Small editions** below; method and material under test |
 
 **Current submission to Artefact:** quote the **~6 ft** piece only. Shop may hollow, rib, thicken walls; advise on translucent outdoor builds.
+
+### Small editions (decided 2026-10-27)
+
+The ~6 ft piece stays the primary vision. It depends on grants and funding and will take a long time. In the meantime the artist is making smaller, ownable objects (editions) of the berry, about 10 to 16 in tall (25 to 40 cm) and lit from inside, and is testing print methods and materials now to see what works best for them. Edition size, count and price are not set.
+
+The 100 mm v17 test prints out for quotes at Proto3000, MatterThings, Objex Unlimited and 3DMan ([`SCANNING.md`](SCANNING.md), [`FABLABS.md`](FABLABS.md)) are a cheap first comparison toward these editions. They are not a test of the 6 ft FDM shell, so PolyJet, SLA and SLS samples are expected to look different from the final sculpture.
+
+Size limits at edition scale:
+
+| Process | Build height | At 10 to 16 in |
+|---------|--------------|----------------|
+| Stratasys J750 PolyJet (full colour) | About 200 mm | No one-piece full-colour berry |
+| Mimaki 3DUJ-553 (Objex Unlimited) | 305 mm | 10 to 12 in fits; 16 in does not |
+| Large-format SLA and SLS | Depends on the machine | Usually reaches 14 to 16 in |
+
+The artist will compare methods on:
+
+- Look when lit from inside: translucency, evenness of the glow, darker seams between drupelets
+- Colour in the material rather than paint (amber #F79523 to red-orange #ED541F)
+- Surface detail and finish at that scale
+- Durability and handling for owned objects
+- Rough cost per piece for a small edition
+
+Next step: ask each service for a recommendation and a rough price for one piece at about 12 in.
 
 ---
 
@@ -189,4 +214,4 @@ Hard call currently on the board: The Rooms AIR ([#57](https://github.com/adamsi
 
 ---
 
-*Updated 2026-10-17. Working calendar points at the R&D board; production body from provenance scan; 6 ft shell one-piece only; alternate shops added to quotes.*
+*Updated 2026-10-27. Small lit editions (10 to 16 in) added beside the 6 ft vision; test prints now serve them. Earlier (2026-10-17): working calendar points at the R&D board; production body from provenance scan; 6 ft shell one-piece only; alternate shops added to quotes.*
