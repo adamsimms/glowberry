@@ -356,9 +356,9 @@ elif MODE == "day":
     bg.inputs["Strength"].default_value = float(os.environ.get("GB_SKY", 1.5))
     back = float(os.environ.get("GB_BACK", 3.2))
     # The backdrop's own colour is a clear blue, so sunlight on it and its
-    # shadow read as sky; the glow adds haze, whiter toward the floor.
-    alb = np.array((0.3, 0.45, 0.7))
-    cb = glow_backdrop(tuple(alb), (0.89, 0.9, 0.73), (0.39, 0.475, 0.42), 1.0, screen=True)
+    # shadow read as sky; the glow adds haze, lighter toward the floor.
+    alb = np.array((0.16, 0.33, 0.6))
+    cb = glow_backdrop(tuple(alb), (0.53, 0.6, 0.6), (0.15, 0.25, 0.22), 1.0, screen=True)
     cb.inputs["Roughness"].default_value = 1.0
     cb.inputs["Specular IOR Level"].default_value = 0.0
     cn = cb.id_data
@@ -415,7 +415,7 @@ elif MODE == "day":
     cn.links.new(seen.outputs["Result"], cb.inputs["Emission Strength"])
 
     # Soft fill on the berry only, so it does not mark the backdrop.
-    fill = area("fill", (3.5, -2.5, 1.8), (0, 0, 0.9), 5.0, float(os.environ.get("GB_FILL", 1700)), (0.9, 0.95, 1.0), shadow=False)
+    fill = area("fill", (3.5, -2.5, 1.8), (0, 0, 0.9), 5.0, float(os.environ.get("GB_FILL", 2000)), (0.9, 0.95, 1.0), shadow=False)
     only = bpy.data.collections.new("berry_only")
     only.objects.link(berry)
     fill.light_linking.receiver_collection = only
