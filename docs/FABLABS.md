@@ -81,6 +81,14 @@ Wider search (2026-10-27, each service's own site):
 | 3DMan, Concord ON | Stratasys J750 full-colour PolyJet (Pantone), 35+ SLA materials, SLS, large-scale printing for art installations | [services](https://3dman.ca/3d-printing-services-and-rapid-prototyping/), info@3dman.ca, 416-400-4335 |
 | Agile Manufacturing, Beaverton ON | About 50 machines: SLA (incl. clear), SLS, FDM, PolyJet/MJP (colour not stated), Carbon DLS, cast urethane; bilingual EN/FR; instant quote | [services](https://agile-manufacturing.com/3d-printing-services-toronto/), agile@agile-manufacturing.com, 905-852-0794 |
 
+Objex Unlimited replied on 2026-10-27. The Mimaki's jetted support cannot be removed from inside a hollow berry, so they advised making the berry solid and cutting out a place for the light. Quotes for the files as designed:
+
+- Mimaki full colour: about $1,100 each at 100 mm, $35 each at 25 mm. In translucent mode the colours are diluted, but the relative gradient holds. Hand sanded finish.
+- MultiJet ProJet 2500 M2-Crystal (frosted, semi-translucent, takes dye, support melted out with steam), frosted and undyed: $750 at 100 mm, $25 each at 25 mm.
+- Clear SLA: their clear resins are not large enough for the 100 mm part, and clear SLA needs sanding at the support posts.
+
+The artist is now asking Objex for 50 mm quotes in all three (Mimaki, M2-Crystal, clear SLA), using prints 9 and 10 in `docs/SCANNING.md`: solid, 50 mm tall, with a 12 mm wide, 25 mm deep light pocket in the stem end.
+
 Method notes: colour inside clear resin (Mimaki Color-in-Clear, or PolyJet VeroVivid with VeroClear) is the closest a printer gets to a lit cloudberry. Tinted translucent urethane cast from a clear SLA master gives colour through the whole part and suits small editions later (mould cost up front). Translucent amber FDM (ABSi at Proto3000) is closest to the planned translucent PETG shell.
 
 Proto3000 is the first pick for a single order of all eight: it documents a full-colour gradient workflow from VRML (send the `.wrl.zip` copies of prints 6 to 8) and runs resin and FDM in-house.
