@@ -76,6 +76,23 @@ def from_mf(M):
                            process=True)
 
 
+def write_ply(path, m, colours):
+    """Binary PLY with per-vertex colour (Mimaki and others read it)."""
+    V, F = np.asarray(m.vertices, np.float32), np.asarray(m.faces, np.int32)
+    head = (f"ply\nformat binary_little_endian 1.0\ncomment units mm\n"
+            f"element vertex {len(V)}\nproperty float x\nproperty float y\nproperty float z\n"
+            "property uchar red\nproperty uchar green\nproperty uchar blue\n"
+            f"element face {len(F)}\nproperty list uchar int vertex_indices\nend_header\n")
+    vd = np.zeros(len(V), dtype=[("p", "<f4", 3), ("c", "u1", 3)])
+    vd["p"], vd["c"] = V, colours
+    fd = np.zeros(len(F), dtype=[("n", "u1"), ("i", "<i4", 3)])
+    fd["n"], fd["i"] = 3, F
+    with open(path, "wb") as f:
+        f.write(head.encode())
+        f.write(vd.tobytes())
+        f.write(fd.tobytes())
+
+
 def wall_fn(dist, z_lo, z_hi):
     """Wall thickness at each point: height gradient plus groove proximity."""
     def fn(x, Yf, Zf):
@@ -209,6 +226,7 @@ def main():
             g = gradient_colours(r)
             write_3mf(path, r, g)
             write_vrml_zip(os.path.join(OUT_DIR, f"{num}_{out}.wrl.zip"), r, g)
+            write_ply(os.path.join(OUT_DIR, f"{num}_{out}.ply"), r, g)
         print(f"{label} {os.path.basename(path)}: watertight {r.is_watertight}, "
               f"bodies {len(r.split(only_watertight=False))}, volume {r.volume / 1000:.1f} cm3, "
               f"extents {np.round(r.extents, 1)}, label {text_mm:.1f} mm")
