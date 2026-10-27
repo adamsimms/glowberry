@@ -54,14 +54,14 @@ LIGHT_HOLE_MM = 10.0
 
 # number, output, kind, surface, size, largest label height mm, label depth mm
 JOBS = [
-    (1, "resin_skin35_100mm.stl", "hollow", "skin_35", None, 6.0, 0.6),
-    (2, "resin_plain_100mm.stl", "hollow", "plain", None, 6.0, 0.6),
-    (3, "resin_true_size_w25mm.stl", "solid", "plain", 25.0, 2.0, 0.3),
-    (4, "fdm_plain_w2in.stl", "solid", "plain", 50.8, 3.5, 0.4),
-    (5, "fdm_skin_fdm_min_100mm.stl", "solid", "skin_fdm_min", None, 6.0, 0.6),
-    (6, "colour_gradient_skin35_100mm_hollow", "hollow", "skin_35", None, 6.0, 0.6),
-    (7, "colour_gradient_w2in", "solid", "plain", 50.8, 3.5, 0.4),
-    (8, "colour_gradient_w25mm", "solid", "plain", 25.0, 2.0, 0.3),
+    (1, "cloudberry_resin_100mm_hollow.stl", "hollow", "skin_35", None, 6.0, 0.6),
+    (2, "cloudberry_resin_100mm_hollow_smooth.stl", "hollow", "plain", None, 6.0, 0.6),
+    (3, "cloudberry_resin_25mm.stl", "solid", "plain", 25.0, 2.0, 0.3),
+    (4, "cloudberry_fdm_2in.stl", "solid", "plain", 50.8, 3.5, 0.4),
+    (5, "cloudberry_fdm_100mm.stl", "solid", "skin_fdm_min", None, 6.0, 0.6),
+    (6, "cloudberry_colour_100mm_hollow", "hollow", "skin_35", None, 6.0, 0.6),
+    (7, "cloudberry_colour_2in", "solid", "plain", 50.8, 3.5, 0.4),
+    (8, "cloudberry_colour_25mm", "solid", "plain", 25.0, 2.0, 0.3),
 ]
 
 

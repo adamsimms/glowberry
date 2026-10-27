@@ -113,14 +113,14 @@ Test prints of the picked berry (2026-10-26) in `models/print/ready_v17/`, built
 
 | No. | File | Printer | Size | Build | Notes | Printed at | Result |
 |---|---|---|---|---|---|---|---|
-| 1 | `1_resin_skin35_100mm.stl` | Resin | 100 mm tall, 109 x 114 mm | Hollow, varying wall, 10 mm light hole | `skin_35` surface; about 79 mL resin | | |
-| 2 | `2_resin_plain_100mm.stl` | Resin | 100 mm tall | Hollow, same | Control, no skin | | |
-| 3 | `3_resin_true_size_w25mm.stl` | Resin | 25 mm wide | Solid | No skin; about 6 mL | | |
-| 4 | `4_fdm_plain_w2in.stl` | FDM | 2 in wide | Solid, no flat | Lab adds raft or supports | | |
-| 5 | `5_fdm_skin_fdm_min_100mm.stl` | FDM | 100 mm tall | Solid, no flat | `skin_fdm_min` surface | | |
-| 6 | `6_colour_gradient_skin35_100mm_hollow.3mf` | Full colour | 100 mm tall | Hollow, varying wall, light hole | Gradient amber base to red-orange top; also `.wrl.zip` | | |
-| 7 | `7_colour_gradient_w2in.3mf` | Full colour | 2 in wide | Solid | Gradient; also `.wrl.zip` | | |
-| 8 | `8_colour_gradient_w25mm.3mf` | Full colour | 25 mm wide | Solid | Gradient; also `.wrl.zip` | | |
+| 1 | `1_cloudberry_resin_100mm_hollow.stl` | Resin | 100 mm tall, 109 x 114 mm | Hollow, varying wall, 10 mm light hole | `skin_35` surface; about 79 mL resin | | |
+| 2 | `2_cloudberry_resin_100mm_hollow_smooth.stl` | Resin | 100 mm tall | Hollow, same | Control, no skin | | |
+| 3 | `3_cloudberry_resin_25mm.stl` | Resin | 25 mm wide | Solid | No skin; about 6 mL | | |
+| 4 | `4_cloudberry_fdm_2in.stl` | FDM | 2 in wide | Solid, no flat | Lab adds raft or supports | | |
+| 5 | `5_cloudberry_fdm_100mm.stl` | FDM | 100 mm tall | Solid, no flat | `skin_fdm_min` surface | | |
+| 6 | `6_cloudberry_colour_100mm_hollow.3mf` | Full colour | 100 mm tall | Hollow, varying wall, light hole | Gradient amber base to red-orange top; also `.wrl.zip` | | |
+| 7 | `7_cloudberry_colour_2in.3mf` | Full colour | 2 in wide | Solid | Gradient; also `.wrl.zip` | | |
+| 8 | `8_cloudberry_colour_25mm.3mf` | Full colour | 25 mm wide | Solid | Gradient; also `.wrl.zip` | | |
 
 The hollow wall varies from 1.5 to 3 mm so the lit berry shifts in tone without paint: thinner toward the stem end and at drupelet centres (brighter, amber), thicker toward the tip and along the grooves (darker, red-orange); half the range follows height and half follows closeness to a groove. The inner surface is the same drupelet field meshed at that varying offset, so it follows the drupelets and cannot fold. One 10 mm hole in the stem star replaces the two 3 mm drain holes (the first build cut it through to the tip; fixed 2026-10-26): it drains, vents, and lets a small LED or phone light in. Print the hollow berries stem toward the build plate so the cavity vents early, tilted along the plate's long side (the 109 mm side has to fit the 123 to 125 mm short side on a Form 4 or Saturn 3 Ultra), and rinse the inside through the hole. No flats: the resin berries keep the natural tilt, and FDM needs a raft or supports from the lab. The small prints carry no skin and their grooves are not widened. Ordering (2026-10-27): prints 1, 3, 5, 6 and 8 go out for quotes (Proto3000 and MatterThings). Colour: the hollow resin berry (1) is clear resin dyed to a translucent amber (#F79523), tinted like amber glass rather than clear; the hollow full-colour berry (6) is colour-tinted translucent PolyJet; the solid berries are opaque orange #E86A17 (3 painted resin, 5 orange filament); 8 keeps the full-colour gradient. No finishing that removes surface (no sanding or vapour smoothing).
 
