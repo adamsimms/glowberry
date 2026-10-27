@@ -30,6 +30,9 @@ SAMPLES = int(argv[3]) if len(argv) > 3 else 256
 
 ROOT = __file__.rsplit("/tools/", 1)[0]
 MESH = f"{ROOT}/models/print/berry_ref_a_studio_v17_subtle_100mm.stl"
+# Lit from inside, the real hollow print (wall 1.5 mm at drupelet centres to
+# 3 mm at grooves, at 100 mm) makes the seams read darker, as printed.
+HOLLOW = f"{ROOT}/models/print/ready_v17/2_cloudberry_resin_100mm_hollow_smooth.stl"
 HEIGHT_M = 1.83
 BASE, TIP = (247, 149, 35), (237, 84, 31)
 WALL_M = 0.02
@@ -43,7 +46,7 @@ def lin(c):
 bpy.ops.wm.read_factory_settings(use_empty=True)
 sc = bpy.context.scene
 
-bpy.ops.wm.stl_import(filepath=MESH)
+bpy.ops.wm.stl_import(filepath=HOLLOW if MODE == "night" else MESH)
 berry = bpy.context.selected_objects[0]
 berry.name = "berry"
 s = HEIGHT_M / berry.dimensions.z
@@ -64,9 +67,10 @@ for i, v in enumerate(me.vertices):
     t = t * t * (3 - 2 * t)
     attr.data[i].color = [lin(BASE[k] * (1 - t) + TIP[k] * t) for k in range(3)] + [1.0]
 
-solid = berry.modifiers.new("shell", "SOLIDIFY")
-solid.thickness = WALL_M
-solid.offset = -1.0
+if MODE != "night":
+    solid = berry.modifiers.new("shell", "SOLIDIFY")
+    solid.thickness = WALL_M
+    solid.offset = -1.0
 
 mat = bpy.data.materials.new("berry")
 mat.use_nodes = True
@@ -76,10 +80,42 @@ col = nt.nodes.new("ShaderNodeVertexColor")
 col.layer_name = "grad"
 nt.links.new(col.outputs["Color"], bsdf.inputs["Base Color"])
 bsdf.inputs["Roughness"].default_value = 0.3
-bsdf.inputs["Subsurface Weight"].default_value = float(os.environ.get("GB_SSS", 0.25))
-bsdf.inputs["Subsurface Radius"].default_value = (1.0, 0.5, 0.18)
-bsdf.inputs["Subsurface Scale"].default_value = 0.015
-bsdf.inputs["Coat Weight"].default_value = float(os.environ.get("GB_COAT", 0.35))
+if MODE == "night":
+    # Less gloss, so glowing drupelets do not mirror into the creases.
+    bsdf.inputs["Roughness"].default_value = 0.45
+    # Grooves read darker when lit from inside (the print files thicken the
+    # wall there): scale the colour down where ambient occlusion finds a fold.
+    ao = nt.nodes.new("ShaderNodeAmbientOcclusion")
+    ao.inputs["Distance"].default_value = float(os.environ.get("GB_GROOVE_DIST", 0.15))
+    inv = nt.nodes.new("ShaderNodeMath")
+    inv.operation = "SUBTRACT"
+    inv.inputs[0].default_value = 1.0
+    nt.links.new(ao.outputs["AO"], inv.inputs[1])
+    amt = nt.nodes.new("ShaderNodeMath")
+    amt.operation = "MULTIPLY"
+    amt.inputs[1].default_value = float(os.environ.get("GB_GROOVE", 1.0))
+    nt.links.new(inv.outputs[0], amt.inputs[0])
+    fac = nt.nodes.new("ShaderNodeMath")
+    fac.operation = "SUBTRACT"
+    fac.inputs[0].default_value = 1.0
+    nt.links.new(amt.outputs[0], fac.inputs[1])
+    mix = nt.nodes.new("ShaderNodeMix")
+    mix.data_type = "RGBA"
+    mix.inputs["A"].default_value = (0, 0, 0, 1)
+    nt.links.new(fac.outputs[0], mix.inputs["Factor"])
+    # Light scattered through the shell drifts to red; a lighter scattering
+    # colour keeps the glow amber.
+    lift = nt.nodes.new("ShaderNodeMix")
+    lift.data_type = "RGBA"
+    lift.inputs["Factor"].default_value = float(os.environ.get("GB_LIFT", 0.35))
+    lift.inputs["B"].default_value = (1, 0.85, 0.6, 1)
+    nt.links.new(col.outputs["Color"], lift.inputs["A"])
+    nt.links.new(lift.outputs["Result"], mix.inputs["B"])
+    nt.links.new(mix.outputs["Result"], bsdf.inputs["Base Color"])
+bsdf.inputs["Subsurface Weight"].default_value = float(os.environ.get("GB_SSS", 0.6 if MODE == "night" else 0.25))
+bsdf.inputs["Subsurface Radius"].default_value = (1.0, 0.75, 0.35) if MODE == "night" else (1.0, 0.5, 0.18)
+bsdf.inputs["Subsurface Scale"].default_value = float(os.environ.get("GB_SSS_SCALE", 0.01 if MODE == "night" else 0.015))
+bsdf.inputs["Coat Weight"].default_value = float(os.environ.get("GB_COAT", 0.1 if MODE == "night" else 0.35))
 bsdf.inputs["Coat Roughness"].default_value = 0.12
 me.materials.append(mat)
 
@@ -157,7 +193,7 @@ sc.cycles.use_denoising = True
 # Neutral transform keeps the berry's amber and orange hues (AgX pulls
 # saturated orange toward salmon).
 sc.view_settings.view_transform = "Khronos PBR Neutral"
-sc.view_settings.exposure = float(os.environ.get("GB_EXPOSURE", -2.0 if MODE == "night" else -2.6))
+sc.view_settings.exposure = float(os.environ.get("GB_EXPOSURE", -2.7 if MODE == "night" else -2.6))
 sc.render.resolution_x = sc.render.resolution_y = SIZE
 sc.render.image_settings.file_format = "PNG"
 sc.render.image_settings.color_mode = "RGBA"
@@ -192,21 +228,39 @@ if MODE in ("hero", "studio", "turntable"):
         berry.rotation_euler = (0, 0, 2 * math.pi)
         berry.keyframe_insert("rotation_euler", index=2, frame=97)
 elif MODE == "night":
-    bg.inputs["Color"].default_value = (0.004, 0.006, 0.012, 1)
-    bg.inputs["Strength"].default_value = 1.0
-    f = floor()
-    f.data.materials.append(material("ground", (0.035, 0.032, 0.03), 0.6))
+    # Dusk just after sunset: physical sky with the sun a few degrees below
+    # the horizon, behind and to the left of the berry.
+    wn = sc.world.node_tree
+    sky = wn.nodes.new("ShaderNodeTexSky")
+    sky.sky_type = "MULTIPLE_SCATTERING"
+    sky.sun_disc = False
+    sky.sun_elevation = math.radians(float(os.environ.get("GB_SUN_EL", -4.0)))
+    sky.sun_rotation = math.radians(150)
+    wn.links.new(sky.outputs["Color"], bg.inputs["Color"])
+    bg.inputs["Strength"].default_value = float(os.environ.get("GB_SKY", 5.0))
+    f = floor(400.0)
+    gm = material("ground", (0.05, 0.055, 0.04), 0.8)
+    gnt = gm.node_tree
+    noise = gnt.nodes.new("ShaderNodeTexNoise")
+    noise.inputs["Scale"].default_value = 3.0
+    bump = gnt.nodes.new("ShaderNodeBump")
+    bump.inputs["Strength"].default_value = 0.3
+    gnt.links.new(noise.outputs["Fac"], bump.inputs["Height"])
+    gb = next(n for n in gnt.nodes if n.type == "BSDF_PRINCIPLED")
+    gnt.links.new(bump.outputs["Normal"], gb.inputs["Normal"])
+    f.data.materials.append(gm)
     glow = bpy.data.objects.new("glow", bpy.data.lights.new("glow", "POINT"))
     glow.data.energy = 450
     glow.data.shadow_soft_size = 0.3
-    glow.data.color = (1.0, 0.72, 0.42)
+    glow.data.color = (1.0, 0.93, 0.78)
     glow.location = (0, 0, 0.85)
     sc.collection.objects.link(glow)
-    area("moon", (2.5, 4.0, 4.0), (0, 0, 1.0), 3.0, 220, (0.65, 0.75, 1.0))
+    area("moon", (2.5, 4.0, 4.0), (0, 0, 1.0), 3.0, float(os.environ.get("GB_MOON", 900)), (0.65, 0.75, 1.0))
     sc.render.resolution_x, sc.render.resolution_y = SIZE, int(SIZE * 2 / 3)
     sc.render.image_settings.color_mode = "RGB"
-    aim(-25, 6, 6.6, 0.95)
-    cam.data.lens = 45
+    # Low camera so the horizon and sky sit behind the upper berry.
+    aim(-25, 3, 6.6, 1.0)
+    cam.data.lens = 42
 
 if MODE == "turntable":
     sc.render.filepath = OUT.rstrip("/") + "/frame_"
