@@ -89,7 +89,24 @@ Objex Unlimited replied on 2026-10-27. The Mimaki's jetted support cannot be rem
 
 The artist is now asking Objex for 50 mm quotes in all three (Mimaki, M2-Crystal, clear SLA), using prints 9 and 10 in `docs/SCANNING.md`: solid, 50 mm tall, with a 12 mm wide, 25 mm deep light pocket in the stem end. Tests stay amber or orange, never clear: M2-Crystal dyed amber, SLA in a translucent amber or orange resin, clear resin dyed amber, or an opaque amber or orange.
 
-Method notes: colour inside clear resin (Mimaki Color-in-Clear, or PolyJet VeroVivid with VeroClear) is the closest a printer gets to a lit cloudberry. Tinted translucent urethane cast from a clear SLA master gives colour through the whole part and suits small editions later (mould cost up front). Translucent amber FDM (ABSi at Proto3000) is closest to the planned translucent PETG shell.
+Objex replied again on 2026-10-27 (Steve Cory, 3:20 PM). For prints 9 and 10 (solid, 12 x 25 mm light pocket) they recommend the Mimaki full colour at 50 mm:
+
+- Mimaki full colour: $150 each at 50 mm (the cost drops a lot when the size halves). They suggest saturating the colours more for translucent mode, possibly much more, and offered one in the original colours plus one in a deeper, more saturated colour for $150 total.
+- M2-Crystal: dyeing is not really feasible.
+- Translucent amber SLA (a material they use for medical devices): $150 at 50 mm, but they think it will not look nearly as good as the Mimaki.
+- Lead time: a couple of days to queue; could be done by the end of that week.
+
+The artist is deciding, leaning toward the Mimaki pair and possibly the amber SLA.
+
+3DMan Studio replied on 2026-10-27 (1:31 PM) and 2026-10-28 (5:34 PM). They can produce all the listed samples, but recommend managing the illuminated editions end to end, and suggest mould making and resin casting for the best control of colour and translucency (testing resin tints and translucency levels). Estimates for the 10 to 18 in (about 25 to 46 cm) range:
+
+- SLA pattern for mould making, including file adjustments and extensive post-processing to a smooth glass-like finish: $1,500 to $2,500 depending on size and complexity.
+- Silicone mould: $1,300 to $2,500 depending on size and requirements.
+- Further cast samples in different resins, colours and translucency: less than the pattern and mould, price depending on material and quantity.
+
+They want to confirm the exact size and review the files before starting. This is the editions track in [`BRIEF.md`](BRIEF.md) (small editions, decided 2026-10-27) and the tinted urethane casting route in the method notes below.
+
+Method notes: colour inside clear resin (Mimaki Color-in-Clear, or PolyJet VeroVivid with VeroClear) is the closest a printer gets to a lit cloudberry. Tinted translucent urethane cast from a clear SLA pattern gives colour through the whole part and suits small editions later (mould cost up front). Translucent amber FDM (ABSi at Proto3000) is closest to the planned translucent PETG shell.
 
 Proto3000 is the first pick for a single order of all eight: it documents a full-colour gradient workflow from VRML (send the `.wrl.zip` copies of prints 6 to 8) and runs resin and FDM in-house.
 
