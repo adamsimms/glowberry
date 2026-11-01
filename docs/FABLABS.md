@@ -106,9 +106,25 @@ The artist is deciding, leaning toward the Mimaki pair and possibly the amber SL
 
 They want to confirm the exact size and review the files before starting. This is the editions track in [`BRIEF.md`](BRIEF.md) (small editions, decided 2026-10-27) and the tinted urethane casting route in the method notes below.
 
+Proto3000 replied on 2026-10-27 (Luke Frangella, Engineering Sales and Operations) with rough pricing in CAD, one unit each, for the 100 mm v17 test prints:
+
+- Clear SLA dyed orange: $750, 7 to 10 business days. They say they can achieve the look.
+- SLS PA 12 White, DDC dyed orange: $980, 7 to 10 business days. The cost is higher because the orange dye must be ordered for a single part.
+- SLA painted (rigid SLA material painted orange): $550, 5 to 7 business days. The email does not say which file this one is for.
+
+They cannot accommodate the other options, which include the full-colour PolyJet prints 6 and 8 and FDM print 5. Proto3000 does not offer full-colour PolyJet as a service.
+
+MatterThings replied on 2026-10-31 (José, Pincourt). Orange is in stock for SLA and FDM. Amber SLA resin is unusual: high-heat resins come in amber at around $100 per litre, and regular resins exist in translucent yellow or translucent red. They also have an amber filament. Quotes:
+
+- `1_cloudberry_resin_100mm_hollow.stl` in standard translucent SLA resin: $384, ready in five days with standard resin. Other resins must be ordered, which adds cost and delay.
+- `3_cloudberry_resin_25mm.stl` in orange SLA resin at 50 µm: $47, ready in 24 hours.
+- `5_cloudberry_fdm_100mm.stl` in orange FDM PETG, 100 µm layers, 100% infill: $238, ready in four days. PLA is the same price.
+
+They asked whether a fully solid FDM part was intended, since 100% infill makes it feel like a rock, or whether a thick shell with hollow or sparse infill was meant. Pickup is in Pincourt.
+
 Method notes: colour inside clear resin (Mimaki Color-in-Clear, or PolyJet VeroVivid with VeroClear) is the closest a printer gets to a lit cloudberry. Tinted translucent urethane cast from a clear SLA pattern gives colour through the whole part and suits small editions later (mould cost up front). Translucent amber FDM (ABSi at Proto3000) is closest to the planned translucent PETG shell.
 
-Proto3000 is the first pick for a single order of all eight: it documents a full-colour gradient workflow from VRML (send the `.wrl.zip` copies of prints 6 to 8) and runs resin and FDM in-house.
+Proto3000 was the first pick for a single order of all eight because its site documents a full-colour gradient workflow from VRML and it runs resin and FDM in-house. Its 2026-10-27 reply rules out full-colour PolyJet, so prints 6 to 8 need another service (Objex or 3DMan above).
 
 Other full colour outside Montreal: [Xometry](https://www.xometry.com/capabilities/3d-printing-service/polyjet-3d/) prints full-colour PolyJet from 3MF (Canadian shipping not confirmed); [Custom Prototypes](https://customprototypes.ca/services/polyjet-3d-printing/), Toronto, has a Mimaki with a 76 mm build height, so it fits prints 7 and 8 but not the 100 mm berry.
 
