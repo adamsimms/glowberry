@@ -189,14 +189,12 @@ def label_cutter(m, text, height_mm, depth_mm, p, pole, workdir):
     return to_mf(t)
 
 
-def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--only", type=int, nargs="+", metavar="N", help="build only these job numbers")
-    only = ap.parse_args().only
-    jobs = [j for j in JOBS if not only or j[0] in only]
-    os.makedirs(OUT_DIR, exist_ok=True)
-    workdir = tempfile.mkdtemp(prefix="glowberry_v17_")
-    spec = VARIANTS[BERRY]
+def run(spec, jobs, out_dir, colour_fn=None):
+    """Build the given jobs for one berry spec into out_dir. colour_fn(mesh,
+    ctx) returns per-vertex sRGB colours for the colour files; by default
+    the amber to red-orange height gradient."""
+    os.makedirs(out_dir, exist_ok=True)
+    workdir = tempfile.mkdtemp(prefix="glowberry_print_")
 
     raw, _, lay, (lo, hi, seam) = build(spec, HEIGHT_MM, voxel=HEIGHT_MM / 500)
     frame = (raw.vertices[:, 2].min(), np.ptp(raw.vertices[:, 2]))
@@ -303,17 +301,26 @@ def main():
         M = M - L
         r = from_mf(M)
         if out.endswith(".stl"):
-            path = os.path.join(OUT_DIR, f"{num}_{out}")
+            path = os.path.join(out_dir, f"{num}_{out}")
             r.export(path)
         else:
-            path = os.path.join(OUT_DIR, f"{num}_{out}.3mf")
-            g = gradient_colours(r)
+            path = os.path.join(out_dir, f"{num}_{out}.3mf")
+            ctx = {"num": num, "lay": lay, "spec": spec, "frame": frame,
+                   "scale": scale, "shift": shift, "k": k}
+            g = colour_fn(r, ctx) if colour_fn else gradient_colours(r)
             write_3mf(path, r, g)
-            write_vrml_zip(os.path.join(OUT_DIR, f"{num}_{out}.wrl.zip"), r, g)
-            write_ply(os.path.join(OUT_DIR, f"{num}_{out}.ply"), r, g)
+            write_vrml_zip(os.path.join(out_dir, f"{num}_{out}.wrl.zip"), r, g)
+            write_ply(os.path.join(out_dir, f"{num}_{out}.ply"), r, g)
         print(f"{label} {os.path.basename(path)}: watertight {r.is_watertight}, "
               f"bodies {len(r.split(only_watertight=False))}, volume {r.volume / 1000:.1f} cm3, "
               f"extents {np.round(r.extents, 1)}, label {text_mm:.1f} mm")
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--only", type=int, nargs="+", metavar="N", help="build only these job numbers")
+    only = ap.parse_args().only
+    run(VARIANTS[BERRY], [j for j in JOBS if not only or j[0] in only], OUT_DIR)
 
 
 if __name__ == "__main__":

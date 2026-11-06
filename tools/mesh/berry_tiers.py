@@ -94,6 +94,16 @@ V16_SUBTLE = {**V7_BOTH, "ring_n": [None, 10, 8, None],
               "drupelet_tilt": [0, 4, 4, 2], "square_var": 0.08,
               "groove_var": 0.03, "oval": [0.018, 70]}
 
+# v17 (V16_SUBTLE with a ripe slump) with a broader, rounder crown: tip row
+# lower, larger and plumper, crown flatter, and the middle row a little
+# further out and taller so it keeps v17's width. Picked 2026-11-06 after
+# the first Mimaki samples.
+V18C = {**V16_SUBTLE, "slump": 0.02,
+        "ring_th": [None, None, 109, 149], "tip_stretch": 1.35,
+        "ring_plump": [1.0, 1.08, 1.0, 1.15], "ring_around": [1.0, 1.12, 1.0, 1.10],
+        "crown": 0.16, "crown_pow": 2.0,
+        "ring_out": [1.0, 1.04, 1.035, 1.0], "mid_m_scale": [1.0, 0.9, 0.98, 0.9]}
+
 VARIANTS = {
     # Picked 2026-10-17 from a_studio: no gaps at junctions, flat star ends.
     "a_studio_v2": {"count": 20, "aspect": 1.2, "taper": 0.30, "elong": 1.1,
@@ -270,6 +280,7 @@ VARIANTS = {
     # 0.35 mm wide at 100 mm) without changing the groove's width.
     "a_studio_v17_subtle": {**V16_SUBTLE, "slump": 0.02},
     "a_studio_v17_subtle_creases": {**V16_SUBTLE, "slump": 0.02, "crease_pinch": [0.25, 0.35]},
+    "a_studio_v18c": V18C,
     # Plumper, less boxy drupelets (longer outward axis deepens creases at
     # the same overlap, so no gaps return). Same stem end as v3.
     "a_studio_v4_rings": {"count": 20, "aspect": 1.2, "taper": 0.30, "elong": 1.4,
@@ -653,6 +664,25 @@ def deform_points(v, spec, frame):
         R = np.array([[c, -s_], [s_, c]])
         M = R @ np.diag([1 + amt, 1 / (1 + amt)]) @ R.T
         v[:, :2] = v[:, :2] @ M.T
+    return v
+
+
+def undeform_points(v, spec, frame):
+    """Inverse of deform_points: from the deformed frame back to the layout."""
+    v = np.array(v, dtype=np.float64)
+    if spec.get("oval"):
+        amt, oaz = spec["oval"]
+        c, s_ = np.cos(np.radians(oaz)), np.sin(np.radians(oaz))
+        R = np.array([[c, -s_], [s_, c]])
+        M = R @ np.diag([1 + amt, 1 / (1 + amt)]) @ R.T
+        v[:, :2] = v[:, :2] @ np.linalg.inv(M).T
+    if spec.get("slump"):
+        s = spec["slump"]
+        z0, H = frame
+        tp = (v[:, 2] - z0) / H
+        t = (1 - np.sqrt(np.clip(1 - 4 * s * tp, 0, None))) / (2 * s)
+        v[:, 2] = z0 + H * t
+        v[:, :2] /= (1 + s * np.exp(-((t - 0.3) / 0.22) ** 2))[:, None]
     return v
 
 

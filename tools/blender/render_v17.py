@@ -32,7 +32,7 @@ SIZE = int(argv[2]) if len(argv) > 2 else 3000
 SAMPLES = int(argv[3]) if len(argv) > 3 else 256
 
 ROOT = __file__.rsplit("/tools/", 1)[0]
-MESH = f"{ROOT}/models/print/berry_ref_a_studio_v17_subtle_100mm.stl"
+MESH = os.environ.get("GB_MESH", f"{ROOT}/models/print/berry_ref_a_studio_v17_subtle_100mm.stl")
 # Lit from inside, the real hollow print (wall 1.5 mm at drupelet centres to
 # 3 mm at grooves, at 100 mm) makes the seams read darker, as printed.
 HOLLOW = f"{ROOT}/models/print/ready_v17/2_cloudberry_resin_100mm_hollow_smooth.stl"
