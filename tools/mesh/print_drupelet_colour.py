@@ -34,7 +34,7 @@ import sys
 import numpy as np
 
 sys.path.insert(0, os.path.dirname(__file__))
-from berry_tiers import VARIANTS, drupelet_dists, undeform_points  # noqa: E402
+from berry_tiers import VARIANTS, drupelet_dists, tip_weights, undeform_points  # noqa: E402
 from print_v17 import run  # noqa: E402
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
@@ -63,6 +63,13 @@ SEAM_MM = 4.8   # how far the seam colour reaches into a drupelet, 100 mm frame
 JOBS = [
     (11, "cloudberry_colour_50mm_pocket_moderate", "pocket", "plain", 50.0, 3.5, 0.4),
 ]
+# Tip trials (2026-11-06), same colour as 11: number, berry, file name.
+TIP_JOBS = [
+    (13, "a_studio_v17_tip_a", "cloudberry_colour_50mm_pocket_tip_dimple"),
+    (14, "a_studio_v17_tip_b", "cloudberry_colour_50mm_pocket_tip_seams"),
+    (15, "a_studio_v17_tip_c", "cloudberry_colour_50mm_pocket_tip_longer"),
+]
+TIP_TONE = 0.6  # extra seam colour where the tip is sculpted
 
 
 def to_lin(c):
@@ -84,7 +91,7 @@ def tone_to_lin(s):
 
 
 def drupelet_colours(mesh, ctx):
-    p = STRENGTHS[ctx["num"]]
+    p = STRENGTHS.get(ctx["num"], STRENGTHS[11])
     C, B, A, X = ctx["lay"]
     C, B, A = C[:-1], B[:-1], A[:-1]  # drop the core
     n = len(C)
@@ -111,13 +118,24 @@ def drupelet_colours(mesh, ctx):
             + p["edge"] * (np.clip(r2, 0, 1.5) - 0.35) + p["side"] * side)
     w = np.exp(-(d - dmin) / BLEND_MM)
     w /= w.sum(axis=1, keepdims=True)
-    t = (w * tone).sum(axis=1) + p["seam_tone"] * seam
+    # The seam colour follows any sculpting at the tip.
+    dim, sea = tip_weights(P, ctx["lay"], ctx["spec"])
+    seam = np.maximum(seam, np.maximum(dim, sea))
+    t = (w * tone).sum(axis=1) + p["seam_tone"] * seam + TIP_TONE * np.maximum(dim, sea)
     lin = tone_to_lin(t) * (1 - p["seam_dark"] * seam)[:, None]
     return to_srgb(lin).astype(np.uint8)
 
 
 def main():
-    run(VARIANTS[BERRY], JOBS, OUT_DIR, colour_fn=drupelet_colours)
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--tip", action="store_true", help="build the tip trials 13 to 15 instead of 11")
+    if ap.parse_args().tip:
+        for num, berry, out in TIP_JOBS:
+            run(VARIANTS[berry], [(num, out, "pocket", "plain", 50.0, 3.5, 0.4)], OUT_DIR,
+                colour_fn=drupelet_colours)
+    else:
+        run(VARIANTS[BERRY], JOBS, OUT_DIR, colour_fn=drupelet_colours)
 
 
 if __name__ == "__main__":

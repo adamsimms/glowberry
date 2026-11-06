@@ -281,6 +281,12 @@ VARIANTS = {
     "a_studio_v17_subtle": {**V16_SUBTLE, "slump": 0.02},
     "a_studio_v17_subtle_creases": {**V16_SUBTLE, "slump": 0.02, "crease_pinch": [0.25, 0.35]},
     "a_studio_v18c": V18C,
+    # Tip trials on v17 (2026-11-06), subtle: A sinks the point where the
+    # five tip seams meet, B deepens those seams toward it, C lengthens the
+    # tip drupelets so their seams run further down the sides.
+    "a_studio_v17_tip_a": {**V16_SUBTLE, "slump": 0.02, "tip_dimple": [1.0, 6.0]},
+    "a_studio_v17_tip_b": {**V16_SUBTLE, "slump": 0.02, "tip_seam_deepen": [0.8, 12.0, 1.5]},
+    "a_studio_v17_tip_c": {**V16_SUBTLE, "slump": 0.02, "tip_stretch": 1.25},
     # Plumper, less boxy drupelets (longer outward axis deepens creases at
     # the same overlap, so no gaps return). Same stem end as v3.
     "a_studio_v4_rings": {"count": 20, "aspect": 1.2, "taper": 0.30, "elong": 1.4,
@@ -601,7 +607,42 @@ def build(spec, height_mm, voxel):
     if spec.get("crease_pinch"):
         seam["pinch_mm"], seam["pinch_w_mm"] = spec["crease_pinch"]
     m = seam_field(ellipsoid_dist(C, B, A, X), len(C), lo, hi, seam, voxel)
+    if spec.get("tip_dimple") or spec.get("tip_seam_deepen"):
+        m = sculpt_tip(m, (C, B, A, X), spec)
     return m, len(C) - 1, (C, B, A, X), (lo, hi, seam)
+
+
+def tip_weights(P, lay, spec):
+    """Where the tip sculpting acts, in the layout frame: (dimple, seam)
+    weights from 0 to 1 per point. tip_dimple [depth, radius] sinks the point
+    where the tip seams meet; tip_seam_deepen [depth, reach, width] deepens
+    the seams more the closer they are to that point."""
+    C, B, A, X = lay
+    n = len(C) - 1
+    tip = spec.get("tip_n", 3)
+    peaks = C[:-1] + A[:-1, :1] * B[:-1, 0]
+    pole = peaks[n - tip:n].mean(axis=0)
+    r = np.linalg.norm(P[:, :2] - pole[:2], axis=1)
+    top = np.clip((P[:, 2] - (pole[2] - 15.0)) / 5.0, 0, 1)  # top of the berry only
+    dim = np.zeros(len(P))
+    if spec.get("tip_dimple"):
+        _, rad = spec["tip_dimple"]
+        dim = np.exp(-(r / rad) ** 2) * top
+    sea = np.zeros(len(P))
+    if spec.get("tip_seam_deepen"):
+        _, reach, width = spec["tip_seam_deepen"]
+        d = np.sort(drupelet_dists(P, lay)[:, :-1], axis=1)
+        sea = np.exp(-((d[:, 1] - d[:, 0]) / width) ** 2) * np.exp(-(r / reach) ** 2) * top
+    return dim, sea
+
+
+def sculpt_tip(m, lay, spec):
+    """Push the surface in at the tip (see tip_weights), along its normals."""
+    dim, sea = tip_weights(m.vertices, lay, spec)
+    dn = dim * spec.get("tip_dimple", (0, 1))[0] + sea * spec.get("tip_seam_deepen", (0, 1, 1))[0]
+    out = trimesh.Trimesh(m.vertices - m.vertex_normals * dn[:, None], m.faces, process=True)
+    out.fix_normals()
+    return out
 
 
 def drupelet_dists(P, lay, chunk=50_000):
