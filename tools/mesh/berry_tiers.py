@@ -96,8 +96,8 @@ V16_SUBTLE = {**V7_BOTH, "ring_n": [None, 10, 8, None],
 
 # v17 (V16_SUBTLE with a ripe slump) with a broader, rounder crown: tip row
 # lower, larger and plumper, crown flatter, and the middle row a little
-# further out and taller so it keeps v17's width. Picked 2026-11-06 after
-# the first Mimaki samples.
+# further out and taller so it keeps v17's width. Tried 2026-11-06 after the
+# first Mimaki samples and rejected (it looked wrong); v17 stays the shape.
 V18C = {**V16_SUBTLE, "slump": 0.02,
         "ring_th": [None, None, 109, 149], "tip_stretch": 1.35,
         "ring_plump": [1.0, 1.08, 1.0, 1.15], "ring_around": [1.0, 1.12, 1.0, 1.10],

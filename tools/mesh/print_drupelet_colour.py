@@ -3,8 +3,8 @@
 # dependencies = ["trimesh", "numpy", "scipy", "networkx", "manifold3d",
 #                 "scikit-image", "pymeshlab"]
 # ///
-"""Full-colour test prints of the v18c berry (broader crown), coloured per
-drupelet for the Mimaki's translucent mode.
+"""Full-colour test prints of the picked berry (v17), coloured per drupelet
+for the Mimaki's translucent mode.
 
 The first Mimaki samples (v17, height gradient) showed that translucent mode
 dilutes colour and that the seams came out paler than the drupelets. Here
@@ -20,10 +20,11 @@ each drupelet carries its own colour:
 
 Colours blend over a short distance across each groove. Two strengths:
 11 moderate, 12 strong. Both are 50 mm tall, solid, with the same light
-pocket as print 9.
+pocket as print 9. (A broader-crown shape, v18c, was tried for these on
+2026-11-06 and rejected; it looked wrong.)
 
-Writes models/print/ready_v18/. Run:
-    uv run tools/mesh/print_v18.py
+Writes models/print/ready_v17/. Run:
+    uv run tools/mesh/print_drupelet_colour.py
 """
 
 import os
@@ -32,11 +33,12 @@ import sys
 import numpy as np
 
 sys.path.insert(0, os.path.dirname(__file__))
-from berry_tiers import V18C, drupelet_dists, undeform_points  # noqa: E402
+from berry_tiers import VARIANTS, drupelet_dists, undeform_points  # noqa: E402
 from print_v17 import run  # noqa: E402
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
-OUT_DIR = os.path.join(ROOT, "models", "print", "ready_v18")
+OUT_DIR = os.path.join(ROOT, "models", "print", "ready_v17")
+BERRY = "a_studio_v17_subtle"
 
 # Rows in layout order: stem star, base, middle, tip.
 ROWS = [4, 10, 8, 5]
@@ -115,7 +117,7 @@ def drupelet_colours(mesh, ctx):
 
 
 def main():
-    run(V18C, JOBS, OUT_DIR, colour_fn=drupelet_colours)
+    run(VARIANTS[BERRY], JOBS, OUT_DIR, colour_fn=drupelet_colours)
 
 
 if __name__ == "__main__":
