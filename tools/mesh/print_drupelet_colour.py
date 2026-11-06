@@ -18,8 +18,9 @@ each drupelet carries its own colour:
 - at the seams: deeper and darker, so the grooves read darker when lit;
 - a little variation from drupelet to drupelet.
 
-Colours blend over a short distance across each groove. Two strengths:
-11 moderate, 12 strong. Both are 50 mm tall, solid, with the same light
+Colours blend over a short distance across each groove; the seam colour
+fades well into each drupelet. Print 11 (moderate); a stronger print 12 was
+dropped after review. Both are 50 mm tall, solid, with the same light
 pocket as print 9. (A broader-crown shape, v18c, was tried for these on
 2026-11-06 and rejected; it looked wrong.)
 
@@ -57,11 +58,10 @@ STRENGTHS = {
          "seam_tone": 0.8, "seam_dark": 0.3, "var": 0.18},
 }
 BLEND_MM = 0.4  # colour blend across a groove, in the 100 mm frame
-SEAM_MM = 2.4   # how far the seam colour reaches into a drupelet, 100 mm frame
+SEAM_MM = 4.8   # how far the seam colour reaches into a drupelet, 100 mm frame
 
 JOBS = [
     (11, "cloudberry_colour_50mm_pocket_moderate", "pocket", "plain", 50.0, 3.5, 0.4),
-    (12, "cloudberry_colour_50mm_pocket_strong", "pocket", "plain", 50.0, 3.5, 0.4),
 ]
 
 
