@@ -57,7 +57,7 @@ STRENGTHS = {
          "seam_tone": 0.8, "seam_dark": 0.3, "var": 0.18},
 }
 BLEND_MM = 0.4  # colour blend across a groove, in the 100 mm frame
-SEAM_MM = 1.2   # how far the seam colour reaches into a drupelet, 100 mm frame
+SEAM_MM = 2.4   # how far the seam colour reaches into a drupelet, 100 mm frame
 
 JOBS = [
     (11, "cloudberry_colour_50mm_pocket_moderate", "pocket", "plain", 50.0, 3.5, 0.4),
