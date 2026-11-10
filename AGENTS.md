@@ -1,52 +1,43 @@
 # Agent notes
 
-Glowberry is developed primarily with Cursor, in the open. Prefer **one milestone (or one issue) per chat** when the work is mechanical.
-
-## Canonical docs
-
-1. [docs/BRIEF.md](docs/BRIEF.md) — concept, tiers, quote draft  
-2. [docs/POWER.md](docs/POWER.md) — light / battery / solar / controller  
-3. [docs/INFLATABLE.md](docs/INFLATABLE.md) — ephemeral summer track  
-4. [docs/RESEARCH_sculpture_precedents.md](docs/RESEARCH_sculpture_precedents.md) — precedents  
-5. [docs/BIBLIOGRAPHY.md](docs/BIBLIOGRAPHY.md) — living bibliography (readings / research)  
-6. [docs/MATERIALS.md](docs/MATERIALS.md) — print, coatings, translucency, ~7 ft mass bands  
-7. [docs/SCANNING.md](docs/SCANNING.md) — photogrammetry of the provenance berry, result and method findings  
-
-Also: [README.md](README.md), [CONTRIBUTING.md](CONTRIBUTING.md), [LICENSE.md](LICENSE.md).
-
-Local-only playground: [`sketchpad/`](sketchpad/) (gitignored except its README). Use for drafts and reference material; canonical truth stays in `docs/`.
-
-## Private vault
-
-Working notes live in a local Obsidian vault shared with Rover, Dreamberry, and Camera Philosophies (not this repo). A gitignored Cursor rule names the path on this machine. Start at the Studio Vault Index, then the Glowberry project index (`Glowberry/MOCs/`), then one topical MOC. Glowberry notes live under `Glowberry/`. Filename prefix `Glowberry -`. Do not copy restricted material into this repo. Public `docs/` are the adapted canon. Dual-write decisions and status to `docs/` and the vault in the same turn. Sketchpad is scratch only.
-
-## Bibliography / Zotero
-
-Zotero holds PDFs and the working library. The public living bibliography is [docs/BIBLIOGRAPHY.md](docs/BIBLIOGRAPHY.md). The vault does not sync with Zotero. Do not query `~/Zotero/zotero.sqlite`. Do not invent citations. Sketchpad `zotero_*.py` scripts are one-shot imports, not agent tools.
-
-## GitHub Projects
-
-- Active: **Glowberry — R&D** — https://github.com/users/adamsimms/projects/2  
-- Later (do not create until needed): Fabrication, Editions, Outputs, Web  
-
-Put M1/M2 work on R&D. Do not invent parallel boards without an explicit ask.
-
-Priority on the board (and matching `priority:*` issue labels): **Urgent** → **High** → **Medium** → **Low**. Prefer working Urgent/High in the active milestone before Medium/Low. Milestone tags: `milestone-1`, `milestone-2` (plus closed `milestone-0`).
+Glowberry, developed in the open. One milestone or one issue per chat when the work is mechanical.
 
 ## Hard rules
 
-- Do **not** invent site permissions, landowner agreements, fabricator quotes, or funding commitments.
-- Do **not** commit moodboard media, location photo dumps, Blender/STL/OBJ, or large binaries unless an issue **explicitly** asks and the artist confirms.
-- Locked concept lives in `docs/BRIEF.md`; open spikes belong in issues labeled `decision` or `spike`.
-- Dual license: docs/creative → CC BY-NC 4.0; software → MIT. See [LICENSE.md](LICENSE.md).
-- Never use the word “master” in new user-facing text, docs, comments, or identifiers (prefer *default branch*, *canonical*, *primary*).
-- Controller path is ESP32/Arduino-class — not Raspberry Pi for v1 heartbeat (Pi only if a future Cloudberry-style sensing chapter).
+- Do **not** invent site permissions, landowner agreements, fabricator quotes, or funding commitments. No site outreach is sent before the pitch package exists.
+- Do **not** commit moodboards, location photos, Blender/STL/OBJ/3MF files, renders or other large binaries; they go to the project's media folder. The provenance scan (`models/provenance/`) is the one tracked binary.
+- Controller path is ESP32/Arduino-class, not Raspberry Pi, for the v1 heartbeat.
+- No phase dates in `docs/`; dates live on issues.
+- Dual license: docs/creative CC BY-NC 4.0, software MIT ([LICENSE.md](LICENSE.md)).
+- Never use the word "master" in new user-facing text, docs, comments, or identifiers.
+- Secrets only via `.env`; see `.env.example`.
 
-## Model routing (guidance)
+## Canonical docs
 
-| Prefer | When |
-|--------|------|
-| Judgment-heavy model | Concept, site ethics, grant narrative, tone |
-| Fast / mechanical model | Docs moves, templates, labels, git hygiene once decided |
+1. [docs/BRIEF.md](docs/BRIEF.md): the brief. Body is the current state; its decisions log is one dated line per change.
+2. [docs/POWER.md](docs/POWER.md): light, battery, solar, controller
+3. [docs/MATERIALS.md](docs/MATERIALS.md): print, coatings, translucency, mass bands
+4. [docs/SCANNING.md](docs/SCANNING.md): photogrammetry of the provenance berry; mesh tools
+5. [docs/FABLABS.md](docs/FABLABS.md), [docs/INFLATABLE.md](docs/INFLATABLE.md) (archived track), [docs/RESEARCH_sculpture_precedents.md](docs/RESEARCH_sculpture_precedents.md)
 
-Pattern: `Work issue #N — … Follow docs/BRIEF.md and AGENTS.md.`
+Docs policy and the decisions rule (work decision vs proposal choice vs option): [`.cursor/rules/docs.mdc`](.cursor/rules/docs.mdc).
+
+## GitHub
+
+Issues here are about the work. Applications, calls, residencies and their deadlines are tracked in the private studio repo, not here. Board: [Glowberry — R&D](https://github.com/users/adamsimms/projects/2). Issue titles have no kind prefix; kind and priority live on labels.
+
+## Private material
+
+Applications, organization and call records, the CV, contact details and private research notes live in the private repo **adamsimms/studio** (`~/Documents/GitHub/studio`; read its `AGENTS.md` first). This project's applications are `applications/<cycle>-<call>-glowberry/`. Nothing from studio comes into this repo unless an issue says so and Adam approved it. Never put a phone number or home address here, including inside PDFs; a global pre-commit guard blocks text.
+
+## Project media
+
+Media (meshes, print files, renders, maquettes, visual tests, photos, video) never stays in this repo's ignored folders: they are not backed up. It goes to the project's synced Drive folder, `$MEDIA_DIR` (`30 STUDIO/32 PROJECTS/GLOWBERRY/`): `01 REFERENCES`, `02 STUDIES` (concept and visual exploration), `03 TESTS` (technical experiments, test prints), `04 ARTWORK` (the finished work's own media), `05 DOCUMENTATION` (one folder per activity, named like studio's). Inside 02 and 03, one dated folder per piece of work: `<YYYY-MM> <name>`. `sketchpad/` is scratch.
+
+## Bibliography / Zotero
+
+Zotero is the source library (public library, Glowberry collection `3Z9ZID5J`). `docs/BIBLIOGRAPHY.md` is generated: `node ~/Documents/GitHub/studio/scripts/zotero/build-bibliography.mjs glowberry --out docs/BIBLIOGRAPHY.md`; never edit it by hand. Writing to Zotero is publishing: only approved batches. Never query `~/Zotero/zotero.sqlite`. Do not invent citations.
+
+## Support
+
+No funder support to acknowledge yet. When an award lands, add the funder and its acknowledgement wording here and in the README.
