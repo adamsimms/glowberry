@@ -2,7 +2,7 @@
 
 Generated from the Zotero collection [3Z9ZID5J](https://www.zotero.org/adamsimms/collections/3Z9ZID5J) by adamsimms/studio scripts/zotero/build-bibliography.mjs. Do not edit; change the items or their notes in Zotero and rebuild.
 
-67 sources. 22 citation keys are not pinned yet (Better BibTeX); unpinned keys may change.
+68 sources. 22 citation keys are not pinned yet (Better BibTeX); unpinned keys may change.
 
 ### adcockJamesTurrellArt1990
 
@@ -255,6 +255,13 @@ Le Louëdec, Justin; Cielniak, Grzegorz (2023). *Key Point-based Orientation Est
 - Zotero: [web](https://www.zotero.org/adamsimms/items/IEFEZXL4) · `zotero://select/library/items/IEFEZXL4`
 - DOI: https://doi.org/10.1007/978-3-031-44137-0_13
 - Tags: computer-vision, fruit, glowberry, method, robotics, strawberry
+
+### LeoVillarealBUCKYBALL
+
+Anon. (n.d.). Leo Villareal: BUCKYBALL. *Madison Square Park Conservancy*.
+
+- Zotero: [web](https://www.zotero.org/adamsimms/items/U53AA6JT) · `zotero://select/library/items/U53AA6JT`
+- URL: https://madisonsquarepark.org/art/exhibitions/leo-villareal-buckyball/
 
 ### lippardEccentricAbstraction1971
 
