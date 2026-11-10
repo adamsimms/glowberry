@@ -1,0 +1,26 @@
+# Shared Dependabot policy
+#
+# Applied by adamsimms/dependabot-policy sync, or copied from adamsimms/repo-template.
+# Security updates are enabled at the repo level (separate from version updates).
+# This template repo has no package.json, so it only watches GitHub Actions.
+# Repos created from it get the npm block from the dependabot-policy sync.
+
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+      time: "06:00"
+      timezone: "America/Toronto"
+    open-pull-requests-limit: 3
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
+    groups:
+      github-actions-dependencies:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"

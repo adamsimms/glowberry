@@ -6,11 +6,11 @@ alwaysApply: true
 
 # Glowberry
 
-- Canonical docs live under `docs/` (BRIEF, POWER, INFLATABLE, RESEARCH).
-- Private vault holds reasoning and restricted material. Start at the Studio Vault Index, then the Glowberry project index, when the local vault rule is present. Dual-write decisions and status to `docs/` and the vault in the same turn. Sketchpad is scratch only.
-- Do not invent permissions, quotes, or funding facts.
-- Do not commit moodboard folders (`3D/`, `inspiration/`, `locations/`, `maquettes/`, `references/`) or mesh/blend binaries unless explicitly asked in an issue.
-- `sketchpad/` is a local playground (notes, drafts, images). Only its README is tracked; do not commit other sketchpad contents. Prefer it as agent context when relevant; do not treat it as canonical over `docs/`.
+- Canonical docs live under `docs/`: BRIEF (with its decisions log), POWER, MATERIALS, SCANNING, FABLABS, INFLATABLE, RESEARCH. Start from `AGENTS.md`.
+- Private material (applications, named people, correspondence) lives in the private studio repo; never copy it here.
+- Do not invent permissions, quotes, or funding facts. No site outreach is sent before the pitch package exists.
+- Media (meshes, renders, Blender files, photos, moodboards) goes to the project's Drive folder (`MEDIA_DIR`), not into git. The provenance scan in `models/provenance/` is the one tracked binary.
+- `sketchpad/` is scratch; only its README is tracked.
+- No phase dates in docs; dates live on issues.
 - Dual license: CC BY-NC 4.0 (docs/creative), MIT (software). See LICENSE.md.
 - Avoid the word "master" in new user-facing text, docs, comments, and identifiers.
-- Exploratory phase: Milestone 0 foundation, then Milestone 1 feasibility — no due dates required.

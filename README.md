@@ -1,6 +1,8 @@
-# Glowberry
+# Bakeapple
 
-Monumental ripe **bakeapple** (cloudberry) as a glowing sculpture — concept, feasibility notes, and open development toward a Newfoundland landmark.
+Monumental ripe **bakeapple** (cloudberry) as a glowing sculpture, with small lit editions alongside — concept, feasibility notes, and open development toward a Newfoundland landmark. (Earlier working title: Glowberry, still the repo name.)
+
+Meshes, print files, renders and photos are not in the repo; they live in the project's media folder (`MEDIA_DIR`, see `.env.example`). The provenance scan in `models/provenance/` is the one tracked binary. Sources are in the public Zotero library (Glowberry collection).
 
 **Artist:** [Adam Simms](https://adamsimms.xyz)
 
@@ -18,7 +20,7 @@ Canonical brief and companions:
 | [docs/POWER.md](docs/POWER.md) | Lighting, battery, solar, controller |
 | [docs/INFLATABLE.md](docs/INFLATABLE.md) | Soft / summer track |
 | [docs/RESEARCH_sculpture_precedents.md](docs/RESEARCH_sculpture_precedents.md) | Sculpture / material precedents |
-| [docs/BIBLIOGRAPHY.md](docs/BIBLIOGRAPHY.md) | Living bibliography (readings, texts, research) |
+| [docs/BIBLIOGRAPHY.md](docs/BIBLIOGRAPHY.md) | Bibliography, generated from Zotero |
 | [docs/MATERIALS.md](docs/MATERIALS.md) | Print materials, coatings, translucency, mass bands |
 | [docs/SCANNING.md](docs/SCANNING.md) | Photogrammetry of the provenance berry |
 
