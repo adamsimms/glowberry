@@ -9,7 +9,7 @@ TIFF-CHUNK-01/   TIFF-CHUNK-02/   TIFF-CHUNK-03/
 metashape/berry04_three_chunks.psx
 ```
 
-Photo paths in the `.psx` are relative to that folder. Set `BERRY_ROOT` to it when running scripts. Default if unset: `~/Desktop/BERRY`. Set it in `.env` (see `.env.example`); on this machine it points at the Drive copy. The Drive archive of the same layout is `My Drive/BERRY/provenance/`.
+Photo paths in the `.psx` are relative to that folder. Set `BERRY_ROOT` to it when running scripts. Default if unset: `~/Desktop/BERRY`. Set it in `.env` (see `.env.example`); on this machine it points at the Drive copy. The Drive archive of the same layout is `$MEDIA_DIR/04-ARTWORK/PROVENANCE-SCAN/`.
 
 ## Two runtimes
 
