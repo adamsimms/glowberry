@@ -30,7 +30,7 @@ Scale comes from **one caliper reading** of 2.5 cm across the widest point. Noth
 
 ## What was captured
 
-446 frames, three remounts of the same berry, so that the parts a mount hides in one orientation are seen in another.
+446 frames, three remounts of the same berry, so that the parts a mount hides in one orientation are seen in another. Over a thousand photographs were taken across all capture attempts; the final reconstruction uses these 446 frames, 150 of them in the shipped mesh.
 
 | Remount | Frames | Rings |
 |---|---|---|
