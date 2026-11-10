@@ -4,13 +4,13 @@ Canonical brief for concept, fabrication (Studio Artefact), and systems. Budget 
 
 **Project title:** Glowberry (bakeapple / cloudberry pilgrimage sculpture).
 
-| Companion docs | |
-|----------------|--|
-| [`RESEARCH_sculpture_precedents.md`](RESEARCH_sculpture_precedents.md) | Sculpture / material precedents |
-| [`BIBLIOGRAPHY.md`](BIBLIOGRAPHY.md) | **Living bibliography** — readings, texts, research |
-| [`MATERIALS.md`](MATERIALS.md) | Print materials, coatings, translucency, mass bands |
-| [`POWER.md`](POWER.md) | Lighting, battery, solar, controller detail |
-| [`INFLATABLE.md`](INFLATABLE.md) | **Separate track:** ephemeral summer inflatable (Choi-lineage POC) |
+| Companion docs                                                         |                                                                    |
+| ---------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| [`RESEARCH_sculpture_precedents.md`](RESEARCH_sculpture_precedents.md) | Sculpture / material precedents                                    |
+| [`BIBLIOGRAPHY.md`](BIBLIOGRAPHY.md)                                   | **Living bibliography** — readings, texts, research                |
+| [`MATERIALS.md`](MATERIALS.md)                                         | Print materials, coatings, translucency, mass bands                |
+| [`POWER.md`](POWER.md)                                                 | Lighting, battery, solar, controller detail                        |
+| [`INFLATABLE.md`](INFLATABLE.md)                                       | **Separate track:** ephemeral summer inflatable (Choi-lineage POC) |
 
 ---
 
@@ -18,52 +18,52 @@ Canonical brief for concept, fabrication (Studio Artefact), and systems. Budget 
 
 **Glowberry** — monumental ripe bakeapple (cloudberry) as an accessible pilgrimage sculpture.
 
-| | |
-|--|--|
-| **Tone** | Awe + humor + uncanny presence |
-| **Body** | Resettled object — returned / transplanted “soul” (artist in Montreal; work for Newfoundland) |
-| **Not** | Weather station, enterable pavilion, data dashboard |
-| **Yes** | Beacon fruit people travel to see; soft **heartbeat / breathing glow** |
-| **Audience** | Newfoundlanders *and* visitors |
-| **Practice lineage** | Continues *Cloudberry* (presence / solar failure), *Light House* (beacon), *Driftwood* / *Adrift* (live systems), bakeapple as reason for return to Pinchard’s |
+|                      |                                                                                                                                                                |
+| -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Tone**             | Awe + humor + uncanny presence                                                                                                                                 |
+| **Body**             | Resettled object — returned / transplanted “soul” (artist in Montreal; work for Newfoundland)                                                                  |
+| **Not**              | Weather station, enterable pavilion, data dashboard                                                                                                            |
+| **Yes**              | Beacon fruit people travel to see; soft **heartbeat / breathing glow**                                                                                         |
+| **Audience**         | Newfoundlanders _and_ visitors                                                                                                                                 |
+| **Practice lineage** | Continues _Cloudberry_ (presence / solar failure), _Light House_ (beacon), _Driftwood_ / _Adrift_ (live systems), bakeapple as reason for return to Pinchard’s |
 
 ---
 
 ## 2. Interaction & siting (locked)
 
-| | |
-|--|--|
-| **Allowed** | Touch, sit near, walk around, photograph |
-| **Not allowed** | Entering the interior |
-| **Site** | TBD — Avalon, Fogo, or other **reachable** NL location; permissions-dependent |
-| **Landscape character** | Inland of shore / rock or cliff plateau; open coastal view |
-| **Site mock** | Local moodboard only for now (not in repo); coastal plateau / shore–cliff character |
-| **Pedestal** | Not required in art direction (fruit “landed/grown”); fabricator may need hidden anchors |
+|                         |                                                                                          |
+| ----------------------- | ---------------------------------------------------------------------------------------- |
+| **Allowed**             | Touch, sit near, walk around, photograph                                                 |
+| **Not allowed**         | Entering the interior                                                                    |
+| **Site**                | TBD — Avalon, Fogo, or other **reachable** NL location; permissions-dependent            |
+| **Landscape character** | Inland of shore / rock or cliff plateau; open coastal view                               |
+| **Site mock**           | Local moodboard only for now (not in repo); coastal plateau / shore–cliff character      |
+| **Pedestal**            | Not required in art direction (fruit “landed/grown”); fabricator may need hidden anchors |
 
 ---
 
 ## 3. Material & light (locked)
 
-**Target:** semi-opaque **translucent glowing orange** — light *in the flesh*.
+**Target:** semi-opaque **translucent glowing orange** — light _in the flesh_.
 
-| | |
-|--|--|
-| **Look** | Saturated amber → vermillion; soft internal luminescence |
-| **Build** | Hollow shell + diffusion + internal LEDs + hatch at stem/bottom |
-| **Candidates** | Translucent **FRP / fiberglass–resin**; translucent **PETG** (Artefact); light-passing tints/clearcoats — see [`MATERIALS.md`](MATERIALS.md) |
-| **Avoid** | Fully opaque paint (kills glow); polished stainless as primary skin |
-| **When it glows** | **Dusk / night** is the show — no daytime glow requirement |
-| **Behavior** | Simple breathing / heartbeat pulse (ESP32-class MCU) |
-| **Darkness** | Outdoor: occasional dark nights **OK** (part of the work) |
+|                   |                                                                                                                                              |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Look**          | Saturated amber → vermillion; soft internal luminescence                                                                                     |
+| **Build**         | Hollow shell + diffusion + internal LEDs + hatch at stem/bottom                                                                              |
+| **Candidates**    | Translucent **FRP / fiberglass–resin**; translucent **PETG** (Artefact); light-passing tints/clearcoats — see [`MATERIALS.md`](MATERIALS.md) |
+| **Avoid**         | Fully opaque paint (kills glow); polished stainless as primary skin                                                                          |
+| **When it glows** | **Dusk / night** is the show — no daytime glow requirement                                                                                   |
+| **Behavior**      | Simple breathing / heartbeat pulse (ESP32-class MCU)                                                                                         |
+| **Darkness**      | Outdoor: occasional dark nights **OK** (part of the work)                                                                                    |
 
 ---
 
 ## 4. Power (locked)
 
-| Scale | Role | Power |
-|-------|------|--------|
-| **≤ ~60"** (Tiers A & B) | Gallery / indoor or short outdoor loans | **AC plug-in** and/or small **battery pack**; typical **5–8 h** evening run; recharge or plug overnight / closed hours; **no solar** |
-| **~10 ft** (Tier C) | Outdoor landmark | **Solar** (panels **hidden** in/under base); **grid assist OK** if site allows; battery for night; dark spells OK |
+| Scale                          | Role                                               | Power                                                                                                                                          |
+| ------------------------------ | -------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| **≤ ~60"** (Tiers A & B)       | Gallery / indoor or short outdoor loans            | **AC plug-in** and/or small **battery pack**; typical **5–8 h** evening run; recharge or plug overnight / closed hours; **no solar**           |
+| **~10 ft** (Tier C)            | Outdoor landmark                                   | **Solar** (panels **hidden** in/under base); **grid assist OK** if site allows; battery for night; dark spells OK                              |
 | **~6 ft** (CCA / Eastern Edge) | Outdoor-capable pilgrimage; **process test at EE** | **EE:** AC + **600-1000 Wh** LiFePO₄. **Optional** one **200-220 W** visible foldable if staff allow. DC into the driver. Not hidden PV/vault. |
 
 **Controller:** ESP32 / Arduino / small LED controller — **not** Raspberry Pi (Pi only if a future Cloudberry-style sensing chapter).
@@ -74,14 +74,14 @@ Detail + cost bands: [`POWER.md`](POWER.md).
 
 ## 5. Primary art references
 
-| Reference | Steal | Don’t copy |
-|-----------|-------|------------|
-| **Yayoi Kusama — Yellow Pumpkin** (Naoshima) | Pilgrimage fruit; island landmark; FRP outdoor fruit; recovery hardware | Opaque paint; polka-dot identity |
-| **Paresh Maity — bronze jackfruit** | Monumental fruit as cultural metaphor | Bronze / no glow |
-| **Anish Kapoor — Cloud Gate (Chicago Bean)** | Touchable public body; walk-around uncanny scale | Mirror stainless as primary skin |
-| **James Turrell — Skyspaces** | Night presence; light as medium; glowing shell logic | Enterable architecture as the work |
-| **Leo Villareal — Buckyball** ([Madison Square Park](https://madisonsquarepark.org/art/exhibitions/leo-villareal-buckyball/)) | Light-as-sculpture; public night draw; programmed LED “life” | Open lattice / RGB spectacle; complex generative software |
-| **Choi Jeong-hwa — inflatable fruit** | Pop humor; photo magnetism; soft temporary monument | Don’t treat as the permanent NL beacon |
+| Reference                                                                                                                     | Steal                                                                   | Don’t copy                                                |
+| ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- | --------------------------------------------------------- |
+| **Yayoi Kusama — Yellow Pumpkin** (Naoshima)                                                                                  | Pilgrimage fruit; island landmark; FRP outdoor fruit; recovery hardware | Opaque paint; polka-dot identity                          |
+| **Paresh Maity — bronze jackfruit**                                                                                           | Monumental fruit as cultural metaphor                                   | Bronze / no glow                                          |
+| **Anish Kapoor — Cloud Gate (Chicago Bean)**                                                                                  | Touchable public body; walk-around uncanny scale                        | Mirror stainless as primary skin                          |
+| **James Turrell — Skyspaces**                                                                                                 | Night presence; light as medium; glowing shell logic                    | Enterable architecture as the work                        |
+| **Leo Villareal — Buckyball** ([Madison Square Park](https://madisonsquarepark.org/art/exhibitions/leo-villareal-buckyball/)) | Light-as-sculpture; public night draw; programmed LED “life”            | Open lattice / RGB spectacle; complex generative software |
+| **Choi Jeong-hwa — inflatable fruit**                                                                                         | Pop humor; photo magnetism; soft temporary monument                     | Don’t treat as the permanent NL beacon                    |
 
 **Stance:** Kusama site + fruit pilgrimage + Turrell/Villareal night light + Kapoor touchability → **translucent FRP/PETG flesh** with a **simple heartbeat**, not a Buckyball-style LED cage.
 
@@ -97,13 +97,13 @@ Production mesh package is **not published in this repo yet** (will be added del
 
 When publishing, expect roughly:
 
-| File | Use |
-|------|-----|
-| `glowberry_master_500mm.stl` | Production mesh (~484k tris) — WeTransfer / Drive |
-| `glowberry_master_500mm_preview.stl` | Lighter preview |
-| `glowberry_master_500mm.obj` | Alternate format |
-| `glowberry.blend` | Blender source (optional) |
-| Berry / site refs | Curated references (added intentionally later) |
+| File                                 | Use                                               |
+| ------------------------------------ | ------------------------------------------------- |
+| `glowberry_master_500mm.stl`         | Production mesh (~484k tris) — WeTransfer / Drive |
+| `glowberry_master_500mm_preview.stl` | Lighter preview                                   |
+| `glowberry_master_500mm.obj`         | Alternate format                                  |
+| `glowberry.blend`                    | Blender source (optional)                         |
+| Berry / site refs                    | Curated references (added intentionally later)    |
 
 **Units:** meters; master height **500 mm**. Scale uniformly per tier.
 
@@ -117,13 +117,13 @@ When publishing, expect roughly:
 
 ### Scale tiers
 
-| Tier | Height | Scale from 500 mm | Role | Fabrication note |
-|------|--------|-------------------|------|------------------|
-| **Primary (Artefact ask)** | **~6 ft (≈1.8 m)** | **≈3.66×** | Outdoor-capable pilgrimage piece | **20 m³ one-piece only**; translucent PETG ± weather coat. Split/join is not a live path for this size. |
-| A (later) | 20–30" | 1.02×–1.52× | Gallery / study | Smaller prints possible |
-| B (later) | 50–60" | 2.54×–3.05× | Gallery | Later; not a split of the 6 ft piece |
-| C (alt.) | ~7–10 ft | 4.3×–6.1× | Larger landmark | Same family as 6 ft; not the current quote focus |
-| Editions (now) | 10 to 16 in (about 25 to 40 cm) | 0.51x to 0.81x | Small ownable objects, lit from inside | See **Small editions** below; method and material under test |
+| Tier                       | Height                          | Scale from 500 mm | Role                                   | Fabrication note                                                                                        |
+| -------------------------- | ------------------------------- | ----------------- | -------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| **Primary (Artefact ask)** | **~6 ft (≈1.8 m)**              | **≈3.66×**        | Outdoor-capable pilgrimage piece       | **20 m³ one-piece only**; translucent PETG ± weather coat. Split/join is not a live path for this size. |
+| A (later)                  | 20–30"                          | 1.02×–1.52×       | Gallery / study                        | Smaller prints possible                                                                                 |
+| B (later)                  | 50–60"                          | 2.54×–3.05×       | Gallery                                | Later; not a split of the 6 ft piece                                                                    |
+| C (alt.)                   | ~7–10 ft                        | 4.3×–6.1×         | Larger landmark                        | Same family as 6 ft; not the current quote focus                                                        |
+| Editions (now)             | 10 to 16 in (about 25 to 40 cm) | 0.51x to 0.81x    | Small ownable objects, lit from inside | See **Small editions** below; method and material under test                                            |
 
 **Current submission to Artefact:** quote the **~6 ft** piece only. Shop may hollow, rib, thicken walls; advise on translucent outdoor builds.
 
@@ -135,11 +135,11 @@ The 100 mm v17 test prints out for quotes at Proto3000, MatterThings, Objex Unli
 
 Size limits at edition scale:
 
-| Process | Build height | At 10 to 16 in |
-|---------|--------------|----------------|
-| Stratasys J750 PolyJet (full colour) | About 200 mm | No one-piece full-colour berry |
-| Mimaki 3DUJ-553 (Objex Unlimited) | 305 mm | 10 to 12 in fits; 16 in does not |
-| Large-format SLA and SLS | Depends on the machine | Usually reaches 14 to 16 in |
+| Process                              | Build height           | At 10 to 16 in                   |
+| ------------------------------------ | ---------------------- | -------------------------------- |
+| Stratasys J750 PolyJet (full colour) | About 200 mm           | No one-piece full-colour berry   |
+| Mimaki 3DUJ-553 (Objex Unlimited)    | 305 mm                 | 10 to 12 in fits; 16 in does not |
+| Large-format SLA and SLS             | Depends on the machine | Usually reaches 14 to 16 in      |
 
 The artist will compare methods on:
 
@@ -161,22 +161,22 @@ Paste-ready answers + PDF brief: [`docs/artefact/`](artefact/).
 
 Form fields they ask for:
 
-| Field | Suggested for Glowberry |
-|-------|-------------------------|
-| Project type | **3D printing** |
-| Delivery | **In more than six months** (exploratory / grant-dependent) |
-| Budget band | **$50,000 or less** for this feasibility ask (or $50–100k if you prefer) |
-| Description | Paste from [`artefact/FORM_ANSWERS.md`](artefact/FORM_ANSWERS.md) — **~6 ft only** |
-| Documents | PDF from [`artefact/ARTEFACT_SUBMISSION_BRIEF.md`](artefact/ARTEFACT_SUBMISSION_BRIEF.md) + preview image; full STL via WeTransfer |
-| How you found them | e.g. online search / recommendation |
-| Email / phone | Required |
+| Field              | Suggested for Glowberry                                                                                                            |
+| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
+| Project type       | **3D printing**                                                                                                                    |
+| Delivery           | **In more than six months** (exploratory / grant-dependent)                                                                        |
+| Budget band        | **$50,000 or less** for this feasibility ask (or $50–100k if you prefer)                                                           |
+| Description        | Paste from [`artefact/FORM_ANSWERS.md`](artefact/FORM_ANSWERS.md) — **~6 ft only**                                                 |
+| Documents          | PDF from [`artefact/ARTEFACT_SUBMISSION_BRIEF.md`](artefact/ARTEFACT_SUBMISSION_BRIEF.md) + preview image; full STL via WeTransfer |
+| How you found them | e.g. online search / recommendation                                                                                                |
+| Email / phone      | Required                                                                                                                           |
 
 **Also:** 514-933-7666 · info@studioartefact.com · 7900 av. Blaise-Pascal, Montreal
 
 ### Best approach
 
-1. **Submit the form** with the short **6 ft** brief + clear feasibility ask.  
-2. After they reply, **co-design** materials, translucent coat, hatch, wall thickness.  
+1. **Submit the form** with the short **6 ft** brief + clear feasibility ask.
+2. After they reply, **co-design** materials, translucent coat, hatch, wall thickness.
 3. Keep the first ask to **feasibility / ballpark range**, not a hard PO.
 
 ### Form body (short — ~6 ft)
@@ -189,12 +189,12 @@ Hello, Adam Simms, Montreal. Developing **Glowberry** (bakeapple / cloudberry pi
 
 ## 8. Send checklist
 
-- [ ] Fill [Artefact contact form](https://www.studioartefact.com/en/contact/) (3D printing + timeline + budget band)  
-- [ ] Upload **6 ft** PDF brief (+ preview image); WeTransfer full STL if asked  
-- [ ] Name / phone / email on form  
-- [ ] Stress **translucent / glow-capable** + **~6 ft one-piece only** (no split)  
-- [ ] Ask for **feasibility + range**, not a fixed PO yet  
-- [ ] Interaction: touch / sit near / walk around — no entry  
+- [ ] Fill [Artefact contact form](https://www.studioartefact.com/en/contact/) (3D printing + timeline + budget band)
+- [ ] Upload **6 ft** PDF brief (+ preview image); WeTransfer full STL if asked
+- [ ] Name / phone / email on form
+- [ ] Stress **translucent / glow-capable** + **~6 ft one-piece only** (no split)
+- [ ] Ask for **feasibility + range**, not a fixed PO yet
+- [ ] Interaction: touch / sit near / walk around — no entry
 
 ---
 
@@ -202,16 +202,16 @@ Hello, Adam Simms, Montreal. Developing **Glowberry** (bakeapple / cloudberry pi
 
 **Working calendar:** living Start / Due dates live on [Glowberry — R&D](https://github.com/users/adamsimms/projects/2). That board is the feasibility clock. There is no separate studio-wide timeline ticket ([#26](https://github.com/adamsimms/glowberry/issues/26) closed). Grant-period work plans and spend schedules live on individual grant issues (for example [#47](https://github.com/adamsimms/glowberry/issues/47)).
 
-Hard call currently on the board: The Rooms AIR ([#57](https://github.com/adamsimms/glowberry/issues/57)) due **2026-11-02**. Site preference is the Landfall Trust, Kent Cottage, Brigus (three weeks, mid-June to mid-July 2027). Working title *Bakeapple*: a study for Glowberry, about 16 in, printed from the scan at night on a Sovol SV08 Max (500 mm build volume) running on its own solar panel and battery, then lit by the same sun. Kent Cottage is off-grid, so nothing draws on the cottage's power. Canada Council ([#47](https://github.com/adamsimms/glowberry/issues/47)) is a personal submit target on a rolling intake.
+Hard call currently on the board: The Rooms AIR ([#57](https://github.com/adamsimms/glowberry/issues/57)) due **2026-11-09** (extended from 2026-11-02). Site preference is the Landfall Trust, Kent Cottage, Brigus (three weeks, mid-June to mid-July 2027). Working title _Bakeapple_: a study for Glowberry, about 16 in, printed from the scan on a Sovol SV08 Max (500 mm build volume) running on its own solar panel and battery, pausing when the battery runs dry, then lit by the same sun. Kent Cottage is off-grid, so nothing draws on the cottage's power. The Rooms application and its support images call the work *Bakeapple* throughout, including the proposed six-foot piece, and do not use the name Glowberry. Est-Nord-Est's regular residency (Saint-Jean-Port-Joli, eight weeks) is due **2026-11-08**, first choice Spring 2027, second Fall 2027. The proposal is research rather than a finished piece: a protected source scan will remain intact while a working file accumulates documented changes through available solar energy, printing, finishing, and possible re-scanning. A small ESP32 or Arduino-class logger will record panel capture, battery state, and printer use as provenance for each descendant. See [`POWER.md`](POWER.md#est-nord-est-solar-print-research-logger-proposed). Canada Council ([#47](https://github.com/adamsimms/glowberry/issues/47)) is a personal submit target on a rolling intake.
 
 **Still open (concept / site):**
 
-- Exact NL site + permissions  
-- Outdoor power: solar-only vs solar+grid when shore power exists  
-- Panel hiding strategy on site  
+- Exact NL site + permissions
+- Outdoor power: solar-only vs solar+grid when shore power exists
+- Panel hiding strategy on site
 - Whether Artefact installs LEDs or only delivers shell
 - Alternate quotes beside Artefact ([#37](https://github.com/adamsimms/glowberry/issues/37)): [AllPrototype](https://allprototype.com/3d-scanning-montreal/), [USIMM](https://www.usimm.ca/en/)
 
 ---
 
-*Updated 2026-10-27. Small lit editions (10 to 16 in) added beside the 6 ft vision; test prints now serve them. Earlier (2026-10-17): working calendar points at the R&D board; production body from provenance scan; 6 ft shell one-piece only; alternate shops added to quotes.*
+_Updated 2026-10-27. Small lit editions (10 to 16 in) added beside the 6 ft vision; test prints now serve them. Earlier (2026-10-17): working calendar points at the R&D board; production body from provenance scan; 6 ft shell one-piece only; alternate shops added to quotes._

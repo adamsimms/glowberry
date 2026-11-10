@@ -162,6 +162,32 @@ Use warm white + amber/orange (or tuned RGBW); diffuse so no hotspots; IP65+ out
 
 ---
 
+## Est-Nord-Est solar-print research logger (proposed)
+
+This is a separate, small system for the Est-Nord-Est residency proposal. It does not power or control the large sculpture's heartbeat.
+
+The proposed residency work uses a small 3D printer, portable panel, and battery to test how available stored energy conditions an evolving print-file lineage. A low-power ESP32 or Arduino-class logger will record the energy system around each attempt.
+
+```text
+[portable panel] → [charge controller / power station] → [small 3D printer]
+                           ↓
+                    [ESP32 energy logger]
+```
+
+### Record for each attempt
+
+- energy captured from the panel during the relevant period, in Wh where the system permits measurement
+- battery state at the start and end of the attempt
+- printer draw and print duration where practical to measure
+- a brief manual note on panel angle, shade, wind, and cloud
+- the working-file version, print state, and any finishing operation
+
+The record is provenance, not a weather dashboard. Solar capture reflects panel placement, shade, charge state, conversion loss, and sun. The residency will use the logger to make a defined file-change protocol accountable, rather than claim that weather automatically generates form.
+
+The logger, sensors, and any small enclosure are artist-supplied. ENE's supervised assembly room can support their mounting, repair, and adaptation. The final sensing architecture and printer-power measurement remain research questions. Do not assume that the lighting kit specified above can power the printer.
+
+---
+
 ## Open systems questions
 
 - Tier C / 6 ft **landscape** site: solar-only vs solar+grid when shore power exists
