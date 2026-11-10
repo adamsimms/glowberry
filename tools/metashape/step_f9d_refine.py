@@ -29,7 +29,7 @@ Env:
     BERRY_D_CANDIDATES=20 rivals to refine alongside the winner
 
 Run:
-    /Users/adamsimms/Desktop/BERRY/metashape/.venv-icp/bin/python step_f9d_refine.py
+    uv run --with open3d --with numpy python step_f9d_refine.py
 """
 
 import json
@@ -38,7 +38,7 @@ import os
 import numpy as np
 import open3d as o3d
 
-WORK = "/Users/adamsimms/Desktop/BERRY/metashape"
+WORK = os.path.join(os.environ.get("BERRY_ROOT", os.path.expanduser("~/Desktop/BERRY")), "metashape")
 CLOUD_DIR = os.path.join(WORK, "clouds")
 OUT_DIR = os.path.join(WORK, "icp")
 GEOM = os.path.join(WORK, "reports", "capture_geometry.json")

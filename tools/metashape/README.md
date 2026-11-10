@@ -9,7 +9,7 @@ TIFF-CHUNK-01/   TIFF-CHUNK-02/   TIFF-CHUNK-03/
 metashape/berry04_three_chunks.psx
 ```
 
-Photo paths in the `.psx` are relative to that folder. Set `BERRY_ROOT` to it when running scripts. Default if unset: `/Users/adamsimms/Desktop/BERRY`. The Drive archive of the same layout is `My Drive/BERRY/provenance/`.
+Photo paths in the `.psx` are relative to that folder. Set `BERRY_ROOT` to it when running scripts. Default if unset: `~/Desktop/BERRY`. Set it in `.env` (see `.env.example`); on this machine it points at the Drive copy. The Drive archive of the same layout is `My Drive/BERRY/provenance/`.
 
 ## Two runtimes
 
@@ -19,10 +19,10 @@ Metashape Pro 2.3.2 scripts (the `step_*` files that import `Metashape`):
 /Applications/MetashapePro.app/Contents/MacOS/MetashapePro -r step_a_import.py
 ```
 
-Open3D scripts (registration, cloud combine, inspection). Use the venv that has Open3D installed, not Metashape's bundled Python:
+Open3D scripts (registration, cloud combine, inspection). Run them with a Python that has Open3D and NumPy, not Metashape's bundled Python, for example:
 
 ```
-/Users/adamsimms/Desktop/BERRY/metashape/.venv-icp/bin/python icp_constrained.py
+uv run --with open3d --with numpy python icp_constrained.py
 ```
 
 ## Order

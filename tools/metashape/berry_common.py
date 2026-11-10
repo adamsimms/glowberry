@@ -12,7 +12,7 @@ Metashape 2.3.x notes that matter here:
 import os
 import sys
 
-BERRY = os.environ.get("BERRY_ROOT", "/Users/adamsimms/Desktop/BERRY")
+BERRY = os.environ.get("BERRY_ROOT", os.path.expanduser("~/Desktop/BERRY"))
 WORK = os.path.join(BERRY, "metashape")
 PROJECT = os.path.join(WORK, "berry04_three_chunks.psx")
 

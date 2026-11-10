@@ -17,7 +17,7 @@ derived from mean nearest-neighbour distance, so any step that would remove
 more than a small fraction is reverted rather than trusted.
 
 Run:
-    /Users/adamsimms/Desktop/BERRY/metashape/.venv-icp/bin/python combine_clouds.py
+    uv run --with open3d --with numpy python combine_clouds.py
 """
 
 import os
@@ -25,7 +25,7 @@ import os
 import numpy as np
 import open3d as o3d
 
-WORK = "/Users/adamsimms/Desktop/BERRY/metashape"
+WORK = os.path.join(os.environ.get("BERRY_ROOT", os.path.expanduser("~/Desktop/BERRY")), "metashape")
 CLOUD_DIR = os.path.join(WORK, "clouds")
 OUT_DIR = os.path.join(WORK, "icp")
 UPRIGHT = "upright_A_nomask_highonly_dense2"

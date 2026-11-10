@@ -17,7 +17,7 @@ interpolated mesh over a 99.3% covered sphere should be one closed piece with
 at most a small patch where the two mount holes overlapped.
 
 Run:
-    /Users/adamsimms/Desktop/BERRY/metashape/.venv-icp/bin/python inspect_mesh.py
+    uv run --with open3d --with numpy python inspect_mesh.py
 """
 
 import os
@@ -25,7 +25,7 @@ import os
 import numpy as np
 import open3d as o3d
 
-WORK = "/Users/adamsimms/Desktop/BERRY/metashape"
+WORK = os.path.join(os.environ.get("BERRY_ROOT", os.path.expanduser("~/Desktop/BERRY")), "metashape")
 OUT_DIR = os.path.join(WORK, "icp")
 # Prefer the cleaned mesh when it exists, so a rerun after step_f6 reports on
 # what will actually be textured.

@@ -29,7 +29,7 @@ sets how much difference this method reports for two scans that do agree.
 Sideways is then judged against that gap rather than against zero.
 
 Run:
-    /Users/adamsimms/Desktop/BERRY/metashape/.venv-icp/bin/python step_f9c_shape.py
+    uv run --with open3d --with numpy python step_f9c_shape.py
 """
 
 import json
@@ -39,7 +39,7 @@ import numpy as np
 import open3d as o3d
 from scipy.special import sph_harm_y
 
-WORK = "/Users/adamsimms/Desktop/BERRY/metashape"
+WORK = os.path.join(os.environ.get("BERRY_ROOT", os.path.expanduser("~/Desktop/BERRY")), "metashape")
 CLOUD_DIR = os.path.join(WORK, "clouds")
 MESH = os.path.join(WORK, "exports", "merged_up_inv_clean.ply")
 OUT = os.path.join(WORK, "icp", "shape_spectrum.png")

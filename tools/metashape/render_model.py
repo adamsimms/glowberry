@@ -11,7 +11,7 @@ that shades the mesh from vertex colours and a simple light, which needs
 nothing but numpy and matplotlib.
 
 Run:
-    /Users/adamsimms/Desktop/BERRY/metashape/.venv-icp/bin/python render_model.py
+    uv run --with open3d --with numpy python render_model.py
 """
 
 import os
@@ -19,7 +19,7 @@ import os
 import numpy as np
 import open3d as o3d
 
-WORK = "/Users/adamsimms/Desktop/BERRY/metashape"
+WORK = os.path.join(os.environ.get("BERRY_ROOT", os.path.expanduser("~/Desktop/BERRY")), "metashape")
 OBJ = os.path.join(WORK, "exports", "berry_merged_up_inv.obj")
 CLEAN = os.path.join(WORK, "exports", "merged_up_inv_clean.ply")
 OUT = os.path.join(WORK, "icp", "berry_render.png")

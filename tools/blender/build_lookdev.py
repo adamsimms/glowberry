@@ -20,7 +20,7 @@ from mathutils import Vector
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 PLY = os.path.join(
-    os.path.expanduser("~/Desktop/BERRY/metashape/exports"),
+    os.path.join(os.environ.get("BERRY_ROOT", os.path.expanduser("~/Desktop/BERRY")), "metashape", "exports"),
     "merged_up_inv_clean.ply",
 )
 GLB = os.path.join(ROOT, "models", "provenance", "berry_merged_up_inv_cm.glb")

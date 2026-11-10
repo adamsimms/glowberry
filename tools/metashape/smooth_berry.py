@@ -7,7 +7,7 @@ two far-hits meet. Vertices stay those of the scan; only radius changes.
 Does not touch models/provenance/. Overwrites models/smooth/.
 
 Run:
-    /Users/adamsimms/Desktop/BERRY/metashape/.venv-icp/bin/python \\
+    uv run --with open3d --with numpy python \\
         tools/metashape/smooth_berry.py
 """
 
@@ -19,7 +19,7 @@ import open3d as o3d
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 SRC_PLY = os.path.join(
-    os.path.expanduser("~/Desktop/BERRY/metashape/exports"),
+    os.path.join(os.environ.get("BERRY_ROOT", os.path.expanduser("~/Desktop/BERRY")), "metashape", "exports"),
     "merged_up_inv_clean.ply",
 )
 OUT_DIR = os.path.join(ROOT, "models", "smooth")

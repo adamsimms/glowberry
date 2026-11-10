@@ -18,7 +18,7 @@ This renders the three clouds side by side to see it, and measures how much of
 each cloud sits outside a berry-sized shell.
 
 Run:
-    /Users/adamsimms/Desktop/BERRY/metashape/.venv-icp/bin/python step_f9b_diagnose.py
+    uv run --with open3d --with numpy python step_f9b_diagnose.py
 """
 
 import json
@@ -27,7 +27,7 @@ import os
 import numpy as np
 import open3d as o3d
 
-WORK = "/Users/adamsimms/Desktop/BERRY/metashape"
+WORK = os.path.join(os.environ.get("BERRY_ROOT", os.path.expanduser("~/Desktop/BERRY")), "metashape")
 CLOUD_DIR = os.path.join(WORK, "clouds")
 OUT = os.path.join(WORK, "icp", "sideways_diagnose.png")
 REPORT = os.path.join(WORK, "reports", "step_f9b_diagnose.json")
