@@ -1,4 +1,6 @@
-# Glowberry Inflatable — ephemeral summer track
+# Inflatable — archived (not pursuing)
+
+**Out since 2026-08-26** ([`BRIEF.md`](BRIEF.md)). Kept as notes only; not a live track.
 
 Separate from the permanent **Glowberry** hard sculpture (translucent FRP/PETG shell). This is a **Choi Jeong-hwa–lineage** piece: soft, loud, temporary, photo-magnetic — a **summer proof of concept** to test scale, humor, and site before (or beside) the hard sculpture.
 
