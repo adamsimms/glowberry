@@ -106,12 +106,6 @@ Not decided. Fogo Island and the Bonavista Peninsula are **regions**, not parcel
 
 ---
 
----|-------------|
-| **Signal Hill** | Artist decision, 2026-08-26. Parks Canada, Cabot Tower, city light. |
-| **Pinchard's Island and Bonavista North** | Too close to resettlement. Origin of the work, not the siting of the object. |
-
----
-
 ## What this is not
 
 - A send ([#34](https://github.com/adamsimms/glowberry/issues/34); waits on the pitch package).
