@@ -10,6 +10,7 @@ Canonical brief for concept, fabrication (Studio Artefact), and systems. Budget 
 | [`BIBLIOGRAPHY.md`](BIBLIOGRAPHY.md)                                   | **Living bibliography** — readings, texts, research                |
 | [`MATERIALS.md`](MATERIALS.md)                                         | Print materials, coatings, translucency, mass bands                |
 | [`POWER.md`](POWER.md)                                                 | Lighting, battery, solar, controller detail                        |
+| [`SITE.md`](SITE.md) | NL site longlist (no place chosen; no permissions claimed) |
 | [`INFLATABLE.md`](INFLATABLE.md)                                       | **Separate track:** ephemeral summer inflatable (Choi-lineage POC) |
 
 ---

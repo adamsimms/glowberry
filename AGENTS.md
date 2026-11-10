@@ -18,7 +18,8 @@ Glowberry, developed in the open. One milestone or one issue per chat when the w
 2. [docs/POWER.md](docs/POWER.md): light, battery, solar, controller
 3. [docs/MATERIALS.md](docs/MATERIALS.md): print, coatings, translucency, mass bands
 4. [docs/SCANNING.md](docs/SCANNING.md): photogrammetry of the provenance berry; mesh tools
-5. [docs/FABLABS.md](docs/FABLABS.md), [docs/INFLATABLE.md](docs/INFLATABLE.md) (archived track), [docs/RESEARCH_sculpture_precedents.md](docs/RESEARCH_sculpture_precedents.md)
+5. [docs/SITE.md](docs/SITE.md): NL site longlist (no place chosen, no permissions)
+6. [docs/FABLABS.md](docs/FABLABS.md), [docs/INFLATABLE.md](docs/INFLATABLE.md) (archived track), [docs/RESEARCH_sculpture_precedents.md](docs/RESEARCH_sculpture_precedents.md)
 
 Docs policy and the decisions rule (work decision vs proposal choice vs option): [`.cursor/rules/docs.mdc`](.cursor/rules/docs.mdc).
 
