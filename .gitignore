@@ -35,3 +35,8 @@ __pycache__/
 
 # Local image dumps (not committed until intentional)
 /assets/
+
+# Env / secrets
+.env
+.env.*
+!.env.example
