@@ -1,8 +1,8 @@
-# Glowberry — project brief
+# Bakeapple — project brief
 
 Canonical brief for concept, fabrication (Studio Artefact), and systems. Budget open / may pursue funding.
 
-**Project title:** Glowberry (bakeapple / cloudberry pilgrimage sculpture).
+**Project title:** *Bakeapple* (a bakeapple / cloudberry pilgrimage sculpture; earlier working title Glowberry, still the repo and file name).
 
 | Companion docs                                                         |                                                                    |
 | ---------------------------------------------------------------------- | ------------------------------------------------------------------ |
@@ -16,7 +16,9 @@ Canonical brief for concept, fabrication (Studio Artefact), and systems. Budget 
 
 ## 1. Concept (locked)
 
-**Glowberry** — monumental ripe bakeapple (cloudberry) as an accessible pilgrimage sculpture.
+***Bakeapple*** — monumental ripe bakeapple (cloudberry) as an accessible pilgrimage sculpture. One small berry is asked to hold what the island knew, without pretending to preserve what is gone; the size answers how small the berry is.
+
+**Naming and ethics:** keep the Newfoundland word *bakeapple*; acknowledge cloudberry, appik, aqpik and chicouté; do not speak for other communities' traditions. One specific berry, not a generic one. Family are collaborators, not subjects.
 
 |                      |                                                                                                                                                                |
 | -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -64,7 +66,7 @@ Canonical brief for concept, fabrication (Studio Artefact), and systems. Budget 
 | ------------------------------ | -------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
 | **≤ ~60"** (Tiers A & B)       | Gallery / indoor or short outdoor loans            | **AC plug-in** and/or small **battery pack**; typical **5–8 h** evening run; recharge or plug overnight / closed hours; **no solar**           |
 | **~10 ft** (Tier C)            | Outdoor landmark                                   | **Solar** (panels **hidden** in/under base); **grid assist OK** if site allows; battery for night; dark spells OK                              |
-| **~6 ft** (CCA / Eastern Edge) | Outdoor-capable pilgrimage; **process test at EE** | **EE:** AC + **600-1000 Wh** LiFePO₄. **Optional** one **200-220 W** visible foldable if staff allow. DC into the driver. Not hidden PV/vault. |
+| **~6 ft**                      | Outdoor-capable pilgrimage; portable lighting test indoors | **Test:** AC + **600-1000 Wh** LiFePO₄, optional visible foldable where allowed, DC into the driver. **Final site:** solar-only vs solar+grid open. |
 
 **Controller:** ESP32 / Arduino / small LED controller — **not** Raspberry Pi (Pi only if a future Cloudberry-style sensing chapter).
 
@@ -93,7 +95,7 @@ Detail + cost bands: [`POWER.md`](POWER.md).
 
 Production mesh package is **not published in this repo yet** (will be added deliberately when quote-ready). Local working files live outside git for now.
 
-**Body origin (locked 2026-09-07):** the production body descends from the **provenance scan** of a Pinchard's Island bakeapple ([#52](https://github.com/adamsimms/glowberry/issues/52), [`SCANNING.md`](SCANNING.md)), not from the independently modelled 500 mm mesh. Raw scan stays the ancestor and archive twin; the print path takes a cleaned, manifold descendant of it, scaled to ~6 ft. This is a claim made in public application text, so [#16](https://github.com/adamsimms/glowberry/issues/16) has to actually rebuild on the scan before fabrication.
+**Body origin (open, OD below):** the application texts say the body descends from the **provenance scan** of a Pinchard's Island bakeapple picked by the artist's grandmother ([`SCANNING.md`](SCANNING.md)): raw scan as ancestor and archive twin, print path a cleaned, manifold descendant. Since the v17 test prints the body is modelled from reference photos, which `SCANNING.md` calls a departure from that claim. Which body the 6 ft piece and the editions use is not decided; public text must not claim more than is true.
 
 When publishing, expect roughly:
 
@@ -127,9 +129,9 @@ When publishing, expect roughly:
 
 **Current submission to Artefact:** quote the **~6 ft** piece only. Shop may hollow, rib, thicken walls; advise on translucent outdoor builds.
 
-### Small editions (decided 2026-10-27)
+### Small editions (decided 2026-10-27; method 2026-11-09)
 
-The ~6 ft piece stays the primary vision. It depends on grants and funding and will take a long time. In the meantime the artist is making smaller, ownable objects (editions) of the berry, about 10 to 16 in tall (25 to 40 cm) and lit from inside, and is testing print methods and materials now to see what works best for them. Edition size, count and price are not set.
+The ~6 ft piece stays the primary vision. It depends on grants and funding and will take a long time. In the meantime the artist is making smaller, ownable objects (editions) of the berry, about 10 to 16 in tall (25 to 40 cm) and lit from inside, and is testing print methods and materials now to see what works best for them. Edition size, count and price are not set. Every small berry is an edition of the work, including residency batches and studies; solar printing (a printer on its own panel and battery, pausing when the battery runs dry) with a logged energy record is part of how they are made ([`POWER.md`](POWER.md#solar-print-logger-editions)).
 
 The 100 mm v17 test prints out for quotes at Proto3000, MatterThings, Objex Unlimited and 3DMan ([`SCANNING.md`](SCANNING.md), [`FABLABS.md`](FABLABS.md)) are a cheap first comparison toward these editions. They are not a test of the 6 ft FDM shell, so PolyJet, SLA and SLS samples are expected to look different from the final sculpture.
 
@@ -198,20 +200,26 @@ Hello, Adam Simms, Montreal. Developing **Glowberry** (bakeapple / cloudberry pi
 
 ---
 
-## 9. Working calendar and still open
+## 9. Still open
 
-**Working calendar:** living Start / Due dates live on [Glowberry — R&D](https://github.com/users/adamsimms/projects/2). That board is the feasibility clock. There is no separate studio-wide timeline ticket ([#26](https://github.com/adamsimms/glowberry/issues/26) closed). Grant-period work plans and spend schedules live on individual grant issues (for example [#47](https://github.com/adamsimms/glowberry/issues/47)).
+Dates live on the [R&D board](https://github.com/users/adamsimms/projects/2), not here.
 
-Hard call currently on the board: The Rooms AIR ([#57](https://github.com/adamsimms/glowberry/issues/57)) due **2026-11-09** (extended from 2026-11-02). Site preference is the Landfall Trust, Kent Cottage, Brigus (three weeks, mid-June to mid-July 2027). Working title _Bakeapple_: a study for Glowberry, about 16 in, printed from the scan on a Sovol SV08 Max (500 mm build volume) running on its own solar panel and battery, pausing when the battery runs dry, then lit by the same sun. Kent Cottage is off-grid, so nothing draws on the cottage's power. The Rooms application and its support images call the work *Bakeapple* throughout, including the proposed six-foot piece, and do not use the name Glowberry. Est-Nord-Est's regular residency (Saint-Jean-Port-Joli, eight weeks) is due **2026-11-08**, first choice Spring 2027, second Fall 2027. The proposal is research rather than a finished piece: a protected source scan will remain intact while a working file accumulates documented changes through available solar energy, printing, finishing, and possible re-scanning. A small ESP32 or Arduino-class logger will record panel capture, battery state, and printer use as provenance for each descendant. See [`POWER.md`](POWER.md#est-nord-est-solar-print-research-logger-proposed). Canada Council ([#47](https://github.com/adamsimms/glowberry/issues/47)) is a personal submit target on a rolling intake.
-
-**Still open (concept / site):**
-
+- Body source for the 6 ft piece and the editions: the provenance scan or the v17 reference-photo body (see section 6)
 - Exact NL site + permissions
-- Outdoor power: solar-only vs solar+grid when shore power exists
+- Outdoor power at the final site: solar-only vs solar+grid when shore power exists
 - Panel hiding strategy on site
-- Whether Artefact installs LEDs or only delivers shell
 - Alternate quotes beside Artefact ([#37](https://github.com/adamsimms/glowberry/issues/37)): [AllPrototype](https://allprototype.com/3d-scanning-montreal/), [USIMM](https://www.usimm.ca/en/)
+
+## 10. Decisions log
+
+- 2026-11-09: Title is *Bakeapple* (was Glowberry). The repo and file names stay `glowberry` until a rename is decided.
+- 2026-11-09: Every small berry (studies, residency batches, the 10 to 16 in lit pieces) is an edition; solar printing with a logged energy record is part of how they are made. Section 6, `POWER.md`.
+- 2026-11-09: The artist installs the LEDs after the shell arrives (was open: whether Artefact installs them).
+- 2026-11-09: Concept line, naming ethics, family as collaborators. Section 1.
+- 2026-11-09: No site outreach is sent before the pitch package exists (pitch, budget, sketches, scale). Contacts may be recorded.
+- 2026-11-09: Body source reopened (scan vs v17); section 6 no longer says locked.
+- 2026-10-27: Small lit editions (10 to 16 in) beside the 6 ft vision.
+- 2026-10-17: 6 ft shell is one piece only.
 
 ---
 
-_Updated 2026-10-27. Small lit editions (10 to 16 in) added beside the 6 ft vision; test prints now serve them. Earlier (2026-10-17): working calendar points at the R&D board; production body from provenance scan; 6 ft shell one-piece only; alternate shops added to quotes._

@@ -1,4 +1,4 @@
-# Glowberry — power & lighting
+# Bakeapple — power & lighting
 
 Companion to [`BRIEF.md`](BRIEF.md). Locked decisions from project development (2026-07).
 
@@ -17,7 +17,7 @@ Print / coating / translucency / mass bands: [`MATERIALS.md`](MATERIALS.md).
 | Panels | **Hidden** in/under base (not on the fruit) when solar is used |
 | **≤ ~60" (Tiers A & B)** | **Gallery:** ~**5–8 h** evening run; **AC plug-in** and/or small **battery pack**; recharge/plug overnight; **no solar** |
 | **~10 ft (Tier C)** | **Outdoor:** **solar** (hidden) + battery; **grid OK if site allows** |
-| **~6 ft (CCA piece)** | Outdoor-capable. **EE: AC + battery; optional bounded solar** (visible panel charging the pack, staff-gated). Not hidden landscape PV. |
+| **~6 ft** | Outdoor-capable. **Lighting test: AC + battery; optional bounded solar** (visible panel charging the pack, where allowed). Final-site power open (solar-only vs solar+grid). |
 
 ---
 
@@ -53,25 +53,25 @@ Print / coating / translucency / mass bands: [`MATERIALS.md`](MATERIALS.md).
 
 ---
 
-## ~6 ft at Eastern Edge (process test, not the landscape power plant)
+## ~6 ft portable lighting test (not the landscape power plant)
 
-The Canada Council 6 ft piece is outdoor-capable. The **residency lighting test** still uses the gallery stack:
+The 6 ft piece is outdoor-capable. An indoor or studio **lighting test** (for example during a residency) still uses the gallery stack:
 
 ```text
 [Studio AC] ──► [12/24V supply] ──► [LED driver] ← [ESP32 PWM]
                       ▲
                [LiFePO₄ pack]
                       ▲
-         optional [visible PV]  (cart / lot / roof if staff allow)
+         optional [visible PV]  (only where the host allows)
 ```
 
-- **Grid** in the studio (plug-in primary). Ask EE which circuit; do not assume a dedicated outdoor outlet on the lot.
-- **Battery** so the fruit can sit without a cable, so you can practice dim-then-**allow dark**, and so a short evening outside does not depend on a parking-lot receptacle.
-- **Optional bounded solar:** one foldable suitcase panel charging a LiFePO₄ power station that also AC-charges in the studio. Visible, portable, in overnight. Prefer **DC out** into the LED driver. Not hidden in the base, not a bermed vault, not the landscape plant. If the panel does not keep up, darkness is the Cloudberry result. Harbour water is south of Harbour Drive, so lot/pier-side sky is plausible; rooftop is a staff ask like the lot. Wind: foldable panels are sails. Bring them in. Landscape PV stays [#21](https://github.com/adamsimms/glowberry/issues/21) / the eventual site.
+- **Grid** in the studio (plug-in primary). Ask which circuit; do not assume an outdoor outlet.
+- **Battery** so the fruit can sit without a cable, so you can practice dim-then-**allow dark**, and so a short evening outside does not depend on an outdoor receptacle.
+- **Optional bounded solar:** one foldable suitcase panel charging a LiFePO₄ power station that also AC-charges in the studio. Visible, portable, in overnight. Prefer **DC out** into the LED driver. Not hidden in the base, not a bermed vault, not the landscape plant. If the panel does not keep up, darkness is the Cloudberry result. Wind: foldable panels are sails; bring them in. Landscape PV stays [#21](https://github.com/adamsimms/glowberry/issues/21) / the eventual site.
 - Peak LED for ~6 ft: treat as **between** the 50-60" and ~10 ft bands (order of **~30-80 W** until measured). An 8 h evening is still pack-scale, not array-scale.
 - Outside (if ever): splash-aware cabling, in overnight. Not IP65 landscape commission.
 
-### Residency kit (spec band, not a 2028 SKU)
+### Portable kit (spec band, not a SKU)
 
 Energy, until wattage is measured:
 
@@ -87,13 +87,13 @@ Studio wall charge covers the next day. The pack only has to own **one evening**
 | Station | **600-1000 Wh** LiFePO₄, brick **under ~12 kg** | One evening at 6 ft; one person carries it in at night |
 | Panel | **One 200-220 W** foldable, matched to the station's solar ceiling | ~2-4 equivalent sun hours downtown is enough to replace a modest evening on a decent day. 100 W is too tight. A second 200 W panel is wasted if the station caps at ~220-300 W, and is a second sail in harbour wind |
 | LED feed | **12 V DC out** (car/XT60/Anderson into the driver). Inverter **off** unless you need a tool | Station DC around 12 V / 10 A (~126 W) covers 80 W peak. Inverter idle (often 8-20 W) can rival a dim fruit |
-| Charge | Wall AC in the studio. Solar only when staff allow a visible test | Grid is primary |
+| Charge | Wall AC in the studio. Solar only where a visible test is allowed | Grid is primary |
 
-**Do not buy in 2026.** Products iterate. Buy in 2027-2028 to the band.
+Products iterate: buy to the band when needed, not ahead.
 
-2026 orientation only (Canada, sale prices move): EcoFlow RIVER 2 Pro (768 Wh, 7.8 kg, 220 W solar max, 12.6 V / 10 A DC) plus **one** 220 W portable panel, kit about C$900-1100. Same band: Anker SOLIX C800 (768 Wh, ~10.5 kg, 300 W solar max) plus one 200 W foldable. A 2400 W / 2160 Wh station with two 200 W cases is the wrong class: heavy, AC-idle hungry, and too much storage for the test to matter.
+Orientation only (Canada, prices move): EcoFlow RIVER 2 Pro (768 Wh, 7.8 kg, 220 W solar max, 12.6 V / 10 A DC) plus **one** 220 W portable panel, kit about C$900-1100. Same band: Anker SOLIX C800 (768 Wh, ~10.5 kg, 300 W solar max) plus one 200 W foldable. A 2400 W / 2160 Wh station with two 200 W cases is the wrong class: heavy, AC-idle hungry, and too much storage for the test to matter.
 
-This kit is **not** the CCA landscape plant (hidden PV, vault, MPPT).
+This kit is **not** the landscape plant (hidden PV, vault, MPPT).
 
 ---
 
@@ -145,7 +145,7 @@ Sculpture shell (Artefact / FRP) is **separate** and typically larger.
 |-------|----------------------|--------|
 | 20–30" | 5–15 W | Gallery battery/plug trivial |
 | 50–60" | 20–50 W | Still fine for 5–8 h gallery |
-| ~6 ft | ~30–80 W (until measured) | EE: plug + pack. Not a PV sizing driver. |
+| ~6 ft | ~30–80 W (until measured) | Lighting test: plug + pack. Not a PV sizing driver. |
 | ~10 ft | 50–120 W | Drives solar/grid sizing |
 
 Use warm white + amber/orange (or tuned RGBW); diffuse so no hotspots; IP65+ outdoors.
@@ -162,11 +162,11 @@ Use warm white + amber/orange (or tuned RGBW); diffuse so no hotspots; IP65+ out
 
 ---
 
-## Est-Nord-Est solar-print research logger (proposed)
+## Solar-print logger (editions)
 
-This is a separate, small system for the Est-Nord-Est residency proposal. It does not power or control the large sculpture's heartbeat.
+A separate, small system for printing the editions. It does not power or control the large sculpture's heartbeat.
 
-The proposed residency work uses a small 3D printer, portable panel, and battery to test how available stored energy conditions an evolving print-file lineage. A low-power ESP32 or Arduino-class logger will record the energy system around each attempt.
+Editions are printed on a small 3D printer running on its own portable panel and battery, pausing when the battery runs dry, so available stored energy conditions each print. A low-power ESP32 or Arduino-class logger will record the energy system around each attempt.
 
 ```text
 [portable panel] → [charge controller / power station] → [small 3D printer]
@@ -182,9 +182,9 @@ The proposed residency work uses a small 3D printer, portable panel, and battery
 - a brief manual note on panel angle, shade, wind, and cloud
 - the working-file version, print state, and any finishing operation
 
-The record is provenance, not a weather dashboard. Solar capture reflects panel placement, shade, charge state, conversion loss, and sun. The residency will use the logger to make a defined file-change protocol accountable, rather than claim that weather automatically generates form.
+The record is provenance, not a weather dashboard. Solar capture reflects panel placement, shade, charge state, conversion loss, and sun. The log makes the record accountable; do not claim that weather automatically generates form.
 
-The logger, sensors, and any small enclosure are artist-supplied. ENE's supervised assembly room can support their mounting, repair, and adaptation. The final sensing architecture and printer-power measurement remain research questions. Do not assume that the lighting kit specified above can power the printer.
+The logger, sensors, and any small enclosure are artist-supplied. The final sensing architecture and printer-power measurement remain research questions. Do not assume that the lighting kit specified above can power the printer.
 
 ---
 
@@ -192,10 +192,8 @@ The logger, sensors, and any small enclosure are artist-supplied. ENE's supervis
 
 - Tier C / 6 ft **landscape** site: solar-only vs solar+grid when shore power exists
 - Exact vault/panel hiding with landscape architect / engineer
-- Who supplies LEDs: Artefact vs separate systems fabricator
 - Gallery cable management aesthetic (visible cloth cord vs floor pocket)
-- Eastern Edge: measured wattage (locks the 15-40 W vs 80 W case); which studio circuit; optional panel location (lot vs roof) if staff allow. Pack/panel **band** is set (600-1000 Wh + one 200-220 W foldable); SKU waits for 2027-2028.
+- 6 ft measured wattage (locks the 15-40 W vs 80 W case). Pack/panel **band** is set (600-1000 Wh + one 200-220 W foldable); the SKU waits until needed.
 
 ---
 
-*Updated 2026-09-07. 6 ft EE: AC + battery; optional bounded solar; residency kit band 600-1000 Wh + one 200-220 W foldable.*

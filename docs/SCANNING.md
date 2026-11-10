@@ -1,6 +1,6 @@
 # Glowberry — scanning (photogrammetry of the provenance berry)
 
-Process note and result for the photogrammetry spike ([#52](https://github.com/adamsimms/glowberry/issues/52)): a Pinchard's Island bakeapple captured and reconstructed as the **ancestor file**. Companion to [`BRIEF.md`](BRIEF.md) and [`MATERIALS.md`](MATERIALS.md).
+Process note and result for the photogrammetry spike ([#52](https://github.com/adamsimms/glowberry/issues/52)): a Pinchard's Island bakeapple, picked by the artist's grandmother, captured and reconstructed as the **ancestor file**. Everything printed from it is a descendant, not a replica. Companion to [`BRIEF.md`](BRIEF.md) and [`MATERIALS.md`](MATERIALS.md).
 
 The concept frame is in the issue: the ancestor is born where picking still means return, and Montreal only rematerializes it. This doc records what was captured, what came out, and what the method cost, so the next capture is cheaper than this one was.
 
@@ -24,7 +24,7 @@ Scale comes from **one caliper reading** of 2.5 cm across the widest point. Noth
 
 **Go / no-go: go.** Photogrammetry is a viable provenance path for a single berry. It is not a path to photoreal fidelity at 6 ft, which was never the claim; the raw scan is the archive twin and the ancestor, not the production mesh.
 
-**Descendant locked 2026-09-07.** The 6 ft production body is built from this scan: a cleaned, manifold descendant scaled up, replacing the independently modelled 500 mm mesh as the default body ([`BRIEF.md`](BRIEF.md) §6, [#16](https://github.com/adamsimms/glowberry/issues/16)). The raw mesh above is unchanged in role. What changed is that the monument is no longer allowed to be an unrelated model: public application text now says the sculpture is printed from a scan of a berry picked at Pinchard's Island.
+**Descendant decided 2026-09-07, reopened 2026-11-09** ([`BRIEF.md`](BRIEF.md) §6: scan or the v17 reference-photo body). As decided then, the 6 ft production body would be built from this scan: a cleaned, manifold descendant scaled up, replacing the independently modelled 500 mm mesh as the default body ([`BRIEF.md`](BRIEF.md) §6, [#16](https://github.com/adamsimms/glowberry/issues/16)). The raw mesh above is unchanged in role. What changed is that the monument is no longer allowed to be an unrelated model: public application text now says the sculpture is printed from a scan of a berry picked at Pinchard's Island.
 
 ---
 
