@@ -24,8 +24,9 @@ PLY = os.path.join(
     "merged_up_inv_clean.ply",
 )
 GLB = os.path.join(ROOT, "models", "provenance", "berry_merged_up_inv_cm.glb")
-REF_DIR = os.path.join(ROOT, "sketchpad", "lookdev")
-BLEND_OUT = os.path.join(ROOT, "sketchpad", "lookdev", "berry_lookdev.blend")
+LOOKDEV = (os.path.join(os.environ["MEDIA_DIR"], "02-STUDIES", "2026-09-LOOKDEV") if os.environ.get("MEDIA_DIR") else os.path.join(ROOT, "sketchpad", "lookdev"))
+REF_DIR = LOOKDEV
+BLEND_OUT = os.path.join(LOOKDEV, "berry_lookdev.blend")
 GLB_OUT = os.path.join(ROOT, "models", "smooth", "berry_blender.glb")
 PNG_OUT = os.path.join(ROOT, "models", "smooth", "berry_blender.png")
 

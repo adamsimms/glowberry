@@ -11,7 +11,8 @@ import open3d as o3d
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 GLB = os.path.join(ROOT, "models", "provenance", "berry_merged_up_inv_cm.glb")
-OUT = os.path.join(ROOT, "sketchpad", "lookdev", "grapes.json")
+LOOKDEV = (os.path.join(os.environ["MEDIA_DIR"], "02-STUDIES", "2026-09-LOOKDEV") if os.environ.get("MEDIA_DIR") else os.path.join(ROOT, "sketchpad", "lookdev"))
+OUT = os.path.join(LOOKDEV, "grapes.json")
 
 MIN_SEP_DEG = 34.0
 K = 0.74
