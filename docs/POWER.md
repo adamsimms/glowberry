@@ -112,10 +112,10 @@ Optional: **grid charger / hybrid** when pier, building, or arts centre power ex
 
 ### Physical layout
 - **Berry:** translucent shell, LEDs, driver, MCU (or tray that lifts out)  
-- **Vault (under/beside, bermed or rock-clad):** batteries, MPPT, disconnects  
+- **Enclosure (under/beside, bermed or rock-clad):** batteries, MPPT, disconnects  
 - **Panels:** low, south-ish, screened — not on orange flesh  
-- **Conduit:** buried berry ↔ vault  
-- **Hatch:** berry bottom + vault lid  
+- **Conduit:** buried berry ↔ enclosure  
+- **Hatch:** berry bottom + enclosure lid  
 
 ### Behavior
 - Day: off  
@@ -131,7 +131,7 @@ Optional: **grid charger / hybrid** when pier, building, or arts centre power ex
 | PV array (hidden) | $1,200–3,500+ |
 | MPPT | $300–800 |
 | LiFePO₄ + BMS | $2,000–6,000+ |
-| Conduit, vault, protection | $800–2,000 |
+| Conduit, enclosure, protection | $800–2,000 |
 | Install / commission | $2,000–6,000 |
 | **Systems subtotal** | **~$7k–22k** (NL winter → high end) |
 
@@ -191,7 +191,7 @@ The logger, sensors, and any small enclosure are artist-supplied. The final sens
 ## Open systems questions
 
 - Tier C / 6 ft **landscape** site: solar-only vs solar+grid when shore power exists
-- Exact vault/panel hiding with landscape architect / engineer
+- Exact enclosure/panel hiding with landscape architect / engineer
 - Gallery cable management aesthetic (visible cloth cord vs floor pocket)
 - 6 ft measured wattage (locks the 15-40 W vs 80 W case). Pack/panel **band** is set (600-1000 Wh + one 200-220 W foldable); the SKU waits until needed.
 

@@ -151,7 +151,7 @@ These are the **best references** for Glowberry going forward:
 
 1. Digital master (you have this)  
 2. **Lit solar prototype 20–30"** in translucent PETG (Artefact / shop)  
-3. If public permanent: **FRP production shell** from molds, thicker coastal spec, lift points, solar vault in base  
+3. If public permanent: **FRP production shell** from molds, thicker coastal spec, lift points, solar enclosure in base  
 4. Keep heartbeat firmware dumb and robust (sine fade, low-power mode)
 
 ---
