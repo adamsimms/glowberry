@@ -11,7 +11,7 @@ Canonical brief for concept, fabrication (Studio Artefact), and systems. Budget 
 | [`MATERIALS.md`](MATERIALS.md)                                         | Print materials, coatings, translucency, mass bands                |
 | [`POWER.md`](POWER.md)                                                 | Lighting, battery, solar, controller detail                        |
 | [`SITE.md`](SITE.md) | NL site longlist (no place chosen; no permissions claimed) |
-| [`INFLATABLE.md`](INFLATABLE.md)                                       | **Separate track:** ephemeral summer inflatable (Choi-lineage POC) |
+| [`INFLATABLE.md`](INFLATABLE.md)                                       | Archived: Choi-lineage inflatable, out since 2026-08-26 |
 
 ---
 
@@ -88,7 +88,7 @@ Detail + cost bands: [`POWER.md`](POWER.md).
 
 **Stance:** Kusama site + fruit pilgrimage + Turrell/Villareal night light + Kapoor touchability → **translucent FRP/PETG flesh** with a **simple heartbeat**, not a Buckyball-style LED cage.
 
-**Parallel track:** Choi-style **inflatable** as ephemeral summer POC — see [`INFLATABLE.md`](INFLATABLE.md).
+**Inflatable:** out since 2026-08-26; notes archived in [`INFLATABLE.md`](INFLATABLE.md).
 
 ---
 
