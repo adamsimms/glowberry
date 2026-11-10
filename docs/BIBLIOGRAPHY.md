@@ -2,7 +2,7 @@
 
 Generated from the Zotero collection [3Z9ZID5J](https://www.zotero.org/adamsimms/collections/3Z9ZID5J) by adamsimms/studio scripts/zotero/build-bibliography.mjs. Do not edit; change the items or their notes in Zotero and rebuild.
 
-68 sources. 22 citation keys are not pinned yet (Better BibTeX); unpinned keys may change.
+83 sources. 37 citation keys are not pinned yet (Better BibTeX); unpinned keys may change.
 
 ### adcockJamesTurrellArt1990
 
@@ -22,6 +22,126 @@ Anon. (1991). *Photo sculpture*. Studios d'été de Saint-Jean-Port-Joli.
 Anon. (2004). Résidence d'artistes à Est-Nord-Est: entretien avec Natalie Lafortune. *Espace Sculpture*(68), 32-35.
 
 - Zotero: [web](https://www.zotero.org/adamsimms/items/QTJJ2NUE) · `zotero://select/library/items/QTJJ2NUE`
+
+### anonndclaes
+
+Anon. (n.d.). *Claes Oldenburg: Paint Torch*.
+
+- Zotero: [web](https://www.zotero.org/adamsimms/items/CHF5MB8C) · `zotero://select/library/items/CHF5MB8C`
+- URL: https://www.pafa.org/museum/exhibitions/paint-torch
+- Note: Glowberry preliminary bibliography (2026). 17. Oldenburg / van Bruggen — *Paint Torch* (PAFA, 2011) — institutional page Serious-art precedent already noted in project research: FRP food/tool Pop with internal LED glow — closest fabrication cousin for heartbeat flesh.
+
+### anonndclaes
+
+Anon. (n.d.). *Claes Oldenburg Sculptures, Bio, Ideas*.
+
+- Zotero: [web](https://www.zotero.org/adamsimms/items/CFSG2IHH) · `zotero://select/library/items/CFSG2IHH`
+- URL: https://www.theartstory.org/artist/oldenburg-claes/
+- Note: Glowberry preliminary bibliography (2026). 15. The Art Story — “Claes Oldenburg” (survey essay) Clear language on reversing viewer/object scale (“shrinks the spectator”) and soft sculpture → body sensation — uncanny humor without needing mirror sublime.
+
+### anonndclaes
+
+Anon. (n.d.). *Claes Oldenburg: Projects for Monuments*.
+
+- Zotero: [web](https://www.zotero.org/adamsimms/items/HTFNXTH2) · `zotero://select/library/items/HTFNXTH2`
+- URL: https://mcachicago.org/exhibitions/1967/claes-oldenburg-projects
+- Note: Glowberry preliminary bibliography (2026). 14. Claes Oldenburg — *Proposals for Monuments and Buildings, 1965–69* (Big Table, 1969) Canonical theory-in-drawing for colossal everyday objects as anti-heroic monuments — humor that is still a public-art argument. Primary text for ...
+
+### anonndhappy
+
+Anon. (n.d.). *Happy Happy  Project : Fruit Tree*.
+
+- Zotero: [web](https://www.zotero.org/adamsimms/items/F24VA5ZQ) · `zotero://select/library/items/F24VA5ZQ`
+- URL: https://bab18.bkkartbiennale.com/project/happy-happy-project-fruit-tree/
+- Note: Glowberry preliminary bibliography (2026). 10. Bangkok Art Biennale note — “Happy Happy Project : Fruit Tree” Curatorial framing of playfulness and menace in large soft Pop — maps to Glowberry’s locked tone (awe + humor + uncanny).
+
+### anonndjapanese
+
+Anon. (n.d.). *The Japanese island that was saved by art*.
+
+- Zotero: [web](https://www.zotero.org/adamsimms/items/PH9CKWR5) · `zotero://select/library/items/PH9CKWR5`
+- URL: https://www.bbc.com/travel/article/20250529-the-japanese-island-that-was-saved-by-art
+- Note: Glowberry preliminary bibliography (2026). 4. BBC Travel — “The Japanese island that was saved by art” (2025) Frames Naoshima as art-led destination / return narrative (depopulation ↔ pilgrimage tourism). Read alongside NL resettlement themes carefully — analogy, not equivalence.
+
+### anonndmoved
+
+Anon. (n.d.). *Moved by the State*. UBC Press.
+
+- Zotero: [web](https://www.zotero.org/adamsimms/items/97WFKQQH) · `zotero://select/library/items/97WFKQQH`
+- URL: https://www.ubcpress.ca/moved-by-the-state
+- Note: Glowberry preliminary bibliography (2026). 26. Tina Loo — *Moved by the State: Forced Relocation and Making a Good Life in Postwar Canada* (UBC Press) Critical history of postwar relocation (incl. NL outports) as state “doing good” — useful ethical caution when using resettlem...
+
+### anonndpublic
+
+Anon. (n.d.). *Public Art #6: Choi Jeong Hwa’s “Fruits Tree”*.
+
+- Zotero: [web](https://www.zotero.org/adamsimms/items/FTJXSWMM) · `zotero://select/library/items/FTJXSWMM`
+- URL: https://www.tokyoartbeat.com/en/articles/-/public-art-6-choi-jeong-hwa-fruit-tree
+- Note: Glowberry preliminary bibliography (2026). 8. Tokyo Art Beat — “Public Art #6: Choi Jeong Hwa’s ‘Fruits Tree’” Reads kitsch FRP fruit as intentionally inauthentic; coastal aging/peeling as part of meaning — strong for the inflatable/pop parallel track and for what Glowberry sh...
+
+### anonndrelocated
+
+Anon. (n.d.). Relocated Pilgrimage: An Artistic Via Dolorosa in the Heart of Amsterdam. *International Journal of Religious Tourism and Pilgrimage*, 8(5).
+
+- Zotero: [web](https://www.zotero.org/adamsimms/items/IIKMZGDE) · `zotero://select/library/items/IIKMZGDE`
+- URL: https://arrow.tudublin.ie/ijrtp/vol8/iss5/7
+- Note: Glowberry preliminary bibliography (2026). 29. Lieke Wijnia — “Relocated Pilgrimage,” *International Journal of Religious Tourism and Pilgrimage Contemporary art routes as secular/post-secular pilgrimage — language for beacon-without-church.
+
+### anonndsize
+
+Anon. (n.d.). *Size matters*.
+
+- Zotero: [web](https://www.zotero.org/adamsimms/items/QCF8RIXX) · `zotero://select/library/items/QCF8RIXX`
+- URL: https://www.salon.com/1998/12/22/oldenburg/
+- Note: Glowberry preliminary bibliography (2026). 16. Peter Plagens? / Salon — “Size matters” (1998 Oldenburg profile) *[confirm byline on read] Readable defense of monumental wackiness that stays warm rather than cold irony — tone check for Glowberry’s awe + humor lock.
+
+### anonndtourists
+
+Anon. (n.d.). *Tourists Like Us. Critical Tourism and Contemporary Art*. Nida Art Colony.
+
+- Zotero: [web](https://www.zotero.org/adamsimms/items/TFHNIAUK) · `zotero://select/library/items/TFHNIAUK`
+- URL: https://nidacolony.lt/tourists-like-us-critical-tourism-and-contemporary-art/
+- Note: Glowberry preliminary bibliography (2026). 28. *Tourists Like Us: Critical Tourism and Contemporary Art* (Nida / ECAV; VDA press) Theory kit for destination culture, tourist gaze, remote landscapes, hosting/displacing — pressures Glowberry’s “people travel to see” ambition pro...
+
+### anonndtyphoonbattered
+
+Anon. (n.d.). *Typhoon-battered Yayoi Kusama pumpkin goes back on display in Japan*.
+
+- Zotero: [web](https://www.zotero.org/adamsimms/items/H6HMD4HA) · `zotero://select/library/items/H6HMD4HA`
+- URL: https://www.theartnewspaper.com/2022/10/10/typhoon-battered-yayoi-kusama-pumpkin-goes-back-on-display-in-japan
+- Note: Glowberry preliminary bibliography (2026). 2. The Art Newspaper — “Typhoon-battered Yayoi Kusama pumpkin goes back on display in Japan” (2022) + companion recovery piece (2021) Sharp reporting on hollow FRP failure modes, viral “object at sea” imagery, and owner commitment to ...
+
+### anonndurbanscape
+
+Anon. (n.d.). *Urbanscape: Paresh Maity's Giant Bronze Jackfruit Sculpture Is An Exercise In Absurdism*.
+
+- Zotero: [web](https://www.zotero.org/adamsimms/items/FH62DJN6) · `zotero://select/library/items/FH62DJN6`
+- URL: https://homegrown.co.in/homegrown-creators/urbanscape-paresh-maitys-giant-bronze-jackfruit-sculpture-is-an-exercise-in-absurdism
+- Note: Glowberry preliminary bibliography (2026). 12. Homegrown — “Urbanscape: Paresh Maity’s Giant Bronze Jackfruit Sculpture Is An Exercise In Absurdism” Absurdist scale + everyday staple made civic landmark; useful when arguing monumental fruit can carry serious local idiom, not o...
+
+### anonndwhy
+
+Anon. (n.d.). *Why is there a jackfruit sculpture outside Kolkata’s Victoria Memorial?*.
+
+- Zotero: [web](https://www.zotero.org/adamsimms/items/3W4XIE7F) · `zotero://select/library/items/3W4XIE7F`
+- URL: https://thenodmag.com/content/jackfruit-sculpture-kolkata-victoria-memorial-bengal-biennale
+- Note: Glowberry preliminary bibliography (2026). 13. The Nod Mag — “Why is there a jackfruit sculpture outside Kolkata’s Victoria Memorial?” Artist voice on childhood fruit → fort/city metaphor; public touching spikes and photographing — pilgrimage + tactility without glow.
+
+### anonndyayoi
+
+Anon. (n.d.). *Yayoi Kusama’s yellow pumpkin is back on Naoshima Island, Japan*.
+
+- Zotero: [web](https://www.zotero.org/adamsimms/items/A4TSG8K3) · `zotero://select/library/items/A4TSG8K3`
+- URL: https://www.cnn.com/travel/article/kusama-naoshima-yellow-pumpkin-returns-intl-hnk
+- Note: Glowberry preliminary bibliography (2026). 1. CNN Travel — “Yayoi Kusama’s yellow pumpkin is back on Naoshima Island, Japan” (2022) Documents the typhoon loss, remake (~10% thicker shell), and stem recovery hook — coastal pilgrimage fruit as logistics + stewardship story, not ...
+
+### anonndyellow
+
+Anon. (n.d.). *Yellow Pumpkin by Yayoi Kusama*.
+
+- Zotero: [web](https://www.zotero.org/adamsimms/items/JMTMXMQG) · `zotero://select/library/items/JMTMXMQG`
+- URL: https://www.setouchiexplorer.com/yellow-pumpkin/
+- Note: Glowberry preliminary bibliography (2026). 3. Setouchi Explorer — “Yellow Pumpkin by Yayoi Kusama” Argues the work’s power is synergy of object + pier + sea, not the pumpkin alone indoors — directly transferable to Glowberry’s landscape character brief.
 
 ### applinEccentricObjectsRethinking2012
 
