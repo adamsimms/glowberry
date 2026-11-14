@@ -1,0 +1,932 @@
+{
+  "upright_A_nomask_tuned": {
+    "history": [
+      {
+        "stage": "baseline",
+        "aligned": 112,
+        "points": 39174,
+        "rms_px": 2.714,
+        "rings": {
+          "15": "37/37",
+          "40": "38/38",
+          "m5": "26/39",
+          "m5_notargets": "11/29"
+        }
+      },
+      {
+        "stage": "after_ReconstructionUncertainty",
+        "aligned": 112,
+        "points": 39174,
+        "rms_px": 2.714,
+        "rings": {
+          "15": "37/37",
+          "40": "38/38",
+          "m5": "26/39",
+          "m5_notargets": "11/29"
+        }
+      },
+      {
+        "stage": "after_ProjectionAccuracy",
+        "aligned": 112,
+        "points": 39174,
+        "rms_px": 2.714,
+        "rings": {
+          "15": "37/37",
+          "40": "38/38",
+          "m5": "26/39",
+          "m5_notargets": "11/29"
+        }
+      },
+      {
+        "stage": "after_ReprojectionError",
+        "aligned": 112,
+        "points": 37847,
+        "rms_px": 1.8171,
+        "rings": {
+          "15": "37/37",
+          "40": "38/38",
+          "m5": "26/39",
+          "m5_notargets": "11/29"
+        }
+      }
+    ],
+    "accepted": [
+      {
+        "criterion": "ReprojectionError",
+        "threshold": 2.0,
+        "points": 39173,
+        "rms_px": 2.6654,
+        "aligned": 112
+      },
+      {
+        "criterion": "ReprojectionError",
+        "threshold": 1.0,
+        "points": 39139,
+        "rms_px": 2.6346,
+        "aligned": 112
+      },
+      {
+        "criterion": "ReprojectionError",
+        "threshold": 0.7,
+        "points": 38661,
+        "rms_px": 2.1897,
+        "aligned": 112
+      },
+      {
+        "criterion": "ReprojectionError",
+        "threshold": 0.5,
+        "points": 37847,
+        "rms_px": 1.8171,
+        "aligned": 112
+      }
+    ],
+    "floor": 112,
+    "final_rms": 1.8171,
+    "final_aligned": 112,
+    "final_points": 37847,
+    "final_rings": {
+      "15": "37/37",
+      "40": "38/38",
+      "m5": "26/39",
+      "m5_notargets": "11/29"
+    },
+    "minutes": 0.3
+  },
+  "inverted_A_nomask_tuned": {
+    "history": [
+      {
+        "stage": "baseline",
+        "aligned": 117,
+        "points": 46573,
+        "rms_px": 1.4263,
+        "rings": {
+          "15": "38/38",
+          "40": "37/37",
+          "m5": "25/36",
+          "m5_notargets": "17/39"
+        }
+      },
+      {
+        "stage": "after_ReconstructionUncertainty",
+        "aligned": 117,
+        "points": 46573,
+        "rms_px": 1.4263,
+        "rings": {
+          "15": "38/38",
+          "40": "37/37",
+          "m5": "25/36",
+          "m5_notargets": "17/39"
+        }
+      },
+      {
+        "stage": "after_ProjectionAccuracy",
+        "aligned": 117,
+        "points": 46573,
+        "rms_px": 1.4263,
+        "rings": {
+          "15": "38/38",
+          "40": "37/37",
+          "m5": "25/36",
+          "m5_notargets": "17/39"
+        }
+      },
+      {
+        "stage": "after_ReprojectionError",
+        "aligned": 117,
+        "points": 46573,
+        "rms_px": 1.4263,
+        "rings": {
+          "15": "38/38",
+          "40": "37/37",
+          "m5": "25/36",
+          "m5_notargets": "17/39"
+        }
+      }
+    ],
+    "accepted": [],
+    "floor": 117,
+    "final_rms": 1.4263,
+    "final_aligned": 117,
+    "final_points": 46573,
+    "final_rings": {
+      "15": "38/38",
+      "40": "37/37",
+      "m5": "25/36",
+      "m5_notargets": "17/39"
+    },
+    "minutes": 0.23
+  },
+  "sideways_A_nomask_tuned": {
+    "history": [
+      {
+        "stage": "baseline",
+        "aligned": 97,
+        "points": 44906,
+        "rms_px": 1.5137,
+        "rings": {
+          "15": "39/39",
+          "40": "37/37",
+          "m5": "16/39",
+          "m5_notargets": "5/36"
+        }
+      },
+      {
+        "stage": "after_ReconstructionUncertainty",
+        "aligned": 97,
+        "points": 44893,
+        "rms_px": 1.5358,
+        "rings": {
+          "15": "39/39",
+          "40": "37/37",
+          "m5": "16/39",
+          "m5_notargets": "5/36"
+        }
+      },
+      {
+        "stage": "after_ProjectionAccuracy",
+        "aligned": 97,
+        "points": 42604,
+        "rms_px": 0.9449,
+        "rings": {
+          "15": "39/39",
+          "40": "37/37",
+          "m5": "16/39",
+          "m5_notargets": "5/36"
+        }
+      },
+      {
+        "stage": "after_ReprojectionError",
+        "aligned": 97,
+        "points": 41071,
+        "rms_px": 0.8346,
+        "rings": {
+          "15": "39/39",
+          "40": "37/37",
+          "m5": "16/39",
+          "m5_notargets": "5/36"
+        }
+      }
+    ],
+    "accepted": [
+      {
+        "criterion": "ReconstructionUncertainty",
+        "threshold": 50,
+        "points": 44901,
+        "rms_px": 1.5369,
+        "aligned": 97
+      },
+      {
+        "criterion": "ReconstructionUncertainty",
+        "threshold": 30,
+        "points": 44893,
+        "rms_px": 1.5358,
+        "aligned": 97
+      },
+      {
+        "criterion": "ProjectionAccuracy",
+        "threshold": 20,
+        "points": 42604,
+        "rms_px": 0.9449,
+        "aligned": 97
+      },
+      {
+        "criterion": "ReprojectionError",
+        "threshold": 0.5,
+        "points": 42601,
+        "rms_px": 0.9438,
+        "aligned": 97
+      },
+      {
+        "criterion": "ReprojectionError",
+        "threshold": 0.3,
+        "points": 41071,
+        "rms_px": 0.8346,
+        "aligned": 97
+      }
+    ],
+    "floor": 97,
+    "final_rms": 0.8346,
+    "final_aligned": 97,
+    "final_points": 41071,
+    "final_rings": {
+      "15": "39/39",
+      "40": "37/37",
+      "m5": "16/39",
+      "m5_notargets": "5/36"
+    },
+    "minutes": 0.34
+  },
+  "upright_A_nomask_slack3": {
+    "history": [
+      {
+        "stage": "baseline",
+        "aligned": 111,
+        "points": 39253,
+        "rms_px": 2.7013,
+        "rings": {
+          "15": "37/37",
+          "40": "38/38",
+          "m5": "26/39",
+          "m5_notargets": "10/29"
+        }
+      },
+      {
+        "stage": "after_ReconstructionUncertainty",
+        "aligned": 110,
+        "points": 39044,
+        "rms_px": 2.6479,
+        "rings": {
+          "15": "37/37",
+          "40": "38/38",
+          "m5": "26/39",
+          "m5_notargets": "9/29"
+        }
+      },
+      {
+        "stage": "after_ProjectionAccuracy",
+        "aligned": 110,
+        "points": 39044,
+        "rms_px": 2.6479,
+        "rings": {
+          "15": "37/37",
+          "40": "38/38",
+          "m5": "26/39",
+          "m5_notargets": "9/29"
+        }
+      },
+      {
+        "stage": "after_ReprojectionError",
+        "aligned": 110,
+        "points": 37733,
+        "rms_px": 1.8101,
+        "rings": {
+          "15": "37/37",
+          "40": "38/38",
+          "m5": "26/39",
+          "m5_notargets": "9/29"
+        }
+      }
+    ],
+    "accepted": [
+      {
+        "criterion": "ReconstructionUncertainty",
+        "threshold": 50,
+        "points": 39045,
+        "rms_px": 2.6479,
+        "aligned": 110
+      },
+      {
+        "criterion": "ReprojectionError",
+        "threshold": 2.0,
+        "points": 39042,
+        "rms_px": 2.6283,
+        "aligned": 110
+      },
+      {
+        "criterion": "ReprojectionError",
+        "threshold": 1.0,
+        "points": 38995,
+        "rms_px": 2.6165,
+        "aligned": 110
+      },
+      {
+        "criterion": "ReprojectionError",
+        "threshold": 0.7,
+        "points": 38538,
+        "rms_px": 2.1744,
+        "aligned": 110
+      },
+      {
+        "criterion": "ReprojectionError",
+        "threshold": 0.5,
+        "points": 37733,
+        "rms_px": 1.8101,
+        "aligned": 110
+      }
+    ],
+    "floor": 108,
+    "slack": 3,
+    "start_aligned": 111,
+    "final_rms": 1.8101,
+    "final_aligned": 110,
+    "final_points": 37733,
+    "final_rings": {
+      "15": "37/37",
+      "40": "38/38",
+      "m5": "26/39",
+      "m5_notargets": "9/29"
+    },
+    "minutes": 0.35
+  },
+  "inverted_A_nomask_slack3": {
+    "history": [
+      {
+        "stage": "baseline",
+        "aligned": 111,
+        "points": 46638,
+        "rms_px": 1.4325,
+        "rings": {
+          "15": "38/38",
+          "40": "37/37",
+          "m5": "23/36",
+          "m5_notargets": "13/39"
+        }
+      },
+      {
+        "stage": "after_ReconstructionUncertainty",
+        "aligned": 108,
+        "points": 45243,
+        "rms_px": 1.4531,
+        "rings": {
+          "15": "38/38",
+          "40": "37/37",
+          "m5": "23/36",
+          "m5_notargets": "10/39"
+        }
+      },
+      {
+        "stage": "after_ProjectionAccuracy",
+        "aligned": 108,
+        "points": 43278,
+        "rms_px": 0.9115,
+        "rings": {
+          "15": "38/38",
+          "40": "37/37",
+          "m5": "23/36",
+          "m5_notargets": "10/39"
+        }
+      },
+      {
+        "stage": "after_ReprojectionError",
+        "aligned": 108,
+        "points": 43278,
+        "rms_px": 0.9115,
+        "rings": {
+          "15": "38/38",
+          "40": "37/37",
+          "m5": "23/36",
+          "m5_notargets": "10/39"
+        }
+      }
+    ],
+    "accepted": [
+      {
+        "criterion": "ReconstructionUncertainty",
+        "threshold": 50,
+        "points": 46562,
+        "rms_px": 1.4524,
+        "aligned": 110
+      },
+      {
+        "criterion": "ReconstructionUncertainty",
+        "threshold": 30,
+        "points": 46394,
+        "rms_px": 1.4511,
+        "aligned": 110
+      },
+      {
+        "criterion": "ReconstructionUncertainty",
+        "threshold": 20,
+        "points": 45243,
+        "rms_px": 1.4531,
+        "aligned": 108
+      },
+      {
+        "criterion": "ProjectionAccuracy",
+        "threshold": 20,
+        "points": 43278,
+        "rms_px": 0.9115,
+        "aligned": 108
+      }
+    ],
+    "floor": 108,
+    "slack": 3,
+    "start_aligned": 111,
+    "final_rms": 0.9115,
+    "final_aligned": 108,
+    "final_points": 43278,
+    "final_rings": {
+      "15": "38/38",
+      "40": "37/37",
+      "m5": "23/36",
+      "m5_notargets": "10/39"
+    },
+    "minutes": 0.36
+  },
+  "sideways_A_nomask_slack3": {
+    "history": [
+      {
+        "stage": "baseline",
+        "aligned": 97,
+        "points": 44936,
+        "rms_px": 1.512,
+        "rings": {
+          "15": "39/39",
+          "40": "37/37",
+          "m5": "16/39",
+          "m5_notargets": "5/36"
+        }
+      },
+      {
+        "stage": "after_ReconstructionUncertainty",
+        "aligned": 96,
+        "points": 42615,
+        "rms_px": 1.5533,
+        "rings": {
+          "15": "39/39",
+          "40": "37/37",
+          "m5": "16/39",
+          "m5_notargets": "4/36"
+        }
+      },
+      {
+        "stage": "after_ProjectionAccuracy",
+        "aligned": 95,
+        "points": 29254,
+        "rms_px": 0.4902,
+        "rings": {
+          "15": "39/39",
+          "40": "37/37",
+          "m5": "15/39",
+          "m5_notargets": "4/36"
+        }
+      },
+      {
+        "stage": "after_ReprojectionError",
+        "aligned": 95,
+        "points": 28261,
+        "rms_px": 0.4342,
+        "rings": {
+          "15": "39/39",
+          "40": "37/37",
+          "m5": "15/39",
+          "m5_notargets": "4/36"
+        }
+      }
+    ],
+    "accepted": [
+      {
+        "criterion": "ReconstructionUncertainty",
+        "threshold": 50,
+        "points": 44923,
+        "rms_px": 1.5352,
+        "aligned": 97
+      },
+      {
+        "criterion": "ReconstructionUncertainty",
+        "threshold": 30,
+        "points": 44907,
+        "rms_px": 1.5343,
+        "aligned": 97
+      },
+      {
+        "criterion": "ReconstructionUncertainty",
+        "threshold": 20,
+        "points": 42617,
+        "rms_px": 1.5533,
+        "aligned": 96
+      },
+      {
+        "criterion": "ProjectionAccuracy",
+        "threshold": 20,
+        "points": 40408,
+        "rms_px": 0.9533,
+        "aligned": 96
+      },
+      {
+        "criterion": "ProjectionAccuracy",
+        "threshold": 12,
+        "points": 35954,
+        "rms_px": 0.7147,
+        "aligned": 95
+      },
+      {
+        "criterion": "ProjectionAccuracy",
+        "threshold": 8,
+        "points": 29254,
+        "rms_px": 0.4902,
+        "aligned": 95
+      },
+      {
+        "criterion": "ReprojectionError",
+        "threshold": 0.3,
+        "points": 28261,
+        "rms_px": 0.4342,
+        "aligned": 95
+      }
+    ],
+    "floor": 94,
+    "slack": 3,
+    "start_aligned": 97,
+    "final_rms": 0.4342,
+    "final_aligned": 95,
+    "final_points": 28261,
+    "final_rings": {
+      "15": "39/39",
+      "40": "37/37",
+      "m5": "15/39",
+      "m5_notargets": "4/36"
+    },
+    "minutes": 0.33
+  },
+  "upright_A_nomask_highonly": {
+    "history": [
+      {
+        "stage": "baseline",
+        "aligned": 75,
+        "points": 38680,
+        "rms_px": 2.5491,
+        "rings": {
+          "15": "37/37",
+          "40": "38/38"
+        }
+      },
+      {
+        "stage": "after_ReconstructionUncertainty",
+        "aligned": 75,
+        "points": 38312,
+        "rms_px": 2.5498,
+        "rings": {
+          "15": "37/37",
+          "40": "38/38"
+        }
+      },
+      {
+        "stage": "after_ProjectionAccuracy",
+        "aligned": 75,
+        "points": 16197,
+        "rms_px": 0.3433,
+        "rings": {
+          "15": "37/37",
+          "40": "38/38"
+        }
+      },
+      {
+        "stage": "after_ReprojectionError",
+        "aligned": 75,
+        "points": 15220,
+        "rms_px": 0.2466,
+        "rings": {
+          "15": "37/37",
+          "40": "38/38"
+        }
+      }
+    ],
+    "accepted": [
+      {
+        "criterion": "ReconstructionUncertainty",
+        "threshold": 50,
+        "points": 38679,
+        "rms_px": 2.5485,
+        "aligned": 75
+      },
+      {
+        "criterion": "ReconstructionUncertainty",
+        "threshold": 30,
+        "points": 38678,
+        "rms_px": 2.5482,
+        "aligned": 75
+      },
+      {
+        "criterion": "ReconstructionUncertainty",
+        "threshold": 20,
+        "points": 38312,
+        "rms_px": 2.5498,
+        "aligned": 75
+      },
+      {
+        "criterion": "ProjectionAccuracy",
+        "threshold": 20,
+        "points": 36483,
+        "rms_px": 1.4771,
+        "aligned": 75
+      },
+      {
+        "criterion": "ProjectionAccuracy",
+        "threshold": 12,
+        "points": 33034,
+        "rms_px": 1.0606,
+        "aligned": 75
+      },
+      {
+        "criterion": "ProjectionAccuracy",
+        "threshold": 8,
+        "points": 27696,
+        "rms_px": 0.713,
+        "aligned": 75
+      },
+      {
+        "criterion": "ProjectionAccuracy",
+        "threshold": 5,
+        "points": 21262,
+        "rms_px": 0.4622,
+        "aligned": 75
+      },
+      {
+        "criterion": "ProjectionAccuracy",
+        "threshold": 3,
+        "points": 16197,
+        "rms_px": 0.3433,
+        "aligned": 75
+      },
+      {
+        "criterion": "ReprojectionError",
+        "threshold": 1.0,
+        "points": 16181,
+        "rms_px": 0.3341,
+        "aligned": 75
+      },
+      {
+        "criterion": "ReprojectionError",
+        "threshold": 0.7,
+        "points": 16112,
+        "rms_px": 0.3132,
+        "aligned": 75
+      },
+      {
+        "criterion": "ReprojectionError",
+        "threshold": 0.5,
+        "points": 15947,
+        "rms_px": 0.2872,
+        "aligned": 75
+      },
+      {
+        "criterion": "ReprojectionError",
+        "threshold": 0.3,
+        "points": 15220,
+        "rms_px": 0.2466,
+        "aligned": 75
+      }
+    ],
+    "floor": 75,
+    "slack": 0,
+    "start_aligned": 75,
+    "final_rms": 0.2466,
+    "final_aligned": 75,
+    "final_points": 15220,
+    "final_rings": {
+      "15": "37/37",
+      "40": "38/38"
+    },
+    "minutes": 0.18
+  },
+  "inverted_A_nomask_highonly": {
+    "history": [
+      {
+        "stage": "baseline",
+        "aligned": 75,
+        "points": 45642,
+        "rms_px": 1.4221,
+        "rings": {
+          "15": "38/38",
+          "40": "37/37"
+        }
+      },
+      {
+        "stage": "after_ReconstructionUncertainty",
+        "aligned": 75,
+        "points": 44520,
+        "rms_px": 1.4248,
+        "rings": {
+          "15": "38/38",
+          "40": "37/37"
+        }
+      },
+      {
+        "stage": "after_ProjectionAccuracy",
+        "aligned": 75,
+        "points": 19665,
+        "rms_px": 0.2645,
+        "rings": {
+          "15": "38/38",
+          "40": "37/37"
+        }
+      },
+      {
+        "stage": "after_ReprojectionError",
+        "aligned": 75,
+        "points": 19071,
+        "rms_px": 0.2397,
+        "rings": {
+          "15": "38/38",
+          "40": "37/37"
+        }
+      }
+    ],
+    "accepted": [
+      {
+        "criterion": "ReconstructionUncertainty",
+        "threshold": 20,
+        "points": 44520,
+        "rms_px": 1.4248,
+        "aligned": 75
+      },
+      {
+        "criterion": "ProjectionAccuracy",
+        "threshold": 20,
+        "points": 42743,
+        "rms_px": 0.9013,
+        "aligned": 75
+      },
+      {
+        "criterion": "ProjectionAccuracy",
+        "threshold": 12,
+        "points": 39222,
+        "rms_px": 0.6949,
+        "aligned": 75
+      },
+      {
+        "criterion": "ProjectionAccuracy",
+        "threshold": 8,
+        "points": 33090,
+        "rms_px": 0.5018,
+        "aligned": 75
+      },
+      {
+        "criterion": "ProjectionAccuracy",
+        "threshold": 5,
+        "points": 25448,
+        "rms_px": 0.3426,
+        "aligned": 75
+      },
+      {
+        "criterion": "ProjectionAccuracy",
+        "threshold": 3,
+        "points": 19665,
+        "rms_px": 0.2645,
+        "aligned": 75
+      },
+      {
+        "criterion": "ReprojectionError",
+        "threshold": 0.3,
+        "points": 19071,
+        "rms_px": 0.2397,
+        "aligned": 75
+      }
+    ],
+    "floor": 75,
+    "slack": 0,
+    "start_aligned": 75,
+    "final_rms": 0.2397,
+    "final_aligned": 75,
+    "final_points": 19071,
+    "final_rings": {
+      "15": "38/38",
+      "40": "37/37"
+    },
+    "minutes": 0.15
+  },
+  "sideways_A_nomask_highonly": {
+    "history": [
+      {
+        "stage": "baseline",
+        "aligned": 76,
+        "points": 44520,
+        "rms_px": 1.5141,
+        "rings": {
+          "15": "39/39",
+          "40": "37/37"
+        }
+      },
+      {
+        "stage": "after_ReconstructionUncertainty",
+        "aligned": 76,
+        "points": 42234,
+        "rms_px": 1.5335,
+        "rings": {
+          "15": "39/39",
+          "40": "37/37"
+        }
+      },
+      {
+        "stage": "after_ProjectionAccuracy",
+        "aligned": 76,
+        "points": 17480,
+        "rms_px": 0.2609,
+        "rings": {
+          "15": "39/39",
+          "40": "37/37"
+        }
+      },
+      {
+        "stage": "after_ReprojectionError",
+        "aligned": 76,
+        "points": 16973,
+        "rms_px": 0.237,
+        "rings": {
+          "15": "39/39",
+          "40": "37/37"
+        }
+      }
+    ],
+    "accepted": [
+      {
+        "criterion": "ReconstructionUncertainty",
+        "threshold": 20,
+        "points": 42234,
+        "rms_px": 1.5335,
+        "aligned": 76
+      },
+      {
+        "criterion": "ProjectionAccuracy",
+        "threshold": 20,
+        "points": 40159,
+        "rms_px": 0.9495,
+        "aligned": 76
+      },
+      {
+        "criterion": "ProjectionAccuracy",
+        "threshold": 12,
+        "points": 35780,
+        "rms_px": 0.7125,
+        "aligned": 76
+      },
+      {
+        "criterion": "ProjectionAccuracy",
+        "threshold": 8,
+        "points": 29127,
+        "rms_px": 0.4895,
+        "aligned": 76
+      },
+      {
+        "criterion": "ProjectionAccuracy",
+        "threshold": 5,
+        "points": 22615,
+        "rms_px": 0.3291,
+        "aligned": 76
+      },
+      {
+        "criterion": "ProjectionAccuracy",
+        "threshold": 3,
+        "points": 17480,
+        "rms_px": 0.2609,
+        "aligned": 76
+      },
+      {
+        "criterion": "ReprojectionError",
+        "threshold": 0.5,
+        "points": 17479,
+        "rms_px": 0.2608,
+        "aligned": 76
+      },
+      {
+        "criterion": "ReprojectionError",
+        "threshold": 0.3,
+        "points": 16973,
+        "rms_px": 0.237,
+        "aligned": 76
+      }
+    ],
+    "floor": 76,
+    "slack": 0,
+    "start_aligned": 76,
+    "final_rms": 0.237,
+    "final_aligned": 76,
+    "final_points": 16973,
+    "final_rings": {
+      "15": "39/39",
+      "40": "37/37"
+    },
+    "minutes": 0.16
+  }
+}

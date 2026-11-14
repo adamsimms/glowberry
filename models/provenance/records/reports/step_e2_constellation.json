@@ -1,0 +1,102 @@
+{
+  "chunks": {
+    "upright_A_nomask_highonly": {
+      "labels": [
+        "target 1",
+        "target 2",
+        "target 3",
+        "target 4",
+        "target 5",
+        "target 6"
+      ],
+      "sorted_distances": [
+        1.017002,
+        1.133517,
+        1.153471,
+        1.168729,
+        1.176802,
+        1.330164,
+        1.936041,
+        1.988747,
+        2.014581,
+        2.031894,
+        2.042896,
+        2.053363,
+        2.243707,
+        2.302831,
+        2.417812
+      ],
+      "flatness": 0.0293
+    },
+    "inverted_A_nomask_highonly": {
+      "labels": [
+        "target 10",
+        "target 11",
+        "target 12",
+        "target 7",
+        "target 8",
+        "target 9"
+      ],
+      "sorted_distances": [
+        1.532002,
+        1.533061,
+        1.640832,
+        1.712015,
+        1.819691,
+        2.012139,
+        2.677407,
+        2.846262,
+        2.910029,
+        3.035192,
+        3.049326,
+        3.212402,
+        3.321493,
+        3.338107,
+        3.566859
+      ],
+      "flatness": 0.0251
+    },
+    "sideways_A_nomask_highonly": {
+      "labels": [
+        "target 13",
+        "target 14",
+        "target 15",
+        "target 16",
+        "target 17",
+        "target 18"
+      ],
+      "sorted_distances": [
+        1.521699,
+        1.577636,
+        1.623482,
+        1.643987,
+        1.757618,
+        1.875735,
+        2.711044,
+        2.741396,
+        2.841722,
+        2.904025,
+        2.966851,
+        3.110882,
+        3.149152,
+        3.396337,
+        3.418449
+      ],
+      "flatness": 0.0288
+    }
+  },
+  "ratios": {
+    "inverted_A_nomask_highonly": {
+      "median_ratio": 0.67785,
+      "min": 0.6392,
+      "max": 0.73938,
+      "relative_spread": 0.1478
+    },
+    "sideways_A_nomask_highonly": {
+      "median_ratio": 0.70893,
+      "min": 0.66006,
+      "max": 0.72545,
+      "relative_spread": 0.0922
+    }
+  }
+}

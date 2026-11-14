@@ -1,0 +1,22 @@
+{
+  "as_built": {
+    "faces": 618213,
+    "vertices": 309922
+  },
+  "components_removed": {
+    "threshold": 1000,
+    "faces": 598319,
+    "vertices": 298148,
+    "faces_removed": 19894
+  },
+  "topology_fixed": {
+    "faces": 598250,
+    "vertices": 298148
+  },
+  "holes_closed": {
+    "level": 30,
+    "faces": 598265,
+    "vertices": 298150,
+    "faces_added": 15
+  }
+}

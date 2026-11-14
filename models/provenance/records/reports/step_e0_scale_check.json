@@ -1,0 +1,112 @@
+{
+  "chunks": {
+    "upright_A_nomask_highonly": {
+      "markers_total": 6,
+      "markers_solved": 6,
+      "observations": {
+        "target 1": 32,
+        "target 2": 34,
+        "target 3": 30,
+        "target 4": 29,
+        "target 5": 23,
+        "target 6": 30
+      },
+      "cloud_extent": [
+        4.227,
+        2.4934,
+        3.3765
+      ]
+    },
+    "inverted_A_nomask_highonly": {
+      "markers_total": 6,
+      "markers_solved": 6,
+      "observations": {
+        "target 7": 34,
+        "target 8": 35,
+        "target 9": 29,
+        "target 10": 31,
+        "target 11": 30,
+        "target 12": 31
+      },
+      "cloud_extent": [
+        8.159,
+        3.9299,
+        9.9109
+      ]
+    },
+    "sideways_A_nomask_highonly": {
+      "markers_total": 6,
+      "markers_solved": 6,
+      "observations": {
+        "target 13": 34,
+        "target 14": 33,
+        "target 15": 24,
+        "target 16": 31,
+        "target 17": 29,
+        "target 18": 36
+      },
+      "cloud_extent": [
+        5.6753,
+        7.6823,
+        4.5344
+      ]
+    }
+  },
+  "distances": {
+    "upright_A_nomask_highonly": {
+      "target 1 | target 2": 1.3301637342229191,
+      "target 1 | target 3": 2.0533628686849545,
+      "target 1 | target 4": 2.3028310710518833,
+      "target 1 | target 5": 1.9887473110803453,
+      "target 1 | target 6": 1.0170019399816062,
+      "target 2 | target 3": 1.1335172597993821,
+      "target 2 | target 4": 2.0318940386166107,
+      "target 2 | target 5": 2.4178118063100267,
+      "target 2 | target 6": 2.0145811782413956,
+      "target 3 | target 4": 1.1768015431511698,
+      "target 3 | target 5": 2.042895973214658,
+      "target 3 | target 6": 2.243707335991921,
+      "target 4 | target 5": 1.153471072962398,
+      "target 4 | target 6": 1.9360411355669733,
+      "target 5 | target 6": 1.1687294791893714
+    },
+    "inverted_A_nomask_highonly": {
+      "target 10 | target 11": 2.0121393267242147,
+      "target 10 | target 12": 3.2124022736822586,
+      "target 10 | target 7": 3.3381073713536193,
+      "target 10 | target 8": 2.6774069343973514,
+      "target 10 | target 9": 1.5330607465951143,
+      "target 11 | target 12": 1.7120146656964035,
+      "target 11 | target 7": 2.910029108810521,
+      "target 11 | target 8": 3.3214934680549066,
+      "target 11 | target 9": 3.0493258624037862,
+      "target 12 | target 7": 1.8196909160464136,
+      "target 12 | target 8": 3.0351924483125674,
+      "target 12 | target 9": 3.5668591432797223,
+      "target 7 | target 8": 1.6408324939485586,
+      "target 7 | target 9": 2.846262039130809,
+      "target 8 | target 9": 1.532002317270255
+    },
+    "sideways_A_nomask_highonly": {
+      "target 13 | target 14": 1.5776356691639641,
+      "target 13 | target 15": 2.7413961762696974,
+      "target 13 | target 16": 3.418449181850899,
+      "target 13 | target 17": 3.1108816225139804,
+      "target 13 | target 18": 1.6234821648240687,
+      "target 14 | target 15": 1.5216986916374118,
+      "target 14 | target 16": 2.8417217243884276,
+      "target 14 | target 17": 3.396337483643195,
+      "target 14 | target 18": 2.7110443620705493,
+      "target 15 | target 16": 1.6439866959307852,
+      "target 15 | target 17": 2.9040250570392687,
+      "target 15 | target 18": 3.1491516011846863,
+      "target 16 | target 17": 1.7576177304354628,
+      "target 16 | target 18": 2.966851109649188,
+      "target 17 | target 18": 1.8757347700477762
+    }
+  },
+  "ratios": {
+    "inverted_A_nomask_highonly": null,
+    "sideways_A_nomask_highonly": null
+  }
+}

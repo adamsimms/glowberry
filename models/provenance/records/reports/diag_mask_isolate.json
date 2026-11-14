@@ -1,0 +1,39 @@
+{
+  "mask_verify": {
+    "camera": "B_2712",
+    "mask_size": [
+      11656,
+      8742
+    ],
+    "white_frac": 0.00211,
+    "white_bbox": [
+      697,
+      379,
+      766,
+      444
+    ],
+    "white_wh": [
+      70,
+      66
+    ],
+    "verdict": "white=berry (correct)"
+  },
+  "C1_mask_no_mtp": {
+    "frames": 12,
+    "tie_points": 0,
+    "aligned": 12,
+    "match_min": 0.17
+  },
+  "C2_mask_nocap": {
+    "frames": 12,
+    "tie_points": 0,
+    "aligned": 0,
+    "match_min": 0.39
+  },
+  "C3_control_nomask": {
+    "frames": 12,
+    "tie_points": 0,
+    "aligned": 12,
+    "match_min": 0.37
+  }
+}

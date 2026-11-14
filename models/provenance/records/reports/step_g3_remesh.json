@@ -1,0 +1,8 @@
+{
+  "chunk": "merged_up_inv_sw",
+  "cloud": "metashape/clouds/merged_up_inv_sw_dense.ply",
+  "faces": 639989,
+  "vertices": 318990,
+  "export": "metashape/exports/merged_up_inv_sw_clean.ply",
+  "mb": 16.9
+}

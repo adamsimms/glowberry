@@ -1,0 +1,25 @@
+{
+  "measured_width_cm": 2.5,
+  "width_project_units": 0.02500000000000001,
+  "scale_factor_to_metres": 0.9999999999999998,
+  "width_cm_after": 2.5,
+  "extents_cm": [
+    2.3798850220235908,
+    2.3399048635764377,
+    2.024044293975364
+  ],
+  "volume_cm3": 5.016287012107033,
+  "area_cm2": 29.979410696090117,
+  "sphere_equivalent_diameter_cm": 2.1238699403131545,
+  "exports": {
+    "obj": {
+      "path": "metashape/exports/berry_merged_up_inv_cm.obj",
+      "mb": 92.5
+    },
+    "glb": {
+      "path": "metashape/exports/berry_merged_up_inv_cm.glb",
+      "mb": 62.0
+    }
+  },
+  "caveat": "one caliper reading, on a compressible berry; treat as good to a few percent"
+}

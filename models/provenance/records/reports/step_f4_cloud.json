@@ -1,0 +1,16 @@
+{
+  "upright_A_nomask_highonly": {
+    "depth_maps": 38,
+    "points": 249258,
+    "minutes": 0.98,
+    "ply": "metashape/clouds/upright_A_nomask_highonly_dense2.ply",
+    "ply_mb": 7.2
+  },
+  "inverted_A_nomask_highonly": {
+    "depth_maps": 37,
+    "points": 265032,
+    "minutes": 0.91,
+    "ply": "metashape/clouds/inverted_A_nomask_highonly_dense2.ply",
+    "ply_mb": 7.7
+  }
+}

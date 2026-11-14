@@ -1,0 +1,16 @@
+{
+  "upright_A_nomask_highonly": {
+    "downscale": 2,
+    "filter": "Metashape.FilterMode.MildFiltering",
+    "cameras": 75,
+    "depth_maps": -1,
+    "minutes": 5.24
+  },
+  "inverted_A_nomask_highonly": {
+    "downscale": 2,
+    "filter": "Metashape.FilterMode.MildFiltering",
+    "cameras": 75,
+    "depth_maps": -1,
+    "minutes": 5.14
+  }
+}

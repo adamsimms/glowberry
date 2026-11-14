@@ -1,0 +1,84 @@
+{
+  "env": {
+    "version": "2.3.2",
+    "gpus": [
+      "Apple M5"
+    ],
+    "numpy": null,
+    "PIL": null,
+    "scipy": null,
+    "cv2": null
+  },
+  "samples": {
+    "c01_40_photo": {
+      "full_size": [
+        11656,
+        8742
+      ],
+      "analysed_size": [
+        1165,
+        874
+      ],
+      "channels": 3,
+      "sat_max": 1.0,
+      "sat_median": 0.08379888268156424,
+      "sampled": 63948
+    },
+    "c01_40_plate": {
+      "full_size": [
+        11656,
+        8742
+      ],
+      "analysed_size": [
+        1165,
+        874
+      ],
+      "channels": 3,
+      "sat_max": 0.2786885245901639,
+      "sat_median": 0.08235294117647059,
+      "sampled": 63948
+    },
+    "c01_nt_photo": {
+      "full_size": [
+        11656,
+        8742
+      ],
+      "analysed_size": [
+        1165,
+        874
+      ],
+      "channels": 3,
+      "sat_max": 1.0,
+      "sat_median": 0.032432432432432434,
+      "sampled": 63948
+    },
+    "c02_40_photo": {
+      "full_size": [
+        11656,
+        8742
+      ],
+      "analysed_size": [
+        1165,
+        874
+      ],
+      "channels": 3,
+      "sat_max": 1.0,
+      "sat_median": 0.07602339181286549,
+      "sampled": 63948
+    },
+    "c03_15_photo": {
+      "full_size": [
+        11656,
+        8742
+      ],
+      "analysed_size": [
+        1165,
+        874
+      ],
+      "channels": 3,
+      "sat_max": 1.0,
+      "sat_median": 0.05343511450381679,
+      "sampled": 63948
+    }
+  }
+}

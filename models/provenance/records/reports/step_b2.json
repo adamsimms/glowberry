@@ -1,0 +1,69 @@
+{
+  "added": {},
+  "sensor_cleanup": {
+    "sideways": {
+      "removed": 1,
+      "now": 1
+    }
+  },
+  "disabled": {
+    "B_2750": {
+      "chunk": "upright",
+      "quality": 0.317241,
+      "reason": "defocused; lone outlier in its ring"
+    }
+  },
+  "state": {
+    "upright": {
+      "cameras": 144,
+      "enabled": 143,
+      "masked": 144,
+      "disabled": [
+        "B_2750"
+      ],
+      "groups": {
+        "40": 39,
+        "15": 37,
+        "m5": 39,
+        "m5_notargets": 29
+      },
+      "markers": 6,
+      "sensors": 1
+    },
+    "inverted": {
+      "cameras": 151,
+      "enabled": 150,
+      "masked": 150,
+      "disabled": [
+        "B_2540"
+      ],
+      "groups": {
+        "40": 37,
+        "15": 38,
+        "m5": 37,
+        "m5_notargets": 39
+      },
+      "markers": 6,
+      "sensors": 1
+    },
+    "sideways": {
+      "cameras": 151,
+      "enabled": 151,
+      "masked": 151,
+      "disabled": [],
+      "groups": {
+        "40": 37,
+        "15": 39,
+        "m5": 39,
+        "m5_notargets": 36
+      },
+      "markers": 6,
+      "sensors": 1
+    }
+  },
+  "totals": {
+    "cameras": 446,
+    "enabled": 444,
+    "masked": 445
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "upright_A_nomask_highonly": {
+    "points": 56143,
+    "fitted_radius": 0.1004137807592622,
+    "radial_sd_pct": 7.997426185547553,
+    "beyond_1.35_radii_pct": 0.0,
+    "inside_0.6_radii_pct": 0.0,
+    "extent_in_radii": [
+      2.1163156361409152,
+      2.2197617371451646,
+      1.5838983825564137
+    ]
+  },
+  "inverted_A_nomask_highonly": {
+    "points": 69844,
+    "fitted_radius": 0.14644525341203224,
+    "radial_sd_pct": 8.204010606915492,
+    "beyond_1.35_radii_pct": 0.0,
+    "inside_0.6_radii_pct": 0.0,
+    "extent_in_radii": [
+      2.1783832584558906,
+      2.2342641714757434,
+      1.6226976251682639
+    ]
+  },
+  "sideways_A_nomask_highonly": {
+    "points": 102860,
+    "fitted_radius": 0.13858836384681597,
+    "radial_sd_pct": 11.721301815132973,
+    "beyond_1.35_radii_pct": 0.0,
+    "inside_0.6_radii_pct": 0.5940112774645149,
+    "extent_in_radii": [
+      2.320993211018389,
+      1.9977599156068526,
+      2.0985780659654805
+    ]
+  }
+}

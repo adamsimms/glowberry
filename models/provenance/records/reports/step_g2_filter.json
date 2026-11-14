@@ -1,0 +1,14 @@
+{
+  "threshold_pct_of_radius": 0.7725850399583566,
+  "control_cell_median_pct": 0.24806995643302798,
+  "sideways_cell_median_pct": 2.039780840277672,
+  "cells_judged": 960,
+  "cells_accepted": 69,
+  "points_in": 373405,
+  "points_kept": 22798,
+  "cells_gaining_redundancy": 69,
+  "cells_newly_covered": 0,
+  "merged_points_before": 485827,
+  "merged_points_after": 508625,
+  "out": "metashape/clouds/merged_up_inv_sw_dense.ply"
+}

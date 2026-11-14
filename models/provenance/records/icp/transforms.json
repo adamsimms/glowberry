@@ -1,0 +1,134 @@
+{
+  "voxel": 0.012,
+  "hub": "sideways_A_nomask_highonly",
+  "clouds": {
+    "sideways_A_nomask_highonly": {
+      "initial_scale": 0.7,
+      "graph_scale": 1.0,
+      "total_scale": 7.204616,
+      "transform_ply_to_common": [
+        [
+          7.2046161570407445,
+          2.1546535650447853e-17,
+          2.659100401378521e-17,
+          1.1146553442129266
+        ],
+        [
+          1.8113277387762533e-16,
+          7.204616157040746,
+          -1.286254025169587e-16,
+          -2.929338059155271
+        ],
+        [
+          1.2364653155288278e-16,
+          -3.6117660491888523e-16,
+          7.204616157040746,
+          58.39384760525703
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "upright_A_nomask_highonly": {
+      "initial_scale": 1.0,
+      "graph_scale": 0.99993,
+      "total_scale": 9.950024,
+      "transform_ply_to_common": [
+        [
+          8.863670578316746,
+          -2.5391788263077193,
+          -3.7404389606291395,
+          -25.656945231772927
+        ],
+        [
+          3.570954460945367,
+          -1.1162779643213658,
+          9.219825193315893,
+          68.9023854323343
+        ],
+        [
+          -2.772471274515857,
+          -9.555598528898111,
+          -0.0831182145070122,
+          3.1359345859721346
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "overlap": {
+        "fraction_within_2_voxels": 0.1577,
+        "median_distance": 0.086144,
+        "median_in_voxels": 7.179,
+        "centroid_offset_pct_of_size": 9.621
+      }
+    },
+    "inverted_A_nomask_highonly": {
+      "initial_scale": 0.67,
+      "graph_scale": 0.99899,
+      "total_scale": 6.810428,
+      "transform_ply_to_common": [
+        [
+          0.9811836714250222,
+          -4.805621425537313,
+          -4.724955503126606,
+          -45.026810226084265
+        ],
+        [
+          3.8592397998959025,
+          -3.5137399643518035,
+          4.375136891458062,
+          45.951165887046336
+        ],
+        [
+          -5.524985969123287,
+          -3.307802498111775,
+          2.21695644153352,
+          22.75159169857755
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "overlap": {
+        "fraction_within_2_voxels": 0.1357,
+        "median_distance": 0.097074,
+        "median_in_voxels": 8.09,
+        "centroid_offset_pct_of_size": 7.154
+      }
+    }
+  },
+  "edges": [
+    {
+      "source": "upright_A_nomask_highonly",
+      "target": "sideways_A_nomask_highonly",
+      "fitness": 0.03845,
+      "inlier_rmse": 0.0045452,
+      "solved_scale": 0.99993
+    },
+    {
+      "source": "inverted_A_nomask_highonly",
+      "target": "sideways_A_nomask_highonly",
+      "fitness": 0.04687,
+      "inlier_rmse": 0.0045667,
+      "solved_scale": 0.99899
+    },
+    {
+      "source": "upright_A_nomask_highonly",
+      "target": "inverted_A_nomask_highonly",
+      "fitness": 0.02732,
+      "inlier_rmse": 0.0045884,
+      "solved_scale": 1.0023
+    }
+  ]
+}

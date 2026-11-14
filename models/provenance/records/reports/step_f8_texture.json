@@ -1,0 +1,19 @@
+{
+  "chunk": "merged_up_inv",
+  "faces": 598265,
+  "cameras": 150,
+  "masked": 151,
+  "texture_size": 8192,
+  "downscale": 1,
+  "exports": {
+    "obj": {
+      "path": "metashape/exports/berry_merged_up_inv.obj",
+      "mb": 92.5
+    },
+    "glb": {
+      "path": "metashape/exports/berry_merged_up_inv.glb",
+      "mb": 62.0
+    }
+  },
+  "units": "arbitrary project units; absolute scale not established"
+}

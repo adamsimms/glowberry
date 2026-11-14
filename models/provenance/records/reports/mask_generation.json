@@ -1,0 +1,178 @@
+{
+  "rings": {
+    "sideways/m5_notargets": {
+      "anchor": [
+        746.8241632427657,
+        560.9342807386937
+      ],
+      "n_photos": 36,
+      "frames": {
+        "B_2222": {
+          "skipped": "already exists"
+        },
+        "B_2223": {
+          "skipped": "already exists"
+        },
+        "B_2224": {
+          "skipped": "already exists"
+        },
+        "B_2225": {
+          "skipped": "already exists"
+        },
+        "B_2226": {
+          "skipped": "already exists"
+        },
+        "B_2227": {
+          "skipped": "already exists"
+        },
+        "B_2228": {
+          "skipped": "already exists"
+        },
+        "B_2229": {
+          "skipped": "already exists"
+        },
+        "B_2230": {
+          "skipped": "already exists"
+        },
+        "B_2231": {
+          "skipped": "already exists"
+        },
+        "B_2232": {
+          "skipped": "already exists"
+        },
+        "B_2233": {
+          "skipped": "already exists"
+        },
+        "B_2234": {
+          "skipped": "already exists"
+        },
+        "B_2235": {
+          "skipped": "already exists"
+        },
+        "B_2236": {
+          "skipped": "already exists"
+        },
+        "B_2237": {
+          "skipped": "already exists"
+        },
+        "B_2238": {
+          "skipped": "already exists"
+        },
+        "B_2239": {
+          "skipped": "already exists"
+        },
+        "B_2240": {
+          "skipped": "already exists"
+        },
+        "B_2241": {
+          "skipped": "already exists"
+        },
+        "B_2242": {
+          "skipped": "already exists"
+        },
+        "B_2243": {
+          "skipped": "already exists"
+        },
+        "B_2244": {
+          "skipped": "already exists"
+        },
+        "B_2245": {
+          "skipped": "already exists"
+        },
+        "B_2246": {
+          "skipped": "already exists"
+        },
+        "B_2247": {
+          "skipped": "already exists"
+        },
+        "B_2248": {
+          "skipped": "already exists"
+        },
+        "B_2249": {
+          "skipped": "already exists"
+        },
+        "B_2250": {
+          "skipped": "already exists"
+        },
+        "B_2251": {
+          "skipped": "already exists"
+        },
+        "B_2252": {
+          "skipped": "already exists"
+        },
+        "B_2253": {
+          "skipped": "already exists"
+        },
+        "B_2254": {
+          "px_full": 315246,
+          "bbox_small": [
+            721,
+            522,
+            797,
+            603
+          ],
+          "wh_small": [
+            77,
+            82
+          ],
+          "dist_to_anchor": 12.4,
+          "refine_box_full": [
+            5576,
+            3984,
+            6576,
+            5024
+          ],
+          "secs": 0.99
+        },
+        "B_2255": {
+          "px_full": 310001,
+          "bbox_small": [
+            718,
+            522,
+            795,
+            603
+          ],
+          "wh_small": [
+            78,
+            82
+          ],
+          "dist_to_anchor": 9.4,
+          "refine_box_full": [
+            5552,
+            3984,
+            6560,
+            5024
+          ],
+          "secs": 0.86
+        },
+        "B_2256": {
+          "px_full": 301963,
+          "bbox_small": [
+            716,
+            522,
+            791,
+            603
+          ],
+          "wh_small": [
+            76,
+            82
+          ],
+          "dist_to_anchor": 6.6,
+          "refine_box_full": [
+            5536,
+            3984,
+            6528,
+            5024
+          ],
+          "secs": 0.86
+        },
+        "B_2257": {
+          "skipped": "already exists"
+        }
+      }
+    }
+  },
+  "flagged": [],
+  "total_masks": 3,
+  "elapsed_s": 6.9
+}

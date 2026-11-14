@@ -1,0 +1,11 @@
+{
+  "chunk": "merged_up_inv",
+  "solved_cameras": 150,
+  "masked": 151,
+  "imported_points": 485827,
+  "faces": 618213,
+  "vertices": 309922,
+  "face_policy": "high",
+  "minutes": 0.19,
+  "export": "metashape/exports/merged_up_inv_untextured.ply"
+}

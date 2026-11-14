@@ -1,0 +1,26 @@
+{
+  "tol": 0.02,
+  "stats": {
+    "upright": {
+      "points": 54468,
+      "median_pct": 0.7570351958274841,
+      "p90_pct": 2.8883981704711914,
+      "within_tol": 0.8348755232430051
+    },
+    "inverted": {
+      "points": 48541,
+      "median_pct": 0.6665337085723877,
+      "p90_pct": 2.7945921421051025,
+      "within_tol": 0.842730887291156
+    },
+    "sideways": {
+      "points": 90290,
+      "median_pct": 2.142582654953003,
+      "p90_pct": 6.901360988616943,
+      "within_tol": 0.4762875179975634
+    }
+  },
+  "control_floor": 0.8348755232430051,
+  "sideways_within_tol": 0.4762875179975634,
+  "matches_controls": false
+}

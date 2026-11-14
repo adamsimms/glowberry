@@ -1,0 +1,116 @@
+{
+  "upright_A_nomask_refined": {
+    "history": [
+      {
+        "stage": "start",
+        "aligned": 101,
+        "enabled": 143,
+        "points": 39012,
+        "rms_px": 2.7933,
+        "max_px": 91.135,
+        "sigma0": "0.396008059671777",
+        "rings": {
+          "15": "37/37",
+          "40": "38/38",
+          "m5": "21/39",
+          "m5_notargets": "5/29"
+        }
+      },
+      {
+        "stage": "after_incremental_1",
+        "aligned": 116,
+        "enabled": 143,
+        "points": 39296,
+        "rms_px": 2.7056,
+        "max_px": 77.961,
+        "sigma0": "0.91579620278463",
+        "rings": {
+          "15": "37/37",
+          "40": "38/38",
+          "m5": "28/39",
+          "m5_notargets": "13/29"
+        }
+      },
+      {
+        "stage": "after_ReconstructionUncertainty",
+        "aligned": 104,
+        "enabled": 143,
+        "points": 26463,
+        "rms_px": 2.8111,
+        "max_px": 91.169,
+        "sigma0": "0.235747905820987",
+        "rings": {
+          "15": "37/37",
+          "40": "38/38",
+          "m5": "20/39",
+          "m5_notargets": "9/29"
+        }
+      },
+      {
+        "stage": "after_ProjectionAccuracy",
+        "aligned": 97,
+        "enabled": 143,
+        "points": 13636,
+        "rms_px": 0.4952,
+        "max_px": 6.201,
+        "sigma0": "0.214318075513938",
+        "rings": {
+          "15": "37/37",
+          "40": "38/38",
+          "m5": "13/39",
+          "m5_notargets": "9/29"
+        }
+      },
+      {
+        "stage": "after_ReprojectionError",
+        "aligned": 97,
+        "enabled": 143,
+        "points": 13293,
+        "rms_px": 0.3917,
+        "max_px": 2.82,
+        "sigma0": "0.177907603433482",
+        "rings": {
+          "15": "37/37",
+          "40": "38/38",
+          "m5": "13/39",
+          "m5_notargets": "9/29"
+        }
+      },
+      {
+        "stage": "final",
+        "aligned": 111,
+        "enabled": 143,
+        "points": 13687,
+        "rms_px": 0.7527,
+        "max_px": 25.497,
+        "sigma0": "0.353382852612505",
+        "rings": {
+          "15": "37/37",
+          "40": "38/38",
+          "m5": "24/39",
+          "m5_notargets": "12/29"
+        }
+      }
+    ],
+    "filters": [
+      {
+        "criterion": "ReconstructionUncertainty",
+        "threshold": 15.0,
+        "before": 39296,
+        "after": 26464
+      },
+      {
+        "criterion": "ProjectionAccuracy",
+        "threshold": 5.0,
+        "before": 26463,
+        "after": 13636
+      },
+      {
+        "criterion": "ReprojectionError",
+        "threshold": 0.5,
+        "before": 13636,
+        "after": 13293
+      }
+    ]
+  }
+}

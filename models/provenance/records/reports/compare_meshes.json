@@ -1,0 +1,39 @@
+{
+  "topology": {
+    "two": {
+      "faces": 598265,
+      "vertices": 298150,
+      "boundary_edges": 61,
+      "components": 2,
+      "largest_component_pct": 99.99498549973674,
+      "relief_sd_pct": 8.205523631777712
+    },
+    "with sw": {
+      "faces": 639989,
+      "vertices": 318990,
+      "boundary_edges": 65,
+      "components": 3,
+      "largest_component_pct": 99.98531224755426,
+      "relief_sd_pct": 8.40086228210811
+    }
+  },
+  "evidence_fit": {
+    "upright": {
+      "old_median": 0.25783205032348633,
+      "new_median": 0.25450989603996277,
+      "old_p90": 1.4608296155929565,
+      "new_p90": 1.4243100881576538
+    },
+    "inverted": {
+      "old_median": 0.20652922987937927,
+      "new_median": 0.21168208122253418,
+      "old_p90": 1.3323689699172974,
+      "new_p90": 1.34564208984375
+    }
+  },
+  "sideways_gain_pct": 2.607727527618408,
+  "regressed": true,
+  "keep_rebuild": false,
+  "cells_accepted": 69,
+  "points_kept": 22798
+}

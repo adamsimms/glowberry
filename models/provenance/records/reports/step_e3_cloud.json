@@ -1,0 +1,50 @@
+{
+  "upright_A_nomask_highonly": {
+    "cameras": 75,
+    "masked": 75,
+    "downscale": 4,
+    "tie_extent": [
+      4.227,
+      2.4934,
+      3.3765
+    ],
+    "cloud_points": 56143,
+    "cloud_extent": null,
+    "depth_min": 2.05,
+    "cloud_min": 0.17,
+    "ply": "metashape/clouds/upright_A_nomask_highonly.ply",
+    "ply_mb": 1.6
+  },
+  "inverted_A_nomask_highonly": {
+    "cameras": 75,
+    "masked": 75,
+    "downscale": 4,
+    "tie_extent": [
+      8.159,
+      3.9299,
+      9.9109
+    ],
+    "cloud_points": 69844,
+    "cloud_extent": null,
+    "depth_min": 2.07,
+    "cloud_min": 0.16,
+    "ply": "metashape/clouds/inverted_A_nomask_highonly.ply",
+    "ply_mb": 2.0
+  },
+  "sideways_A_nomask_highonly": {
+    "cameras": 76,
+    "masked": 76,
+    "downscale": 4,
+    "tie_extent": [
+      5.6753,
+      7.6823,
+      4.5344
+    ],
+    "cloud_points": 102860,
+    "cloud_extent": null,
+    "depth_min": 2.22,
+    "cloud_min": 0.16,
+    "ply": "metashape/clouds/sideways_A_nomask_highonly.ply",
+    "ply_mb": 3.0
+  }
+}
