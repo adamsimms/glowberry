@@ -33,7 +33,7 @@ Applications, organization and call records, the CV, contact details and private
 
 ## Project media
 
-Media (meshes, print files, renders, maquettes, visual tests, photos, video) never stays in this repo's ignored folders: they are not backed up. It goes to the project's synced Drive folder, `$MEDIA_DIR` (`30 STUDIO/32 PROJECTS/GLOWBERRY/`): `01-REFERENCES`, `02-STUDIES` (concept and visual exploration), `03-TESTS` (technical experiments, test prints), `04-ARTWORK` (the finished work's own media), `05-DOCUMENTATION` (one folder per activity, named like studio's). Inside 02 and 03, one dated folder per piece of work: `<YYYY-MM>-<NAME>`. `sketchpad/` is scratch.
+Media (meshes, print files, renders, maquettes, visual tests, photos, video) never stays in this repo's ignored folders: they are not backed up. It goes to the project's media folder, `$MEDIA_DIR` (`30 STUDIO/32 PROJECTS/GLOWBERRY/`), a local outbox that a daily job copies to off-site storage and clears 14 days after the copies are verified. Older media is fetched from that storage, not read back from `$MEDIA_DIR`. Stages: `01-REFERENCES`, `02-STUDIES` (concept and visual exploration), `03-TESTS` (technical experiments, test prints), `04-ARTWORK` (the finished work's own media), `05-DOCUMENTATION` (one folder per activity, named like studio's). Inside 02 and 03, one dated folder per piece of work: `<YYYY-MM>-<NAME>`. `sketchpad/` is scratch.
 
 ## Bibliography / Zotero
 

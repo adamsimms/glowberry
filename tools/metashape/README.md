@@ -2,14 +2,14 @@
 
 Replayable pipeline for the Pinchard's bakeapple reconstruction documented in [`docs/SCANNING.md`](../../docs/SCANNING.md).
 
-Frames, the Metashape project, point clouds, and mesh exports stay on disk. They are not in this repo. Layout (Drive archive `BERRY/BERRY-04/`, or a local copy of that package):
+Frames, the Metashape project, point clouds, and mesh exports stay on disk. They are not in this repo. Layout (the scan package `30 STUDIO/32 PROJECTS/GLOWBERRY/04-ARTWORK/PROVENANCE-SCAN/` in off-site media storage, or a local working copy of it):
 
 ```
 TIFF-CHUNK-01/   TIFF-CHUNK-02/   TIFF-CHUNK-03/
 metashape/berry04_three_chunks.psx
 ```
 
-Photo paths in the `.psx` are relative to that folder. Set `BERRY_ROOT` to it when running scripts. Default if unset: `~/Desktop/BERRY`. Set it in `.env` (see `.env.example`); on this machine it points at the Drive copy. The Drive archive of the same layout is `$MEDIA_DIR/04-ARTWORK/PROVENANCE-SCAN/`.
+Photo paths in the `.psx` are relative to that folder. Set `BERRY_ROOT` to it when running scripts. Default if unset: `~/Desktop/BERRY`. Set it in `.env` (see `.env.example`) to the local working copy. The package also holds the raw frames (`IMAGES-RAW*`), which the scripts do not need locally.
 
 ## Two runtimes
 

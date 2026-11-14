@@ -102,7 +102,7 @@ When publishing, expect roughly:
 
 | File                                 | Use                                               |
 | ------------------------------------ | ------------------------------------------------- |
-| `glowberry_master_500mm.stl`         | Production mesh (~484k tris) — WeTransfer / Drive |
+| `glowberry_master_500mm.stl`         | Production mesh (~484k tris), sent by file transfer |
 | `glowberry_master_500mm_preview.stl` | Lighter preview                                   |
 | `glowberry_master_500mm.obj`         | Alternate format                                  |
 | `glowberry.blend`                    | Blender source (optional)                         |
